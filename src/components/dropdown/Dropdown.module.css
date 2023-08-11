@@ -1,0 +1,31 @@
+/* .dropdown {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.dropdown ul {
+    position: absolute;
+    top: 30px;
+    background-color: white;
+    padding: 10px 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.dropdown ul li {
+    list-style-type: none;
+    text-transform: capitalize;
+}
+
+.dropdown ul li:hover {
+    background-color: lightgray;
+}
+
+.dropdown ul li div {
+    padding-left: 10px;
+} */

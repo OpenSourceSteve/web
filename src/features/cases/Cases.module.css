@@ -1,0 +1,59 @@
+/* .resourceListHeader {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 1px solid black;
+}
+
+.resourceListRow {
+    padding: 10px 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    color: black;
+    text-decoration: none;
+}
+
+.dropdownContainer ul {
+    position: fixed;
+    background-color: white;
+    border: 1px solid black;
+    padding: 0 10px;
+    margin: 1.7em 2.8em;
+    border-radius: 10px;
+    transform: translate(-2.6em, 1.75em);
+}
+
+.dropdownContainer ul li {
+    list-style-type: none;
+    margin: 0;
+}
+
+.dropdownContainer ul li:hover {
+    background-color: lightgray;
+}
+
+.caseForm {
+    padding: 20px;
+}
+
+.caseForm label {
+    display: inline;
+}
+
+.caseForm input {
+    display: block;
+}
+
+.caseForm input[type="checkbox"] {
+    display: inline;
+    width: fit-content;
+}
+
+.caseForm input {
+    width: 100%;
+}
+
+.caseForm div {
+    margin: 12px 0px;
+} */
