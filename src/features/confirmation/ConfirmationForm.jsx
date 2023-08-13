@@ -6,6 +6,8 @@ import { Button, NumberInput } from "../../components";
 
 export const ConfirmationForm = ({ onSuccess, username }) => {
 
+  const { confirmationURL, resendURL } = LAMBDAS;
+
   const [state, setState] = useState({ code: "" })
   const [isLoading, setIsLoading] = useState(false);
 
@@ -18,8 +20,6 @@ export const ConfirmationForm = ({ onSuccess, username }) => {
 
   const submitHandler = async () => {
     setIsLoading(true)
-
-    const { confirmationURL } = LAMBDAS;
 
     const postJsonOptions = createPostJsonOptions({ username, code: state.code })
 
@@ -42,11 +42,9 @@ export const ConfirmationForm = ({ onSuccess, username }) => {
   }
 
   const resendHandler = async () => {
-    const url = "https://eefdeymkkyztmk6tjodnilncbi0evtks.lambda-url.us-west-1.on.aws/";
-
     const postJsonOptions = createPostJsonOptions({ username })
 
-    const response = await fetch(url, postJsonOptions);
+    const response = await fetch(resendURL, postJsonOptions);
 
     return response.json().then(data => {
         return {

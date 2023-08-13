@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "api": {
+      "web": [
+        "Mutation"
+      ]
+    }
+  },
+  "lambdaLayers": [],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "clientId",
+      "environmentVariableName": "CLIENT_ID"
+    },
+    {
+      "cloudFormationParameterName": "userpoolId",
+      "environmentVariableName": "USERPOOL_ID"
+    }
+  ]
+}

@@ -1,4 +1,34 @@
 {
+  "api": {
+    "web": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "web1c61ecc2"
+        }
+      ],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AWS_IAM"
+            }
+          ],
+          "defaultAuthentication": {
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authweb1c61ecc2"
+            }
+          }
+        }
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync"
+    }
+  },
   "auth": {
     "web1c61ecc2": {
       "customAuth": false,
@@ -25,6 +55,163 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
+    }
+  },
+  "function": {
+    "clientLogger": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "confirmationWorkflow": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput"
+          ],
+          "category": "api",
+          "resourceName": "web"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "resendConfirmationCode": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "signupWorkflow": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput"
+          ],
+          "category": "api",
+          "resourceName": "web"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_clientLogger_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "clientLogger"
+        }
+      ]
+    },
+    "AMPLIFY_function_clientLogger_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "clientLogger"
+        }
+      ]
+    },
+    "AMPLIFY_function_confirmationWorkflow_clientId": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "confirmationWorkflow"
+        }
+      ]
+    },
+    "AMPLIFY_function_confirmationWorkflow_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "confirmationWorkflow"
+        }
+      ]
+    },
+    "AMPLIFY_function_confirmationWorkflow_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "confirmationWorkflow"
+        }
+      ]
+    },
+    "AMPLIFY_function_confirmationWorkflow_userpoolId": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "confirmationWorkflow"
+        }
+      ]
+    },
+    "AMPLIFY_function_resendConfirmationCode_clientId": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "resendConfirmationCode"
+        }
+      ]
+    },
+    "AMPLIFY_function_resendConfirmationCode_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "resendConfirmationCode"
+        }
+      ]
+    },
+    "AMPLIFY_function_resendConfirmationCode_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "resendConfirmationCode"
+        }
+      ]
+    },
+    "AMPLIFY_function_resendConfirmationCode_userpoolId": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "resendConfirmationCode"
+        }
+      ]
+    },
+    "AMPLIFY_function_signupWorkflow_clientId": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "signupWorkflow"
+        }
+      ]
+    },
+    "AMPLIFY_function_signupWorkflow_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "signupWorkflow"
+        }
+      ]
+    },
+    "AMPLIFY_function_signupWorkflow_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "signupWorkflow"
+        }
+      ]
+    },
+    "AMPLIFY_function_signupWorkflow_userpoolId": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "signupWorkflow"
+        }
+      ]
     }
   }
 }

@@ -1,60 +1,6 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateSignup = /* GraphQL */ `
-  subscription OnCreateSignup($filter: ModelSubscriptionSignupFilterInput) {
-    onCreateSignup(filter: $filter) {
-      id
-      email
-      firstName
-      lastName
-      cognitoID
-      userID
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-      __typename
-    }
-  }
-`;
-export const onUpdateSignup = /* GraphQL */ `
-  subscription OnUpdateSignup($filter: ModelSubscriptionSignupFilterInput) {
-    onUpdateSignup(filter: $filter) {
-      id
-      email
-      firstName
-      lastName
-      cognitoID
-      userID
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-      __typename
-    }
-  }
-`;
-export const onDeleteSignup = /* GraphQL */ `
-  subscription OnDeleteSignup($filter: ModelSubscriptionSignupFilterInput) {
-    onDeleteSignup(filter: $filter) {
-      id
-      email
-      firstName
-      lastName
-      cognitoID
-      userID
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-      __typename
-    }
-  }
-`;
 export const onCreateFinance = /* GraphQL */ `
   subscription OnCreateFinance(
     $filter: ModelSubscriptionFinanceFilterInput
@@ -120,6 +66,60 @@ export const onDeleteFinance = /* GraphQL */ `
       _deleted
       _lastChangedAt
       owner
+      __typename
+    }
+  }
+`;
+export const onCreateSignup = /* GraphQL */ `
+  subscription OnCreateSignup($filter: ModelSubscriptionSignupFilterInput) {
+    onCreateSignup(filter: $filter) {
+      id
+      email
+      firstName
+      lastName
+      cognitoID
+      userID
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      __typename
+    }
+  }
+`;
+export const onUpdateSignup = /* GraphQL */ `
+  subscription OnUpdateSignup($filter: ModelSubscriptionSignupFilterInput) {
+    onUpdateSignup(filter: $filter) {
+      id
+      email
+      firstName
+      lastName
+      cognitoID
+      userID
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      __typename
+    }
+  }
+`;
+export const onDeleteSignup = /* GraphQL */ `
+  subscription OnDeleteSignup($filter: ModelSubscriptionSignupFilterInput) {
+    onDeleteSignup(filter: $filter) {
+      id
+      email
+      firstName
+      lastName
+      cognitoID
+      userID
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -554,94 +554,6 @@ export const onCreateCase = /* GraphQL */ `
           id
           caseId
           clientId
-          case {
-            id
-            jurisdiction
-            court
-            judge
-            prosecutor
-            Clients {
-              nextToken
-              startedAt
-              __typename
-            }
-            Lawyers {
-              nextToken
-              startedAt
-              __typename
-            }
-            Events {
-              nextToken
-              startedAt
-              __typename
-            }
-            Charges {
-              nextToken
-              startedAt
-              __typename
-            }
-            Notes {
-              nextToken
-              startedAt
-              __typename
-            }
-            Tasks {
-              nextToken
-              startedAt
-              __typename
-            }
-            caseNumber
-            caseName
-            Finances {
-              nextToken
-              startedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
-          client {
-            id
-            userID
-            firstName
-            lastName
-            dateOfBirth
-            phone
-            email
-            address1
-            address2
-            city
-            state
-            zip
-            referralSource
-            cases {
-              nextToken
-              startedAt
-              __typename
-            }
-            Tasks {
-              nextToken
-              startedAt
-              __typename
-            }
-            Finances {
-              nextToken
-              startedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           createdAt
           updatedAt
           _version
@@ -659,89 +571,6 @@ export const onCreateCase = /* GraphQL */ `
           id
           caseId
           lawyerId
-          case {
-            id
-            jurisdiction
-            court
-            judge
-            prosecutor
-            Clients {
-              nextToken
-              startedAt
-              __typename
-            }
-            Lawyers {
-              nextToken
-              startedAt
-              __typename
-            }
-            Events {
-              nextToken
-              startedAt
-              __typename
-            }
-            Charges {
-              nextToken
-              startedAt
-              __typename
-            }
-            Notes {
-              nextToken
-              startedAt
-              __typename
-            }
-            Tasks {
-              nextToken
-              startedAt
-              __typename
-            }
-            caseNumber
-            caseName
-            Finances {
-              nextToken
-              startedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
-          lawyer {
-            id
-            userID
-            firstName
-            lastName
-            barAssociation
-            licenseNumber
-            practices {
-              nextToken
-              startedAt
-              __typename
-            }
-            email
-            phone
-            owner
-            Tasks {
-              nextToken
-              startedAt
-              __typename
-            }
-            cases {
-              nextToken
-              startedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            __typename
-          }
           createdAt
           updatedAt
           _version
@@ -821,27 +650,6 @@ export const onCreateCase = /* GraphQL */ `
           caseID
           lawyerID
           clientID
-          Notes {
-            items {
-              id
-              timestamp
-              text
-              type
-              caseID
-              eventID
-              taskID
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            nextToken
-            startedAt
-            __typename
-          }
           isAssigneeComplete
           isVerifiedComplete
           createdAt
@@ -905,94 +713,6 @@ export const onUpdateCase = /* GraphQL */ `
           id
           caseId
           clientId
-          case {
-            id
-            jurisdiction
-            court
-            judge
-            prosecutor
-            Clients {
-              nextToken
-              startedAt
-              __typename
-            }
-            Lawyers {
-              nextToken
-              startedAt
-              __typename
-            }
-            Events {
-              nextToken
-              startedAt
-              __typename
-            }
-            Charges {
-              nextToken
-              startedAt
-              __typename
-            }
-            Notes {
-              nextToken
-              startedAt
-              __typename
-            }
-            Tasks {
-              nextToken
-              startedAt
-              __typename
-            }
-            caseNumber
-            caseName
-            Finances {
-              nextToken
-              startedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
-          client {
-            id
-            userID
-            firstName
-            lastName
-            dateOfBirth
-            phone
-            email
-            address1
-            address2
-            city
-            state
-            zip
-            referralSource
-            cases {
-              nextToken
-              startedAt
-              __typename
-            }
-            Tasks {
-              nextToken
-              startedAt
-              __typename
-            }
-            Finances {
-              nextToken
-              startedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           createdAt
           updatedAt
           _version
@@ -1010,89 +730,6 @@ export const onUpdateCase = /* GraphQL */ `
           id
           caseId
           lawyerId
-          case {
-            id
-            jurisdiction
-            court
-            judge
-            prosecutor
-            Clients {
-              nextToken
-              startedAt
-              __typename
-            }
-            Lawyers {
-              nextToken
-              startedAt
-              __typename
-            }
-            Events {
-              nextToken
-              startedAt
-              __typename
-            }
-            Charges {
-              nextToken
-              startedAt
-              __typename
-            }
-            Notes {
-              nextToken
-              startedAt
-              __typename
-            }
-            Tasks {
-              nextToken
-              startedAt
-              __typename
-            }
-            caseNumber
-            caseName
-            Finances {
-              nextToken
-              startedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
-          lawyer {
-            id
-            userID
-            firstName
-            lastName
-            barAssociation
-            licenseNumber
-            practices {
-              nextToken
-              startedAt
-              __typename
-            }
-            email
-            phone
-            owner
-            Tasks {
-              nextToken
-              startedAt
-              __typename
-            }
-            cases {
-              nextToken
-              startedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            __typename
-          }
           createdAt
           updatedAt
           _version
@@ -1172,27 +809,6 @@ export const onUpdateCase = /* GraphQL */ `
           caseID
           lawyerID
           clientID
-          Notes {
-            items {
-              id
-              timestamp
-              text
-              type
-              caseID
-              eventID
-              taskID
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            nextToken
-            startedAt
-            __typename
-          }
           isAssigneeComplete
           isVerifiedComplete
           createdAt
@@ -1256,94 +872,6 @@ export const onDeleteCase = /* GraphQL */ `
           id
           caseId
           clientId
-          case {
-            id
-            jurisdiction
-            court
-            judge
-            prosecutor
-            Clients {
-              nextToken
-              startedAt
-              __typename
-            }
-            Lawyers {
-              nextToken
-              startedAt
-              __typename
-            }
-            Events {
-              nextToken
-              startedAt
-              __typename
-            }
-            Charges {
-              nextToken
-              startedAt
-              __typename
-            }
-            Notes {
-              nextToken
-              startedAt
-              __typename
-            }
-            Tasks {
-              nextToken
-              startedAt
-              __typename
-            }
-            caseNumber
-            caseName
-            Finances {
-              nextToken
-              startedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
-          client {
-            id
-            userID
-            firstName
-            lastName
-            dateOfBirth
-            phone
-            email
-            address1
-            address2
-            city
-            state
-            zip
-            referralSource
-            cases {
-              nextToken
-              startedAt
-              __typename
-            }
-            Tasks {
-              nextToken
-              startedAt
-              __typename
-            }
-            Finances {
-              nextToken
-              startedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           createdAt
           updatedAt
           _version
@@ -1361,89 +889,6 @@ export const onDeleteCase = /* GraphQL */ `
           id
           caseId
           lawyerId
-          case {
-            id
-            jurisdiction
-            court
-            judge
-            prosecutor
-            Clients {
-              nextToken
-              startedAt
-              __typename
-            }
-            Lawyers {
-              nextToken
-              startedAt
-              __typename
-            }
-            Events {
-              nextToken
-              startedAt
-              __typename
-            }
-            Charges {
-              nextToken
-              startedAt
-              __typename
-            }
-            Notes {
-              nextToken
-              startedAt
-              __typename
-            }
-            Tasks {
-              nextToken
-              startedAt
-              __typename
-            }
-            caseNumber
-            caseName
-            Finances {
-              nextToken
-              startedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
-          lawyer {
-            id
-            userID
-            firstName
-            lastName
-            barAssociation
-            licenseNumber
-            practices {
-              nextToken
-              startedAt
-              __typename
-            }
-            email
-            phone
-            owner
-            Tasks {
-              nextToken
-              startedAt
-              __typename
-            }
-            cases {
-              nextToken
-              startedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            __typename
-          }
           createdAt
           updatedAt
           _version
@@ -1523,27 +968,6 @@ export const onDeleteCase = /* GraphQL */ `
           caseID
           lawyerID
           clientID
-          Notes {
-            items {
-              id
-              timestamp
-              text
-              type
-              caseID
-              eventID
-              taskID
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            nextToken
-            startedAt
-            __typename
-          }
           isAssigneeComplete
           isVerifiedComplete
           createdAt
@@ -1615,94 +1039,6 @@ export const onCreateClient = /* GraphQL */ `
           id
           caseId
           clientId
-          case {
-            id
-            jurisdiction
-            court
-            judge
-            prosecutor
-            Clients {
-              nextToken
-              startedAt
-              __typename
-            }
-            Lawyers {
-              nextToken
-              startedAt
-              __typename
-            }
-            Events {
-              nextToken
-              startedAt
-              __typename
-            }
-            Charges {
-              nextToken
-              startedAt
-              __typename
-            }
-            Notes {
-              nextToken
-              startedAt
-              __typename
-            }
-            Tasks {
-              nextToken
-              startedAt
-              __typename
-            }
-            caseNumber
-            caseName
-            Finances {
-              nextToken
-              startedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
-          client {
-            id
-            userID
-            firstName
-            lastName
-            dateOfBirth
-            phone
-            email
-            address1
-            address2
-            city
-            state
-            zip
-            referralSource
-            cases {
-              nextToken
-              startedAt
-              __typename
-            }
-            Tasks {
-              nextToken
-              startedAt
-              __typename
-            }
-            Finances {
-              nextToken
-              startedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           createdAt
           updatedAt
           _version
@@ -1725,27 +1061,6 @@ export const onCreateClient = /* GraphQL */ `
           caseID
           lawyerID
           clientID
-          Notes {
-            items {
-              id
-              timestamp
-              text
-              type
-              caseID
-              eventID
-              taskID
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            nextToken
-            startedAt
-            __typename
-          }
           isAssigneeComplete
           isVerifiedComplete
           createdAt
@@ -1815,94 +1130,6 @@ export const onUpdateClient = /* GraphQL */ `
           id
           caseId
           clientId
-          case {
-            id
-            jurisdiction
-            court
-            judge
-            prosecutor
-            Clients {
-              nextToken
-              startedAt
-              __typename
-            }
-            Lawyers {
-              nextToken
-              startedAt
-              __typename
-            }
-            Events {
-              nextToken
-              startedAt
-              __typename
-            }
-            Charges {
-              nextToken
-              startedAt
-              __typename
-            }
-            Notes {
-              nextToken
-              startedAt
-              __typename
-            }
-            Tasks {
-              nextToken
-              startedAt
-              __typename
-            }
-            caseNumber
-            caseName
-            Finances {
-              nextToken
-              startedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
-          client {
-            id
-            userID
-            firstName
-            lastName
-            dateOfBirth
-            phone
-            email
-            address1
-            address2
-            city
-            state
-            zip
-            referralSource
-            cases {
-              nextToken
-              startedAt
-              __typename
-            }
-            Tasks {
-              nextToken
-              startedAt
-              __typename
-            }
-            Finances {
-              nextToken
-              startedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           createdAt
           updatedAt
           _version
@@ -1925,27 +1152,6 @@ export const onUpdateClient = /* GraphQL */ `
           caseID
           lawyerID
           clientID
-          Notes {
-            items {
-              id
-              timestamp
-              text
-              type
-              caseID
-              eventID
-              taskID
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            nextToken
-            startedAt
-            __typename
-          }
           isAssigneeComplete
           isVerifiedComplete
           createdAt
@@ -2015,94 +1221,6 @@ export const onDeleteClient = /* GraphQL */ `
           id
           caseId
           clientId
-          case {
-            id
-            jurisdiction
-            court
-            judge
-            prosecutor
-            Clients {
-              nextToken
-              startedAt
-              __typename
-            }
-            Lawyers {
-              nextToken
-              startedAt
-              __typename
-            }
-            Events {
-              nextToken
-              startedAt
-              __typename
-            }
-            Charges {
-              nextToken
-              startedAt
-              __typename
-            }
-            Notes {
-              nextToken
-              startedAt
-              __typename
-            }
-            Tasks {
-              nextToken
-              startedAt
-              __typename
-            }
-            caseNumber
-            caseName
-            Finances {
-              nextToken
-              startedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
-          client {
-            id
-            userID
-            firstName
-            lastName
-            dateOfBirth
-            phone
-            email
-            address1
-            address2
-            city
-            state
-            zip
-            referralSource
-            cases {
-              nextToken
-              startedAt
-              __typename
-            }
-            Tasks {
-              nextToken
-              startedAt
-              __typename
-            }
-            Finances {
-              nextToken
-              startedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           createdAt
           updatedAt
           _version
@@ -2125,27 +1243,6 @@ export const onDeleteClient = /* GraphQL */ `
           caseID
           lawyerID
           clientID
-          Notes {
-            items {
-              id
-              timestamp
-              text
-              type
-              caseID
-              eventID
-              taskID
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            nextToken
-            startedAt
-            __typename
-          }
           isAssigneeComplete
           isVerifiedComplete
           createdAt
@@ -2271,54 +1368,6 @@ export const onCreatePractice = /* GraphQL */ `
           id
           practiceId
           lawyerId
-          practice {
-            id
-            name
-            owner
-            Lawyers {
-              nextToken
-              startedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            __typename
-          }
-          lawyer {
-            id
-            userID
-            firstName
-            lastName
-            barAssociation
-            licenseNumber
-            practices {
-              nextToken
-              startedAt
-              __typename
-            }
-            email
-            phone
-            owner
-            Tasks {
-              nextToken
-              startedAt
-              __typename
-            }
-            cases {
-              nextToken
-              startedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            __typename
-          }
           createdAt
           updatedAt
           _version
@@ -2354,54 +1403,6 @@ export const onUpdatePractice = /* GraphQL */ `
           id
           practiceId
           lawyerId
-          practice {
-            id
-            name
-            owner
-            Lawyers {
-              nextToken
-              startedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            __typename
-          }
-          lawyer {
-            id
-            userID
-            firstName
-            lastName
-            barAssociation
-            licenseNumber
-            practices {
-              nextToken
-              startedAt
-              __typename
-            }
-            email
-            phone
-            owner
-            Tasks {
-              nextToken
-              startedAt
-              __typename
-            }
-            cases {
-              nextToken
-              startedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            __typename
-          }
           createdAt
           updatedAt
           _version
@@ -2437,54 +1438,6 @@ export const onDeletePractice = /* GraphQL */ `
           id
           practiceId
           lawyerId
-          practice {
-            id
-            name
-            owner
-            Lawyers {
-              nextToken
-              startedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            __typename
-          }
-          lawyer {
-            id
-            userID
-            firstName
-            lastName
-            barAssociation
-            licenseNumber
-            practices {
-              nextToken
-              startedAt
-              __typename
-            }
-            email
-            phone
-            owner
-            Tasks {
-              nextToken
-              startedAt
-              __typename
-            }
-            cases {
-              nextToken
-              startedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            __typename
-          }
           createdAt
           updatedAt
           _version
@@ -2523,54 +1476,6 @@ export const onCreateLawyer = /* GraphQL */ `
           id
           practiceId
           lawyerId
-          practice {
-            id
-            name
-            owner
-            Lawyers {
-              nextToken
-              startedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            __typename
-          }
-          lawyer {
-            id
-            userID
-            firstName
-            lastName
-            barAssociation
-            licenseNumber
-            practices {
-              nextToken
-              startedAt
-              __typename
-            }
-            email
-            phone
-            owner
-            Tasks {
-              nextToken
-              startedAt
-              __typename
-            }
-            cases {
-              nextToken
-              startedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            __typename
-          }
           createdAt
           updatedAt
           _version
@@ -2596,27 +1501,6 @@ export const onCreateLawyer = /* GraphQL */ `
           caseID
           lawyerID
           clientID
-          Notes {
-            items {
-              id
-              timestamp
-              text
-              type
-              caseID
-              eventID
-              taskID
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            nextToken
-            startedAt
-            __typename
-          }
           isAssigneeComplete
           isVerifiedComplete
           createdAt
@@ -2636,89 +1520,6 @@ export const onCreateLawyer = /* GraphQL */ `
           id
           caseId
           lawyerId
-          case {
-            id
-            jurisdiction
-            court
-            judge
-            prosecutor
-            Clients {
-              nextToken
-              startedAt
-              __typename
-            }
-            Lawyers {
-              nextToken
-              startedAt
-              __typename
-            }
-            Events {
-              nextToken
-              startedAt
-              __typename
-            }
-            Charges {
-              nextToken
-              startedAt
-              __typename
-            }
-            Notes {
-              nextToken
-              startedAt
-              __typename
-            }
-            Tasks {
-              nextToken
-              startedAt
-              __typename
-            }
-            caseNumber
-            caseName
-            Finances {
-              nextToken
-              startedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
-          lawyer {
-            id
-            userID
-            firstName
-            lastName
-            barAssociation
-            licenseNumber
-            practices {
-              nextToken
-              startedAt
-              __typename
-            }
-            email
-            phone
-            owner
-            Tasks {
-              nextToken
-              startedAt
-              __typename
-            }
-            cases {
-              nextToken
-              startedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            __typename
-          }
           createdAt
           updatedAt
           _version
@@ -2757,54 +1558,6 @@ export const onUpdateLawyer = /* GraphQL */ `
           id
           practiceId
           lawyerId
-          practice {
-            id
-            name
-            owner
-            Lawyers {
-              nextToken
-              startedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            __typename
-          }
-          lawyer {
-            id
-            userID
-            firstName
-            lastName
-            barAssociation
-            licenseNumber
-            practices {
-              nextToken
-              startedAt
-              __typename
-            }
-            email
-            phone
-            owner
-            Tasks {
-              nextToken
-              startedAt
-              __typename
-            }
-            cases {
-              nextToken
-              startedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            __typename
-          }
           createdAt
           updatedAt
           _version
@@ -2830,27 +1583,6 @@ export const onUpdateLawyer = /* GraphQL */ `
           caseID
           lawyerID
           clientID
-          Notes {
-            items {
-              id
-              timestamp
-              text
-              type
-              caseID
-              eventID
-              taskID
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            nextToken
-            startedAt
-            __typename
-          }
           isAssigneeComplete
           isVerifiedComplete
           createdAt
@@ -2870,89 +1602,6 @@ export const onUpdateLawyer = /* GraphQL */ `
           id
           caseId
           lawyerId
-          case {
-            id
-            jurisdiction
-            court
-            judge
-            prosecutor
-            Clients {
-              nextToken
-              startedAt
-              __typename
-            }
-            Lawyers {
-              nextToken
-              startedAt
-              __typename
-            }
-            Events {
-              nextToken
-              startedAt
-              __typename
-            }
-            Charges {
-              nextToken
-              startedAt
-              __typename
-            }
-            Notes {
-              nextToken
-              startedAt
-              __typename
-            }
-            Tasks {
-              nextToken
-              startedAt
-              __typename
-            }
-            caseNumber
-            caseName
-            Finances {
-              nextToken
-              startedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
-          lawyer {
-            id
-            userID
-            firstName
-            lastName
-            barAssociation
-            licenseNumber
-            practices {
-              nextToken
-              startedAt
-              __typename
-            }
-            email
-            phone
-            owner
-            Tasks {
-              nextToken
-              startedAt
-              __typename
-            }
-            cases {
-              nextToken
-              startedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            __typename
-          }
           createdAt
           updatedAt
           _version
@@ -2991,54 +1640,6 @@ export const onDeleteLawyer = /* GraphQL */ `
           id
           practiceId
           lawyerId
-          practice {
-            id
-            name
-            owner
-            Lawyers {
-              nextToken
-              startedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            __typename
-          }
-          lawyer {
-            id
-            userID
-            firstName
-            lastName
-            barAssociation
-            licenseNumber
-            practices {
-              nextToken
-              startedAt
-              __typename
-            }
-            email
-            phone
-            owner
-            Tasks {
-              nextToken
-              startedAt
-              __typename
-            }
-            cases {
-              nextToken
-              startedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            __typename
-          }
           createdAt
           updatedAt
           _version
@@ -3064,27 +1665,6 @@ export const onDeleteLawyer = /* GraphQL */ `
           caseID
           lawyerID
           clientID
-          Notes {
-            items {
-              id
-              timestamp
-              text
-              type
-              caseID
-              eventID
-              taskID
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            nextToken
-            startedAt
-            __typename
-          }
           isAssigneeComplete
           isVerifiedComplete
           createdAt
@@ -3104,89 +1684,6 @@ export const onDeleteLawyer = /* GraphQL */ `
           id
           caseId
           lawyerId
-          case {
-            id
-            jurisdiction
-            court
-            judge
-            prosecutor
-            Clients {
-              nextToken
-              startedAt
-              __typename
-            }
-            Lawyers {
-              nextToken
-              startedAt
-              __typename
-            }
-            Events {
-              nextToken
-              startedAt
-              __typename
-            }
-            Charges {
-              nextToken
-              startedAt
-              __typename
-            }
-            Notes {
-              nextToken
-              startedAt
-              __typename
-            }
-            Tasks {
-              nextToken
-              startedAt
-              __typename
-            }
-            caseNumber
-            caseName
-            Finances {
-              nextToken
-              startedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
-          lawyer {
-            id
-            userID
-            firstName
-            lastName
-            barAssociation
-            licenseNumber
-            practices {
-              nextToken
-              startedAt
-              __typename
-            }
-            email
-            phone
-            owner
-            Tasks {
-              nextToken
-              startedAt
-              __typename
-            }
-            cases {
-              nextToken
-              startedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            __typename
-          }
           createdAt
           updatedAt
           _version
@@ -3458,192 +1955,31 @@ export const onCreateCaseClient = /* GraphQL */ `
         judge
         prosecutor
         Clients {
-          items {
-            id
-            caseId
-            clientId
-            case {
-              id
-              jurisdiction
-              court
-              judge
-              prosecutor
-              caseNumber
-              caseName
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            client {
-              id
-              userID
-              firstName
-              lastName
-              dateOfBirth
-              phone
-              email
-              address1
-              address2
-              city
-              state
-              zip
-              referralSource
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         Lawyers {
-          items {
-            id
-            caseId
-            lawyerId
-            case {
-              id
-              jurisdiction
-              court
-              judge
-              prosecutor
-              caseNumber
-              caseName
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            lawyer {
-              id
-              userID
-              firstName
-              lastName
-              barAssociation
-              licenseNumber
-              email
-              phone
-              owner
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         Events {
-          items {
-            id
-            status
-            statute
-            description
-            caseID
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         Charges {
-          items {
-            id
-            status
-            statute
-            description
-            caseID
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         Notes {
-          items {
-            id
-            status
-            statute
-            description
-            caseID
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         Tasks {
-          items {
-            id
-            title
-            description
-            deadline
-            assignee
-            caseID
-            lawyerID
-            clientID
-            Notes {
-              nextToken
-              startedAt
-              __typename
-            }
-            isAssigneeComplete
-            isVerifiedComplete
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
@@ -3651,22 +1987,6 @@ export const onCreateCaseClient = /* GraphQL */ `
         caseNumber
         caseName
         Finances {
-          items {
-            id
-            caseID
-            clientID
-            expense
-            payment
-            title
-            description
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
@@ -3694,106 +2014,16 @@ export const onCreateCaseClient = /* GraphQL */ `
         zip
         referralSource
         cases {
-          items {
-            id
-            caseId
-            clientId
-            case {
-              id
-              jurisdiction
-              court
-              judge
-              prosecutor
-              caseNumber
-              caseName
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            client {
-              id
-              userID
-              firstName
-              lastName
-              dateOfBirth
-              phone
-              email
-              address1
-              address2
-              city
-              state
-              zip
-              referralSource
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         Tasks {
-          items {
-            id
-            title
-            description
-            deadline
-            assignee
-            caseID
-            lawyerID
-            clientID
-            Notes {
-              nextToken
-              startedAt
-              __typename
-            }
-            isAssigneeComplete
-            isVerifiedComplete
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         Finances {
-          items {
-            id
-            caseID
-            clientID
-            expense
-            payment
-            title
-            description
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
@@ -3832,192 +2062,31 @@ export const onUpdateCaseClient = /* GraphQL */ `
         judge
         prosecutor
         Clients {
-          items {
-            id
-            caseId
-            clientId
-            case {
-              id
-              jurisdiction
-              court
-              judge
-              prosecutor
-              caseNumber
-              caseName
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            client {
-              id
-              userID
-              firstName
-              lastName
-              dateOfBirth
-              phone
-              email
-              address1
-              address2
-              city
-              state
-              zip
-              referralSource
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         Lawyers {
-          items {
-            id
-            caseId
-            lawyerId
-            case {
-              id
-              jurisdiction
-              court
-              judge
-              prosecutor
-              caseNumber
-              caseName
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            lawyer {
-              id
-              userID
-              firstName
-              lastName
-              barAssociation
-              licenseNumber
-              email
-              phone
-              owner
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         Events {
-          items {
-            id
-            status
-            statute
-            description
-            caseID
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         Charges {
-          items {
-            id
-            status
-            statute
-            description
-            caseID
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         Notes {
-          items {
-            id
-            status
-            statute
-            description
-            caseID
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         Tasks {
-          items {
-            id
-            title
-            description
-            deadline
-            assignee
-            caseID
-            lawyerID
-            clientID
-            Notes {
-              nextToken
-              startedAt
-              __typename
-            }
-            isAssigneeComplete
-            isVerifiedComplete
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
@@ -4025,22 +2094,6 @@ export const onUpdateCaseClient = /* GraphQL */ `
         caseNumber
         caseName
         Finances {
-          items {
-            id
-            caseID
-            clientID
-            expense
-            payment
-            title
-            description
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
@@ -4068,106 +2121,16 @@ export const onUpdateCaseClient = /* GraphQL */ `
         zip
         referralSource
         cases {
-          items {
-            id
-            caseId
-            clientId
-            case {
-              id
-              jurisdiction
-              court
-              judge
-              prosecutor
-              caseNumber
-              caseName
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            client {
-              id
-              userID
-              firstName
-              lastName
-              dateOfBirth
-              phone
-              email
-              address1
-              address2
-              city
-              state
-              zip
-              referralSource
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         Tasks {
-          items {
-            id
-            title
-            description
-            deadline
-            assignee
-            caseID
-            lawyerID
-            clientID
-            Notes {
-              nextToken
-              startedAt
-              __typename
-            }
-            isAssigneeComplete
-            isVerifiedComplete
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         Finances {
-          items {
-            id
-            caseID
-            clientID
-            expense
-            payment
-            title
-            description
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
@@ -4206,192 +2169,31 @@ export const onDeleteCaseClient = /* GraphQL */ `
         judge
         prosecutor
         Clients {
-          items {
-            id
-            caseId
-            clientId
-            case {
-              id
-              jurisdiction
-              court
-              judge
-              prosecutor
-              caseNumber
-              caseName
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            client {
-              id
-              userID
-              firstName
-              lastName
-              dateOfBirth
-              phone
-              email
-              address1
-              address2
-              city
-              state
-              zip
-              referralSource
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         Lawyers {
-          items {
-            id
-            caseId
-            lawyerId
-            case {
-              id
-              jurisdiction
-              court
-              judge
-              prosecutor
-              caseNumber
-              caseName
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            lawyer {
-              id
-              userID
-              firstName
-              lastName
-              barAssociation
-              licenseNumber
-              email
-              phone
-              owner
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         Events {
-          items {
-            id
-            status
-            statute
-            description
-            caseID
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         Charges {
-          items {
-            id
-            status
-            statute
-            description
-            caseID
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         Notes {
-          items {
-            id
-            status
-            statute
-            description
-            caseID
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         Tasks {
-          items {
-            id
-            title
-            description
-            deadline
-            assignee
-            caseID
-            lawyerID
-            clientID
-            Notes {
-              nextToken
-              startedAt
-              __typename
-            }
-            isAssigneeComplete
-            isVerifiedComplete
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
@@ -4399,22 +2201,6 @@ export const onDeleteCaseClient = /* GraphQL */ `
         caseNumber
         caseName
         Finances {
-          items {
-            id
-            caseID
-            clientID
-            expense
-            payment
-            title
-            description
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
@@ -4442,106 +2228,16 @@ export const onDeleteCaseClient = /* GraphQL */ `
         zip
         referralSource
         cases {
-          items {
-            id
-            caseId
-            clientId
-            case {
-              id
-              jurisdiction
-              court
-              judge
-              prosecutor
-              caseNumber
-              caseName
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            client {
-              id
-              userID
-              firstName
-              lastName
-              dateOfBirth
-              phone
-              email
-              address1
-              address2
-              city
-              state
-              zip
-              referralSource
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         Tasks {
-          items {
-            id
-            title
-            description
-            deadline
-            assignee
-            caseID
-            lawyerID
-            clientID
-            Notes {
-              nextToken
-              startedAt
-              __typename
-            }
-            isAssigneeComplete
-            isVerifiedComplete
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         Finances {
-          items {
-            id
-            caseID
-            clientID
-            expense
-            payment
-            title
-            description
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
@@ -4580,192 +2276,31 @@ export const onCreateCaseLawyer = /* GraphQL */ `
         judge
         prosecutor
         Clients {
-          items {
-            id
-            caseId
-            clientId
-            case {
-              id
-              jurisdiction
-              court
-              judge
-              prosecutor
-              caseNumber
-              caseName
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            client {
-              id
-              userID
-              firstName
-              lastName
-              dateOfBirth
-              phone
-              email
-              address1
-              address2
-              city
-              state
-              zip
-              referralSource
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         Lawyers {
-          items {
-            id
-            caseId
-            lawyerId
-            case {
-              id
-              jurisdiction
-              court
-              judge
-              prosecutor
-              caseNumber
-              caseName
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            lawyer {
-              id
-              userID
-              firstName
-              lastName
-              barAssociation
-              licenseNumber
-              email
-              phone
-              owner
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         Events {
-          items {
-            id
-            status
-            statute
-            description
-            caseID
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         Charges {
-          items {
-            id
-            status
-            statute
-            description
-            caseID
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         Notes {
-          items {
-            id
-            status
-            statute
-            description
-            caseID
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         Tasks {
-          items {
-            id
-            title
-            description
-            deadline
-            assignee
-            caseID
-            lawyerID
-            clientID
-            Notes {
-              nextToken
-              startedAt
-              __typename
-            }
-            isAssigneeComplete
-            isVerifiedComplete
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
@@ -4773,22 +2308,6 @@ export const onCreateCaseLawyer = /* GraphQL */ `
         caseNumber
         caseName
         Finances {
-          items {
-            id
-            caseID
-            clientID
-            expense
-            payment
-            title
-            description
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
@@ -4809,46 +2328,6 @@ export const onCreateCaseLawyer = /* GraphQL */ `
         barAssociation
         licenseNumber
         practices {
-          items {
-            id
-            practiceId
-            lawyerId
-            practice {
-              id
-              name
-              owner
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              __typename
-            }
-            lawyer {
-              id
-              userID
-              firstName
-              lastName
-              barAssociation
-              licenseNumber
-              email
-              phone
-              owner
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
@@ -4857,80 +2336,11 @@ export const onCreateCaseLawyer = /* GraphQL */ `
         phone
         owner
         Tasks {
-          items {
-            id
-            title
-            description
-            deadline
-            assignee
-            caseID
-            lawyerID
-            clientID
-            Notes {
-              nextToken
-              startedAt
-              __typename
-            }
-            isAssigneeComplete
-            isVerifiedComplete
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         cases {
-          items {
-            id
-            caseId
-            lawyerId
-            case {
-              id
-              jurisdiction
-              court
-              judge
-              prosecutor
-              caseNumber
-              caseName
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            lawyer {
-              id
-              userID
-              firstName
-              lastName
-              barAssociation
-              licenseNumber
-              email
-              phone
-              owner
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
@@ -4968,192 +2378,31 @@ export const onUpdateCaseLawyer = /* GraphQL */ `
         judge
         prosecutor
         Clients {
-          items {
-            id
-            caseId
-            clientId
-            case {
-              id
-              jurisdiction
-              court
-              judge
-              prosecutor
-              caseNumber
-              caseName
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            client {
-              id
-              userID
-              firstName
-              lastName
-              dateOfBirth
-              phone
-              email
-              address1
-              address2
-              city
-              state
-              zip
-              referralSource
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         Lawyers {
-          items {
-            id
-            caseId
-            lawyerId
-            case {
-              id
-              jurisdiction
-              court
-              judge
-              prosecutor
-              caseNumber
-              caseName
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            lawyer {
-              id
-              userID
-              firstName
-              lastName
-              barAssociation
-              licenseNumber
-              email
-              phone
-              owner
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         Events {
-          items {
-            id
-            status
-            statute
-            description
-            caseID
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         Charges {
-          items {
-            id
-            status
-            statute
-            description
-            caseID
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         Notes {
-          items {
-            id
-            status
-            statute
-            description
-            caseID
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         Tasks {
-          items {
-            id
-            title
-            description
-            deadline
-            assignee
-            caseID
-            lawyerID
-            clientID
-            Notes {
-              nextToken
-              startedAt
-              __typename
-            }
-            isAssigneeComplete
-            isVerifiedComplete
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
@@ -5161,22 +2410,6 @@ export const onUpdateCaseLawyer = /* GraphQL */ `
         caseNumber
         caseName
         Finances {
-          items {
-            id
-            caseID
-            clientID
-            expense
-            payment
-            title
-            description
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
@@ -5197,46 +2430,6 @@ export const onUpdateCaseLawyer = /* GraphQL */ `
         barAssociation
         licenseNumber
         practices {
-          items {
-            id
-            practiceId
-            lawyerId
-            practice {
-              id
-              name
-              owner
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              __typename
-            }
-            lawyer {
-              id
-              userID
-              firstName
-              lastName
-              barAssociation
-              licenseNumber
-              email
-              phone
-              owner
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
@@ -5245,80 +2438,11 @@ export const onUpdateCaseLawyer = /* GraphQL */ `
         phone
         owner
         Tasks {
-          items {
-            id
-            title
-            description
-            deadline
-            assignee
-            caseID
-            lawyerID
-            clientID
-            Notes {
-              nextToken
-              startedAt
-              __typename
-            }
-            isAssigneeComplete
-            isVerifiedComplete
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         cases {
-          items {
-            id
-            caseId
-            lawyerId
-            case {
-              id
-              jurisdiction
-              court
-              judge
-              prosecutor
-              caseNumber
-              caseName
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            lawyer {
-              id
-              userID
-              firstName
-              lastName
-              barAssociation
-              licenseNumber
-              email
-              phone
-              owner
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
@@ -5356,192 +2480,31 @@ export const onDeleteCaseLawyer = /* GraphQL */ `
         judge
         prosecutor
         Clients {
-          items {
-            id
-            caseId
-            clientId
-            case {
-              id
-              jurisdiction
-              court
-              judge
-              prosecutor
-              caseNumber
-              caseName
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            client {
-              id
-              userID
-              firstName
-              lastName
-              dateOfBirth
-              phone
-              email
-              address1
-              address2
-              city
-              state
-              zip
-              referralSource
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         Lawyers {
-          items {
-            id
-            caseId
-            lawyerId
-            case {
-              id
-              jurisdiction
-              court
-              judge
-              prosecutor
-              caseNumber
-              caseName
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            lawyer {
-              id
-              userID
-              firstName
-              lastName
-              barAssociation
-              licenseNumber
-              email
-              phone
-              owner
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         Events {
-          items {
-            id
-            status
-            statute
-            description
-            caseID
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         Charges {
-          items {
-            id
-            status
-            statute
-            description
-            caseID
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         Notes {
-          items {
-            id
-            status
-            statute
-            description
-            caseID
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         Tasks {
-          items {
-            id
-            title
-            description
-            deadline
-            assignee
-            caseID
-            lawyerID
-            clientID
-            Notes {
-              nextToken
-              startedAt
-              __typename
-            }
-            isAssigneeComplete
-            isVerifiedComplete
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
@@ -5549,22 +2512,6 @@ export const onDeleteCaseLawyer = /* GraphQL */ `
         caseNumber
         caseName
         Finances {
-          items {
-            id
-            caseID
-            clientID
-            expense
-            payment
-            title
-            description
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
@@ -5585,46 +2532,6 @@ export const onDeleteCaseLawyer = /* GraphQL */ `
         barAssociation
         licenseNumber
         practices {
-          items {
-            id
-            practiceId
-            lawyerId
-            practice {
-              id
-              name
-              owner
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              __typename
-            }
-            lawyer {
-              id
-              userID
-              firstName
-              lastName
-              barAssociation
-              licenseNumber
-              email
-              phone
-              owner
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
@@ -5633,80 +2540,11 @@ export const onDeleteCaseLawyer = /* GraphQL */ `
         phone
         owner
         Tasks {
-          items {
-            id
-            title
-            description
-            deadline
-            assignee
-            caseID
-            lawyerID
-            clientID
-            Notes {
-              nextToken
-              startedAt
-              __typename
-            }
-            isAssigneeComplete
-            isVerifiedComplete
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         cases {
-          items {
-            id
-            caseId
-            lawyerId
-            case {
-              id
-              jurisdiction
-              court
-              judge
-              prosecutor
-              caseNumber
-              caseName
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            lawyer {
-              id
-              userID
-              firstName
-              lastName
-              barAssociation
-              licenseNumber
-              email
-              phone
-              owner
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
@@ -5742,46 +2580,6 @@ export const onCreatePracticeLawyer = /* GraphQL */ `
         name
         owner
         Lawyers {
-          items {
-            id
-            practiceId
-            lawyerId
-            practice {
-              id
-              name
-              owner
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              __typename
-            }
-            lawyer {
-              id
-              userID
-              firstName
-              lastName
-              barAssociation
-              licenseNumber
-              email
-              phone
-              owner
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
@@ -5801,46 +2599,6 @@ export const onCreatePracticeLawyer = /* GraphQL */ `
         barAssociation
         licenseNumber
         practices {
-          items {
-            id
-            practiceId
-            lawyerId
-            practice {
-              id
-              name
-              owner
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              __typename
-            }
-            lawyer {
-              id
-              userID
-              firstName
-              lastName
-              barAssociation
-              licenseNumber
-              email
-              phone
-              owner
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
@@ -5849,80 +2607,11 @@ export const onCreatePracticeLawyer = /* GraphQL */ `
         phone
         owner
         Tasks {
-          items {
-            id
-            title
-            description
-            deadline
-            assignee
-            caseID
-            lawyerID
-            clientID
-            Notes {
-              nextToken
-              startedAt
-              __typename
-            }
-            isAssigneeComplete
-            isVerifiedComplete
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         cases {
-          items {
-            id
-            caseId
-            lawyerId
-            case {
-              id
-              jurisdiction
-              court
-              judge
-              prosecutor
-              caseNumber
-              caseName
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            lawyer {
-              id
-              userID
-              firstName
-              lastName
-              barAssociation
-              licenseNumber
-              email
-              phone
-              owner
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
@@ -5958,46 +2647,6 @@ export const onUpdatePracticeLawyer = /* GraphQL */ `
         name
         owner
         Lawyers {
-          items {
-            id
-            practiceId
-            lawyerId
-            practice {
-              id
-              name
-              owner
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              __typename
-            }
-            lawyer {
-              id
-              userID
-              firstName
-              lastName
-              barAssociation
-              licenseNumber
-              email
-              phone
-              owner
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
@@ -6017,46 +2666,6 @@ export const onUpdatePracticeLawyer = /* GraphQL */ `
         barAssociation
         licenseNumber
         practices {
-          items {
-            id
-            practiceId
-            lawyerId
-            practice {
-              id
-              name
-              owner
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              __typename
-            }
-            lawyer {
-              id
-              userID
-              firstName
-              lastName
-              barAssociation
-              licenseNumber
-              email
-              phone
-              owner
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
@@ -6065,80 +2674,11 @@ export const onUpdatePracticeLawyer = /* GraphQL */ `
         phone
         owner
         Tasks {
-          items {
-            id
-            title
-            description
-            deadline
-            assignee
-            caseID
-            lawyerID
-            clientID
-            Notes {
-              nextToken
-              startedAt
-              __typename
-            }
-            isAssigneeComplete
-            isVerifiedComplete
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         cases {
-          items {
-            id
-            caseId
-            lawyerId
-            case {
-              id
-              jurisdiction
-              court
-              judge
-              prosecutor
-              caseNumber
-              caseName
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            lawyer {
-              id
-              userID
-              firstName
-              lastName
-              barAssociation
-              licenseNumber
-              email
-              phone
-              owner
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
@@ -6174,46 +2714,6 @@ export const onDeletePracticeLawyer = /* GraphQL */ `
         name
         owner
         Lawyers {
-          items {
-            id
-            practiceId
-            lawyerId
-            practice {
-              id
-              name
-              owner
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              __typename
-            }
-            lawyer {
-              id
-              userID
-              firstName
-              lastName
-              barAssociation
-              licenseNumber
-              email
-              phone
-              owner
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
@@ -6233,46 +2733,6 @@ export const onDeletePracticeLawyer = /* GraphQL */ `
         barAssociation
         licenseNumber
         practices {
-          items {
-            id
-            practiceId
-            lawyerId
-            practice {
-              id
-              name
-              owner
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              __typename
-            }
-            lawyer {
-              id
-              userID
-              firstName
-              lastName
-              barAssociation
-              licenseNumber
-              email
-              phone
-              owner
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
@@ -6281,80 +2741,11 @@ export const onDeletePracticeLawyer = /* GraphQL */ `
         phone
         owner
         Tasks {
-          items {
-            id
-            title
-            description
-            deadline
-            assignee
-            caseID
-            lawyerID
-            clientID
-            Notes {
-              nextToken
-              startedAt
-              __typename
-            }
-            isAssigneeComplete
-            isVerifiedComplete
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename
         }
         cases {
-          items {
-            id
-            caseId
-            lawyerId
-            case {
-              id
-              jurisdiction
-              court
-              judge
-              prosecutor
-              caseNumber
-              caseName
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              owner
-              __typename
-            }
-            lawyer {
-              id
-              userID
-              firstName
-              lastName
-              barAssociation
-              licenseNumber
-              email
-              phone
-              owner
-              createdAt
-              updatedAt
-              _version
-              _deleted
-              _lastChangedAt
-              __typename
-            }
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-            owner
-            __typename
-          }
           nextToken
           startedAt
           __typename

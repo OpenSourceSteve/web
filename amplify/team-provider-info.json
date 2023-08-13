@@ -14,6 +14,33 @@
     "categories": {
       "auth": {
         "web1c61ecc2": {}
+      },
+      "api": {
+        "web": {}
+      },
+      "function": {
+        "clientLogger": {
+          "deploymentBucketName": "amplify-web-dev-233335-deployment",
+          "s3Key": "amplify-builds/clientLogger-36753765586d742f3464-build.zip"
+        },
+        "confirmationWorkflow": {
+          "deploymentBucketName": "amplify-web-dev-233335-deployment",
+          "s3Key": "amplify-builds/confirmationWorkflow-317652665130556e732f-build.zip",
+          "clientId": "520eein2dpa1huqkicuujatkac",
+          "userpoolId": "us-west-1_Sdkcf2w67"
+        },
+        "resendConfirmationCode": {
+          "clientId": "520eein2dpa1huqkicuujatkac",
+          "userpoolId": "us-west-1_Sdkcf2w67",
+          "deploymentBucketName": "amplify-web-dev-233335-deployment",
+          "s3Key": "amplify-builds/resendConfirmationCode-6541796f437a6d326b46-build.zip"
+        },
+        "signupWorkflow": {
+          "deploymentBucketName": "amplify-web-dev-233335-deployment",
+          "s3Key": "amplify-builds/signupWorkflow-3948765551445064772f-build.zip",
+          "clientId": "520eein2dpa1huqkicuujatkac",
+          "userpoolId": "us-west-1_Sdkcf2w67"
+        }
       }
     }
   }

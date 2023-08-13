@@ -1,0 +1,162 @@
+type Finance @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  caseID: ID! @index(name: "byCase")
+  clientID: ID! @index(name: "byClient")
+  expense: Int
+  payment: Int
+  title: String
+  description: String
+}
+
+type Signup @model @auth(rules: [{allow: private, provider: iam}]) {
+  id: ID!
+  email: AWSEmail! @index
+  firstName: String
+  lastName: String
+  cognitoID: ID
+  userID: ID
+}
+
+type Task @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  title: String
+  description: String
+  deadline: AWSDateTime
+  assignee: ID
+  caseID: ID! @index(name: "byCase")
+  lawyerID: ID! @index(name: "byLawyer")
+  clientID: ID! @index(name: "byClient")
+  Notes: [Note] @hasMany(indexName: "byTask", fields: ["id"])
+  isAssigneeComplete: Boolean
+  isVerifiedComplete: Boolean
+}
+
+enum NoteType {
+  CLIENT
+  COURT
+  OTHER
+}
+
+type Note @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  timestamp: AWSDateTime
+  text: String
+  type: NoteType
+  caseID: ID! @index(name: "byCase")
+  eventID: ID @index(name: "byEvent")
+  taskID: ID @index(name: "byTask")
+}
+
+enum ChargeStatus {
+  UNFILED
+  PENDING
+  DISMISSED
+  CLOSED
+}
+
+type Charge @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  status: ChargeStatus
+  statute: String
+  description: String
+  caseID: ID! @index(name: "byCase")
+}
+
+enum EventType {
+  COURT_APPEARANCE
+  CLIENT_MEETING
+  STAFF_MEETING
+  EXTERNAL_MEETING
+  OTHER_HOURS_BILLABLE
+}
+
+type Event @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  caseID: ID! @index(name: "byCase")
+  type: EventType
+  startDatetime: AWSDateTime!
+  duration: Int
+  location: String
+  link: AWSURL
+  phone: String
+  title: String
+  description: String
+  Notes: [Note] @hasMany(indexName: "byEvent", fields: ["id"])
+}
+
+type Case @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  jurisdiction: String
+  court: String
+  judge: String
+  prosecutor: String
+  Clients: [Client] @manyToMany(relationName: "CaseClient")
+  Lawyers: [Lawyer] @manyToMany(relationName: "CaseLawyer")
+  Events: [Charge] @hasMany(indexName: "byCase", fields: ["id"])
+  Charges: [Charge] @hasMany(indexName: "byCase", fields: ["id"])
+  Notes: [Charge] @hasMany(indexName: "byCase", fields: ["id"])
+  Tasks: [Task] @hasMany(indexName: "byCase", fields: ["id"])
+  caseNumber: String
+  caseName: String
+  Finances: [Finance] @hasMany(indexName: "byCase", fields: ["id"])
+}
+
+type Client @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  userID: ID @index(name: "byUser")
+  firstName: String
+  lastName: String
+  dateOfBirth: AWSDate
+  phone: String
+  email: AWSEmail
+  address1: String
+  address2: String
+  city: String
+  state: String
+  zip: String
+  referralSource: String
+  cases: [Case] @manyToMany(relationName: "CaseClient")
+  Tasks: [Task] @hasMany(indexName: "byClient", fields: ["id"])
+  Finances: [Finance] @hasMany(indexName: "byClient", fields: ["id"])
+}
+
+type Consent @model @auth(rules: [{allow: owner, operations: [read]}, {allow: private, operations: [create], provider: iam}]) {
+  id: ID!
+  userID: ID! @index(name: "byUser")
+  consentsToTermsAndConditions: Boolean!
+  termsAndConditionsVersion: String!
+  IPAddress: AWSIPAddress
+  userAgent: String
+  owner: ID!
+}
+
+type Practice @model @auth(rules: [{allow: owner}, {allow: private, operations: [create, update], provider: iam}]) {
+  id: ID!
+  name: String
+  owner: ID!
+  Lawyers: [Lawyer] @manyToMany(relationName: "PracticeLawyer")
+}
+
+type Lawyer @model @auth(rules: [{allow: owner}, {allow: private, operations: [create], provider: iam}]) {
+  id: ID!
+  userID: ID! @index(name: "byUser")
+  firstName: String
+  lastName: String
+  barAssociation: String
+  licenseNumber: String
+  practices: [Practice] @manyToMany(relationName: "PracticeLawyer")
+  email: AWSEmail
+  phone: String
+  owner: ID!
+  Tasks: [Task] @hasMany(indexName: "byLawyer", fields: ["id"])
+  cases: [Case] @manyToMany(relationName: "CaseLawyer")
+}
+
+type User @model @auth(rules: [{allow: owner}, {allow: private, operations: [create, update], provider: iam}]) {
+  id: ID!
+  cognitoID: ID
+  Lawyers: [Consent] @hasMany(indexName: "byUser", fields: ["id"])
+  Consents: [Consent] @hasMany(indexName: "byUser", fields: ["id"])
+  Clients: [Consent] @hasMany(indexName: "byUser", fields: ["id"])
+  owner: ID!
+}
