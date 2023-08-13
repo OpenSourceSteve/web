@@ -6,5 +6,5 @@ export const LAMBDAS = {
         resendURL: "https://3fa62aeiab55yiqyusbeflneoa0tfuld.lambda-url.us-west-1.on.aws/"
     },
     demo: {},
-    prod: {}
+    www: {}
 }
