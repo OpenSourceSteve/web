@@ -4,9 +4,11 @@ import { LAMBDAS } from "../../app/lambdas";
 
 import { Button, NumberInput } from "../../components";
 
+const ENV = process.env.USER_BRANCH
+
 export const ConfirmationForm = ({ onSuccess, username }) => {
 
-  const { confirmationURL, resendURL } = LAMBDAS;
+  const { confirmationURL, resendURL } = LAMBDAS[ENV];
 
   const [state, setState] = useState({ code: "" })
   const [isLoading, setIsLoading] = useState(false);

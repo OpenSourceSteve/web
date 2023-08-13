@@ -1,9 +1,11 @@
-import { LAMBDAS } from "../app/lambdas"
 import { createPostJsonOptions } from "./functions/createPostJsonOptions"
+import { LAMBDAS } from "../app/lambdas"
+
+const ENV = process.env.USER_BRANCH
 
 export const logger = () => {
 
-    const loggerURL = LAMBDAS.loggerURL;
+    const loggerURL = LAMBDAS[ENV].loggerURL;
 
     const info = data => {
         console.log(data)

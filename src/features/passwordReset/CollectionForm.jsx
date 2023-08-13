@@ -4,10 +4,12 @@ import { Auth } from 'aws-amplify'
 import { Button, EmailInput, PasswordInput, TextInput } from "../../components"
 import { createPostJsonOptions } from "../../utils";
 
-// import styles from "./PasswordReset.module.css";
-
 import { logger } from '../../utils/logger';
 import { useNavigate } from 'react-router-dom';
+
+import { LAMBDAS } from '../../app/lambdas';
+
+const ENV = process.env.USER_BRANCH
 
 const Logger = logger();
 
@@ -31,11 +33,11 @@ export const CollectionForm = ({ onSuccess, onChange, state, username }) => {
     }
 
     const resendHandler = async () => {
-        const url = "https://eefdeymkkyztmk6tjodnilncbi0evtks.lambda-url.us-west-1.on.aws/";
+        const { resendURL } = LAMBDAS[ENV]
 
         const postJsonOptions = createPostJsonOptions({ username })
 
-        const response = await fetch(url, postJsonOptions);
+        const response = await fetch(resendURL, postJsonOptions);
 
         return response.json().then(data => {
             return {

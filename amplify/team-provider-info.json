@@ -33,7 +33,7 @@
           "clientId": "520eein2dpa1huqkicuujatkac",
           "userpoolId": "us-west-1_Sdkcf2w67",
           "deploymentBucketName": "amplify-web-dev-233335-deployment",
-          "s3Key": "amplify-builds/resendConfirmationCode-6541796f437a6d326b46-build.zip"
+          "s3Key": "amplify-builds/resendConfirmationCode-7968376e676536446261-build.zip"
         },
         "signupWorkflow": {
           "deploymentBucketName": "amplify-web-dev-233335-deployment",

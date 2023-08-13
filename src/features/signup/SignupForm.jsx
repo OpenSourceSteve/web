@@ -17,6 +17,8 @@ import { LAMBDAS } from "../../app/lambdas";
 
 import { logger } from "../../utils/logger";
 
+const ENV = process.env.USER_BRANCH
+
 const Logger = logger();
 
 export const SignupForm = ({ onSuccess }) => {
@@ -102,7 +104,7 @@ export const SignupForm = ({ onSuccess }) => {
       // Create user and record of consent
       const postJsonOptions = createPostJsonOptions(userSubmittedData);
       try {
-        const response = await fetch(LAMBDAS.signupURL, postJsonOptions);
+        const response = await fetch(LAMBDAS[ENV].signupURL, postJsonOptions);
 
         response.json().then(data => {
           setIsLoading(false);
