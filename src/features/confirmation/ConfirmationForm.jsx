@@ -1,10 +1,9 @@
 import { useState } from "react";
 
-import { createPostJsonOptions } from "../../utils";
+import { createPostJsonOptions, getEnv } from "../../utils";
 import { LAMBDAS } from "../../app/lambdas";
 
 import { Button, NumberInput } from "../../components";
-import { getEnv } from "../../utils/functions/getEnv";
 
 export const ConfirmationForm = ({ onSuccess, username }) => {
   const ENV = getEnv()

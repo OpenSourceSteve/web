@@ -3,9 +3,9 @@ import { Auth } from 'aws-amplify';
 
 import { logger } from '../../utils/logger';
 
-const Logger = logger();
-
 export const Authentication = ({ children }) => {
+    const Logger = logger();
+
     const navigate = useNavigate()
 
     try {

@@ -9,11 +9,9 @@ import {
 
 import { logger } from "../../utils/logger";
 
-// import styles from './Header.module.css'
-
-const Logger = logger();
-
 export const Header = ({ links, pages }) => {
+    const Logger = logger();
+
     const signOut = async () => {
         try {
             await Auth.signOut();

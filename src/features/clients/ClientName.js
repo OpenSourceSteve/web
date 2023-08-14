@@ -1,10 +1,9 @@
 import { useGetClientQuery } from './clientsSlice'
 
-import { logger } from '../../utils/logger'
-
-const Logger = logger()
+import { logger } from '../../utils'
 
 export const ClientName = ({ clientId }) => {
+    const Logger = logger()
 
     const {
         data: client,

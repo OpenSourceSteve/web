@@ -1,8 +1,8 @@
 import { useState } from "react";
-
-import { createPostJsonOptions } from "../../utils";
-
 import { useDispatch } from 'react-redux'
+
+import { createPostJsonOptions, getEnv, logger } from "../../utils";
+
 import { setUsername } from './signupSlice'
 
 import {
@@ -15,13 +15,9 @@ import {
 
 import { LAMBDAS } from "../../app/lambdas";
 
-import { logger } from "../../utils/logger";
-
-import { getEnv } from "../../utils/functions/getEnv";
-
-const Logger = logger();
-
 export const SignupForm = ({ onSuccess }) => {
+  const Logger = logger();
+
   const dispatch = useDispatch()
 
   const ENV = getEnv()

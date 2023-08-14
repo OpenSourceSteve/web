@@ -7,9 +7,9 @@ import { Button, EmailInput, PasswordInput } from '../../components'
 
 import { logger } from '../../utils/logger';
 
-const Logger = logger();
-
 export const LoginForm = ({ onReset }) => {
+    const Logger = logger();
+
     const navigate = useNavigate()
     const [isLoading, setIsLoading] = useState(false)
 

@@ -16,14 +16,15 @@ import {
     TextInput
 } from "../../../components"
 
-import { logger } from '../../../utils/logger';
+import { logger } from '../../../utils';
 
 import { clientAttributes } from './clientAttributes';
 
-const Logger = logger();
-
 export const ClientForm = forwardRef(({ clientData, onCancel }, ref) => {
+    const Logger = logger();
+
     const navigate = useNavigate()
+
     const isUpdate = !!clientData
 
     const [createClient] = useCreateClientMutation()

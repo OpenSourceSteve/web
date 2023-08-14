@@ -1,17 +1,14 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 import { Auth } from 'aws-amplify'
 
 import { Button, EmailInput } from "../../components"
 
-// import styles from "./PasswordReset.module.css";
-
-import { logger } from '../../utils/logger';
-import { useNavigate } from 'react-router-dom';
-
-const Logger = logger();
+import { logger } from '../../utils';
 
 export const EmailForm = ({ onSuccess, onChange, state, onBack }) => {
+    const Logger = logger();
     const navigate = useNavigate()
 
     const [isLoading, setIsLoading] = useState(false)
