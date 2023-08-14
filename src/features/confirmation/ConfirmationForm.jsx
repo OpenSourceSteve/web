@@ -1,15 +1,13 @@
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
 
 import { createPostJsonOptions } from "../../utils";
 import { LAMBDAS } from "../../app/lambdas";
 
 import { Button, NumberInput } from "../../components";
+import { getEnv } from "../../utils/functions/getEnv";
 
 export const ConfirmationForm = ({ onSuccess, username }) => {
-  const location = useLocation()
-
-  const ENV = location.host.split(".")[0]
+  const ENV = getEnv()
 
   const { confirmationURL, resendURL } = LAMBDAS[ENV];
 

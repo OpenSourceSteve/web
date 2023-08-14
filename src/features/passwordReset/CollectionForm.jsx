@@ -5,17 +5,17 @@ import { Button, EmailInput, PasswordInput, TextInput } from "../../components"
 import { createPostJsonOptions } from "../../utils";
 
 import { logger } from '../../utils/logger';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { LAMBDAS } from '../../app/lambdas';
+import { getEnv } from '../../utils/functions/getEnv';
 
 const Logger = logger();
 
 export const CollectionForm = ({ onSuccess, onChange, state, username }) => {
     const navigate = useNavigate()
-    const location = useLocation()
 
-    const ENV = location.host.split(".")[0]
+    const ENV = getEnv()
 
     const [isLoading, setIsLoadiing] = useState(false)
 

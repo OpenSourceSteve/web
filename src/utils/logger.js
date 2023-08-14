@@ -1,8 +1,10 @@
 import { createPostJsonOptions } from "./functions/createPostJsonOptions"
 import { LAMBDAS } from "../app/lambdas"
+import { getEnv } from "./functions/getEnv";
 
 export const logger = () => {
-    const ENV = window.location.host.split(".")[0]
+
+    const ENV = getEnv()
 
     const loggerURL = LAMBDAS[ENV].loggerURL;
 

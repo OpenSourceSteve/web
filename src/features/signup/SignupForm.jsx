@@ -16,15 +16,15 @@ import {
 import { LAMBDAS } from "../../app/lambdas";
 
 import { logger } from "../../utils/logger";
-import { useLocation } from "react-router-dom";
+
+import { getEnv } from "../../utils/functions/getEnv";
 
 const Logger = logger();
 
 export const SignupForm = ({ onSuccess }) => {
   const dispatch = useDispatch()
-  const location = useLocation()
 
-  const ENV = location.host.split(".")[0]
+  const ENV = getEnv()
 
   const [userData, setUserData] = useState({
     firstName: "",

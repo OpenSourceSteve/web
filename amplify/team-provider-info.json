@@ -25,7 +25,7 @@
         },
         "confirmationWorkflow": {
           "deploymentBucketName": "amplify-web-dev-233335-deployment",
-          "s3Key": "amplify-builds/confirmationWorkflow-317652665130556e732f-build.zip",
+          "s3Key": "amplify-builds/confirmationWorkflow-512b574a396b42364d4c-build.zip",
           "clientId": "520eein2dpa1huqkicuujatkac",
           "userpoolId": "us-west-1_Sdkcf2w67"
         },
@@ -37,7 +37,7 @@
         },
         "signupWorkflow": {
           "deploymentBucketName": "amplify-web-dev-233335-deployment",
-          "s3Key": "amplify-builds/signupWorkflow-3948765551445064772f-build.zip",
+          "s3Key": "amplify-builds/signupWorkflow-2f724466563361383434-build.zip",
           "clientId": "520eein2dpa1huqkicuujatkac",
           "userpoolId": "us-west-1_Sdkcf2w67"
         }
