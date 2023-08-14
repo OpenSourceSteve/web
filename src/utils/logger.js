@@ -1,6 +1,5 @@
-import { createPostJsonOptions } from "./"
+import { createPostJsonOptions, getEnv } from "./"
 import { LAMBDAS } from "../app/lambdas"
-import { getEnv } from "./";
 
 export const logger = () => {
 
