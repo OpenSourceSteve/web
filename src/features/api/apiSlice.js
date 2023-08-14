@@ -3,7 +3,13 @@ import { graphqlRequestBaseQuery } from '@rtk-query/graphql-request-base-query'
 
 import { Auth } from 'aws-amplify';
 
-const API_DOMAIN = process.env.REACT_APP_API_DOMAIN
+import { getEnv } from '../../utils';
+
+import { APIs } from '../../app/apis';
+
+const ENV = getEnv()
+
+const API_DOMAIN = APIs[ENV]
 
 export const apiSlice = createApi({
   reducerPath: 'api',
