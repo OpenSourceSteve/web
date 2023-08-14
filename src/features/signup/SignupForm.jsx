@@ -1,8 +1,8 @@
 import { useState } from "react";
-
-import { createPostJsonOptions } from "../../utils";
-
 import { useDispatch } from 'react-redux'
+
+import { createPostJsonOptions, getEnv, logger } from "../../utils";
+
 import { setUsername } from './signupSlice'
 
 import {
@@ -15,16 +15,12 @@ import {
 
 import { LAMBDAS } from "../../app/lambdas";
 
-import { logger } from "../../utils/logger";
-import { useLocation } from "react-router-dom";
-
-const Logger = logger();
-
 export const SignupForm = ({ onSuccess }) => {
-  const dispatch = useDispatch()
-  const location = useLocation()
+  const Logger = logger();
 
-  const ENV = location.host.split(".")[0]
+  const dispatch = useDispatch()
+
+  const ENV = getEnv()
 
   const [userData, setUserData] = useState({
     firstName: "",

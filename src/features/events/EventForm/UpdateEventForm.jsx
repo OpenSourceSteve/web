@@ -5,7 +5,7 @@ import {
     useUpdateEventMutation
 } from "../eventsSlice"
 
-import { formatDatetimeWithTimezone } from '../../../utils'
+import { formatDatetimeWithTimezone, logger } from '../../../utils'
 
 import { eventTypeOptions } from "../eventTypeOptions"
 
@@ -18,13 +18,11 @@ import {
     UrlInput
 } from '../../../components'
 
-import { logger } from '../../../utils/logger'
-
 import { eventAttributes } from './eventAttributes'
 
-const Logger = logger()
-
 export const UpdateEventForm = forwardRef(({ caseID, clientId, eventId, onToggleForm, resource: event }, ref) => {
+    const Logger = logger()
+
     const initialState = {
         clientId: "",
         caseID: "",

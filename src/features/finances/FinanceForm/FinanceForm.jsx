@@ -15,10 +15,10 @@ import {
 
 import { logger } from '../../../utils/logger'
 
-const Logger = logger()
-
 // TODO: I don't think eventID and are passed in
 export const FinanceForm = forwardRef(({ caseID, onToggleForm, eventID, resource: finance }, ref) => {
+    const Logger = logger()
+
     const clientId = useSelector(state => state.clients.clientId)
 
     const initialState = {

@@ -13,15 +13,15 @@ import {
     TextInput
 } from '../../../components'
 
-import { logger } from '../../../utils/logger'
+import { logger } from '../../../utils'
 
 import styles from '../Charges.module.css'
 
 import { chargeAttributes } from './chargeAttributes'
 
-const Logger = logger()
-
 export const ChargeForm = forwardRef(({ caseID, clientId, onToggleForm, resource: charge }, ref) => {
+    const Logger = logger()
+
     const initialState = {
         caseID: "",
         status: "",

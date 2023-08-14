@@ -13,15 +13,12 @@ import {
     TextAreaInput
 } from '../../../components'
 
-import { logger } from '../../../utils/logger'
-
-// import styles from '../Notes.module.css'
+import { logger } from '../../../utils'
 
 import { noteAttributes } from './noteAttributes'
 
-const Logger = logger()
-
 export const NoteForm = forwardRef(({ caseID, clientId, onToggleForm, eventID, taskID, resource: note }, ref) => {
+    const Logger = logger()
 
     const initialState = {
         caseID: "",

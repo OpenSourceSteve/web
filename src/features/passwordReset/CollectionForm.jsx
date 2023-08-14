@@ -2,20 +2,20 @@ import { useState } from 'react'
 import { Auth } from 'aws-amplify'
 
 import { Button, EmailInput, PasswordInput, TextInput } from "../../components"
-import { createPostJsonOptions } from "../../utils";
+import { createPostJsonOptions, getEnv, logger } from "../../utils";
 
-import { logger } from '../../utils/logger';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { LAMBDAS } from '../../app/lambdas';
 
-const Logger = logger();
-
 export const CollectionForm = ({ onSuccess, onChange, state, username }) => {
-    const navigate = useNavigate()
-    const location = useLocation()
+    const Logger = logger();
 
-    const ENV = location.host.split(".")[0]
+    const navigate = useNavigate()
+
+    const ENV = getEnv()
+
+    const { resendURL } = LAMBDAS[ENV]
 
     const [isLoading, setIsLoadiing] = useState(false)
 
@@ -34,8 +34,6 @@ export const CollectionForm = ({ onSuccess, onChange, state, username }) => {
     }
 
     const resendHandler = async () => {
-        const { resendURL } = LAMBDAS[ENV]
-
         const postJsonOptions = createPostJsonOptions({ username })
 
         const response = await fetch(resendURL, postJsonOptions);

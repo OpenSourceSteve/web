@@ -1,6 +1,7 @@
 import { forwardRef, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 
+import { useListLawyersQuery } from '../../lawyers/lawyersSlice'
 import {
     useCreateTaskMutation,
     useUpdateTaskMutation
@@ -13,14 +14,13 @@ import {
     TextInput
 } from '../../../components'
 
-import { logger } from '../../../utils/logger'
+import { logger } from '../../../utils'
 
 import { taskAttributes } from './taskAttributes'
-import { useListLawyersQuery } from '../../lawyers/lawyersSlice'
-
-const Logger = logger()
 
 export const TaskForm = forwardRef(({ caseID, onToggleForm, resource: task }, ref) => {
+    const Logger = logger()
+
     const clientId = useSelector(state => state.clients.clientId)
 
     const initialState = {
