@@ -88,6 +88,7 @@ export const CaseEventForm = forwardRef(({ caseID, onToggleForm, resource: event
             eventObj[attribute] = eventState[attribute]
         })
 
+        eventObj.caseID = caseID
         eventObj.id = eventState.id
         eventObj.link = eventObj.link || undefined
         eventObj.startDatetime = formatDatetimeWithTimezone(eventObj.startDatetime)

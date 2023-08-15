@@ -59,12 +59,6 @@ export const CaseDetailsView = () => {
         error
     } = useGetCaseQuery({ id: caseId })
 
-    const keyDownHandler = event => {
-        if (event.keyCode === 13) {
-            navigate('/cases')
-        }
-    }
-
     const toggleDialog = dialogRef => {
         if (dialogRef.current.open) {
             dialogRef.current.close()
@@ -127,7 +121,7 @@ export const CaseDetailsView = () => {
     return (
         <Layout
             sidebarContent={(
-                <CaseDetailsSidebar keyDownHandler={keyDownHandler}
+                <CaseDetailsSidebar
                     callToAction={callToAction(activeTabDialogRef)}
                 />
             )}
