@@ -22,7 +22,7 @@ export const EventsList = ({ dialogRef }) => {
         isSuccess,
         isError,
         error
-    } = useListEventsQuery({})
+    } = useListEventsQuery({filter: {caseID: {eq: caseId}}})
 
     const keyDownHandler = (event) => {
         if (event.keyCode === 13) {

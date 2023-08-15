@@ -1,5 +1,4 @@
 import { useRef, useState } from 'react'
-import { useDispatch } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 
 import { useGetCaseQuery } from '../casesSlice'
@@ -19,7 +18,6 @@ import { CaseDetailsSidebar } from './CaseDetailsSidebar'
 import { CaseDetails } from './CaseDetails'
 
 export const CaseDetailsView = () => {
-    const dispatch = useDispatch()
     const navigate = useNavigate()
 
     const params = useParams();

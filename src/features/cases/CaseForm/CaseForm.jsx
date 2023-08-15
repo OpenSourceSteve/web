@@ -16,6 +16,7 @@ import { caseAttributes } from "./caseAttributes"
 import { trimAndDecreaseCase } from "../../../utils"
 
 export const CaseForm = forwardRef(({ caseInstance, onCancel, clientId }, ref) => {
+    clientId = clientId || ""
     const [isLoading, setIsLoading] = useState(false);
     const [timeoutId, setTimeoutId] = useState(0);
     const [debounced, setDebounced] = useState(false);
@@ -113,11 +114,15 @@ export const CaseForm = forwardRef(({ caseInstance, onCancel, clientId }, ref) =
             <h2 className="inline">{caseInstance ? "Update" : "Create"} Case Form</h2><span onClick={closeHandler} className="float-right cursor-pointer">X</span>
             <form className="">
                 {!caseInstance && (caseDetails.clientId === ""
-                    ? <ClientSelector clientName={caseDetails.clientName}
-                        clientNameChangeHandler={clientNameChangeHandler}
-                        clientHandler={clientHandler}
-                        debounced={debounced}
-                    />
+                    ? (
+                        <div className="py-4">
+                            <ClientSelector clientName={caseDetails.clientName}
+                                clientNameChangeHandler={clientNameChangeHandler}
+                                clientHandler={clientHandler}
+                                debounced={debounced}
+                            />
+                        </div>
+                    )
                     : (caseDetails?.clientId && <ClientName clientId={caseDetails.clientId} />)
                 )}
                 <div className="py-2">
