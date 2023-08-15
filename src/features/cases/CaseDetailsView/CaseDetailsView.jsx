@@ -59,12 +59,6 @@ export const CaseDetailsView = () => {
         error
     } = useGetCaseQuery({ id: caseId })
 
-    const keyDownHandler = event => {
-        if (event.keyCode === 13) {
-            navigate('/cases')
-        }
-    }
-
     const toggleDialog = dialogRef => {
         if (dialogRef.current.open) {
             dialogRef.current.close()
@@ -83,8 +77,6 @@ export const CaseDetailsView = () => {
     if (isLoading) {
         <h2 className="">Loading...</h2>
     } else if (isSuccess && caseInstance) {
-        // TODO: set caseInstance using Redux
-
         if (caseInstance) {
             const { caseNumber, caseName } = caseInstance;
             content = (
@@ -92,7 +84,7 @@ export const CaseDetailsView = () => {
                     <h1 className="p-8 font-bold">Case: {caseNumber}: {caseName}</h1>
                     <CaseDetails caseInstance={caseInstance} dialogRef={caseDialogRef} toggleFormDialog={toggleDialog}/>
                     <TabbedNav activeTab={activeTab} tabs={navTabs} navTabHandler={navTabHandler}>
-                        {activeTab === "Events" && <EventsTab caseInstance={caseInstance} dialogRef={eventDialogRef} />}
+                        {activeTab === "Events" && <EventsTab dialogRef={eventDialogRef} />}
                         {activeTab === "Charges" && <ChargesTab caseInstance={caseInstance} dialogRef={chargeDialogRef} />}
                         {activeTab === "Notes" && <NotesTab caseInstance={caseInstance} dialogRef={noteDialogRef} />}
                         {activeTab === "Tasks" && <TasksTab caseInstance={caseInstance} dialogRef={taskDialogRef} />}
@@ -129,7 +121,7 @@ export const CaseDetailsView = () => {
     return (
         <Layout
             sidebarContent={(
-                <CaseDetailsSidebar keyDownHandler={keyDownHandler}
+                <CaseDetailsSidebar
                     callToAction={callToAction(activeTabDialogRef)}
                 />
             )}

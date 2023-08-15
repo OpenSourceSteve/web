@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom"
 
-export const Link = ({ path, text, color, onClick }) => {
+export const Link = ({ path, text, color, onClick, inline }) => {
     const navigate = useNavigate()
     const location = useLocation()
 
@@ -41,7 +41,7 @@ export const Link = ({ path, text, color, onClick }) => {
 
     // 3. current resource view is unrelated to link -> normal font weight hyperlink
     return (
-        <div tabIndex={0} onKeyDown={keydownHandler} data-href={`${path}`} className="">
+        <div tabIndex={0} onKeyDown={keydownHandler} data-href={`${path}`} className={`${inline && "inline"}`}>
             <a href={path}
                 className={`text-${color} capitalize`}
                 onKeyDown={keydownHandler}

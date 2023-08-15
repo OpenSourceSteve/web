@@ -59,7 +59,7 @@ export const NotesList = ({ dialogRef }) => {
                         onClick={clickHandler}
                         href={`/cases/${caseId}?view=/notes/${note.id}`}
                     >
-                        <div className="basis-1/3">{note.timestamp}</div>
+                        <div className="basis-1/3">{note.createdAt}</div>
                         <div className="basis-1/3">{noteTypeMap[note.type] || ""}</div>
                         <div className="basis-1/3">{note.text || ""}</div>
                     </a>

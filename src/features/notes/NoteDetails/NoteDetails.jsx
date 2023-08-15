@@ -21,7 +21,10 @@ export const NoteDetails = ({ noteId }) => {
         content = (
             <>
                 <div>
-                    Timestamp: {note.timestamp}
+                    Created At: {note.createdAt}
+                </div>
+                <div>
+                    Updated At: {note.updatedAt}
                 </div>
                 <div>
                     Note Type: {noteTypeMap[note.type]}

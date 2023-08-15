@@ -74,10 +74,6 @@ export const extendedAPISlice = apiSlice.injectEndpoints({
         return meta.response
       }
     }),
-    // listCasesWithNumber: builder.query({
-    //   query: (caseNumber) => `/cases?number=${caseNumber}`,
-    //   provideTags: ['PotentialCase']
-    // }),
     listCasesWithNumber: builder.query({
       query: ({ filter, limit, nextToken }) => ({
         document: gql`${listCases}`,

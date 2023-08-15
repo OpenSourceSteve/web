@@ -30,12 +30,10 @@ export default function NoteUpdateForm(props) {
     ...rest
   } = props;
   const initialValues = {
-    timestamp: "",
     text: "",
     type: "",
     caseID: "",
   };
-  const [timestamp, setTimestamp] = React.useState(initialValues.timestamp);
   const [text, setText] = React.useState(initialValues.text);
   const [type, setType] = React.useState(initialValues.type);
   const [caseID, setCaseID] = React.useState(initialValues.caseID);
@@ -44,7 +42,6 @@ export default function NoteUpdateForm(props) {
     const cleanValues = noteRecord
       ? { ...initialValues, ...noteRecord }
       : initialValues;
-    setTimestamp(cleanValues.timestamp);
     setText(cleanValues.text);
     setType(cleanValues.type);
     setCaseID(cleanValues.caseID);
@@ -62,7 +59,6 @@ export default function NoteUpdateForm(props) {
   }, [idProp, noteModelProp]);
   React.useEffect(resetStateValues, [noteRecord]);
   const validations = {
-    timestamp: [],
     text: [],
     type: [],
     caseID: [{ type: "Required" }],
@@ -84,23 +80,6 @@ export default function NoteUpdateForm(props) {
     setErrors((errors) => ({ ...errors, [fieldName]: validationResponse }));
     return validationResponse;
   };
-  const convertToLocal = (date) => {
-    const df = new Intl.DateTimeFormat("default", {
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit",
-      hour: "2-digit",
-      minute: "2-digit",
-      calendar: "iso8601",
-      numberingSystem: "latn",
-      hourCycle: "h23",
-    });
-    const parts = df.formatToParts(date).reduce((acc, part) => {
-      acc[part.type] = part.value;
-      return acc;
-    }, {});
-    return `${parts.year}-${parts.month}-${parts.day}T${parts.hour}:${parts.minute}`;
-  };
   return (
     <Grid
       as="form"
@@ -110,7 +89,6 @@ export default function NoteUpdateForm(props) {
       onSubmit={async (event) => {
         event.preventDefault();
         let modelFields = {
-          timestamp,
           text,
           type,
           caseID,
@@ -161,35 +139,6 @@ export default function NoteUpdateForm(props) {
       {...rest}
     >
       <TextField
-        label="Timestamp"
-        isRequired={false}
-        isReadOnly={false}
-        type="datetime-local"
-        value={timestamp && convertToLocal(new Date(timestamp))}
-        onChange={(e) => {
-          let value =
-            e.target.value === "" ? "" : new Date(e.target.value).toISOString();
-          if (onChange) {
-            const modelFields = {
-              timestamp: value,
-              text,
-              type,
-              caseID,
-            };
-            const result = onChange(modelFields);
-            value = result?.timestamp ?? value;
-          }
-          if (errors.timestamp?.hasError) {
-            runValidationTasks("timestamp", value);
-          }
-          setTimestamp(value);
-        }}
-        onBlur={() => runValidationTasks("timestamp", timestamp)}
-        errorMessage={errors.timestamp?.errorMessage}
-        hasError={errors.timestamp?.hasError}
-        {...getOverrideProps(overrides, "timestamp")}
-      ></TextField>
-      <TextField
         label="Text"
         isRequired={false}
         isReadOnly={false}
@@ -198,7 +147,6 @@ export default function NoteUpdateForm(props) {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
-              timestamp,
               text: value,
               type,
               caseID,
@@ -225,7 +173,6 @@ export default function NoteUpdateForm(props) {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
-              timestamp,
               text,
               type: value,
               caseID,
@@ -268,7 +215,6 @@ export default function NoteUpdateForm(props) {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
-              timestamp,
               text,
               type,
               caseID: value,

@@ -1,3 +1,4 @@
+// NOTE: This form creates an event given a caseID
 import { forwardRef, useEffect, useState } from 'react'
 
 import {
@@ -20,11 +21,10 @@ import {
 
 import { eventAttributes } from './eventAttributes'
 
-export const UpdateEventForm = forwardRef(({ caseID, clientId, eventId, onToggleForm, resource: event }, ref) => {
+export const CaseEventForm = forwardRef(({ caseID, onToggleForm, resource: event }, ref) => {
     const Logger = logger()
 
     const initialState = {
-        clientId: "",
         caseID: "",
         startDatetime: "",
         title: "",
@@ -46,12 +46,11 @@ export const UpdateEventForm = forwardRef(({ caseID, clientId, eventId, onToggle
         } else {
             setEventState({
                 ...eventState,
-                clientId,
                 caseID
             })
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [event, clientId, caseID])
+    }, [event, caseID])
 
     const [createEvent, { isError: isCreateError, error: createError }] = useCreateEventMutation()
     const [updateEvent, { isError: isUpdateError, error: updateError }] = useUpdateEventMutation()
@@ -89,12 +88,17 @@ export const UpdateEventForm = forwardRef(({ caseID, clientId, eventId, onToggle
             eventObj[attribute] = eventState[attribute]
         })
 
+        eventObj.caseID = caseID
         eventObj.id = eventState.id
         eventObj.link = eventObj.link || undefined
         eventObj.startDatetime = formatDatetimeWithTimezone(eventObj.startDatetime)
 
         try {
-            await updateEvent({ input: eventObj }).unwrap()
+            if (event) {
+                await updateEvent({ input: eventObj }).unwrap()
+            } else {
+                await createEvent({ input: eventObj }).unwrap()
+            }
             closeHandler()
         } catch (error) {
             setError(error, "updating")

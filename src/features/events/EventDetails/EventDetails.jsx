@@ -1,6 +1,6 @@
 import { useGetEventQuery } from "../eventsSlice"
 
-import { UpdateEventForm } from "../EventForm/UpdateEventForm"
+import { CaseEventForm } from "../EventForm/CaseEventForm"
 
 import { eventTypeMap } from "../eventTypeMap"
 
@@ -50,7 +50,7 @@ export const EventDetails = ({ eventId }) => {
     // return content
     return <DetailsTab resourceName="Event"
         resource={event}
-        ResourceForm={UpdateEventForm}
+        ResourceForm={CaseEventForm}
         title={title}
         resourceDetailContent={content}
         isLoading={isLoading}

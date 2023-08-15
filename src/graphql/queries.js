@@ -286,7 +286,6 @@ export const getTask = /* GraphQL */ `
       Notes {
         items {
           id
-          timestamp
           text
           type
           caseID
@@ -335,7 +334,6 @@ export const listTasks = /* GraphQL */ `
         Notes {
           items {
             id
-            timestamp
             text
             type
             caseID
@@ -394,7 +392,6 @@ export const syncTasks = /* GraphQL */ `
         Notes {
           items {
             id
-            timestamp
             text
             type
             caseID
@@ -455,7 +452,6 @@ export const tasksByCaseID = /* GraphQL */ `
         Notes {
           items {
             id
-            timestamp
             text
             type
             caseID
@@ -516,7 +512,6 @@ export const tasksByLawyerID = /* GraphQL */ `
         Notes {
           items {
             id
-            timestamp
             text
             type
             caseID
@@ -577,7 +572,6 @@ export const tasksByClientID = /* GraphQL */ `
         Notes {
           items {
             id
-            timestamp
             text
             type
             caseID
@@ -615,7 +609,6 @@ export const getNote = /* GraphQL */ `
   query GetNote($id: ID!) {
     getNote(id: $id) {
       id
-      timestamp
       text
       type
       caseID
@@ -640,7 +633,6 @@ export const listNotes = /* GraphQL */ `
     listNotes(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        timestamp
         text
         type
         caseID
@@ -675,7 +667,6 @@ export const syncNotes = /* GraphQL */ `
     ) {
       items {
         id
-        timestamp
         text
         type
         caseID
@@ -712,7 +703,6 @@ export const notesByCaseID = /* GraphQL */ `
     ) {
       items {
         id
-        timestamp
         text
         type
         caseID
@@ -749,7 +739,6 @@ export const notesByEventID = /* GraphQL */ `
     ) {
       items {
         id
-        timestamp
         text
         type
         caseID
@@ -786,7 +775,6 @@ export const notesByTaskID = /* GraphQL */ `
     ) {
       items {
         id
-        timestamp
         text
         type
         caseID
@@ -935,7 +923,6 @@ export const getEvent = /* GraphQL */ `
       Notes {
         items {
           id
-          timestamp
           text
           type
           caseID
@@ -984,7 +971,6 @@ export const listEvents = /* GraphQL */ `
         Notes {
           items {
             id
-            timestamp
             text
             type
             caseID
@@ -1043,7 +1029,6 @@ export const syncEvents = /* GraphQL */ `
         Notes {
           items {
             id
-            timestamp
             text
             type
             caseID
@@ -1104,7 +1089,6 @@ export const eventsByCaseID = /* GraphQL */ `
         Notes {
           items {
             id
-            timestamp
             text
             type
             caseID
@@ -1419,7 +1403,6 @@ export const getCase = /* GraphQL */ `
           Notes {
             items {
               id
-              timestamp
               text
               type
               caseID
@@ -2106,7 +2089,6 @@ export const getClient = /* GraphQL */ `
           Notes {
             items {
               id
-              timestamp
               text
               type
               caseID
@@ -3034,7 +3016,6 @@ export const getLawyer = /* GraphQL */ `
           Notes {
             items {
               id
-              timestamp
               text
               type
               caseID

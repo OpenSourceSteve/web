@@ -1,5 +1,4 @@
 export const eventAttributes = [
-    "caseID",
     "type",
     "startDatetime",
     "duration",

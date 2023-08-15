@@ -35,9 +35,9 @@ export const CasesTable = ({ cases }) => {
                             onClick={clickHandler}
                             onKeyDown={keyDownHandler}
                         >
-                            <td className="basis-1/3">{client?.lastName}, {client?.firstName}</td>
-                            <td className="basis-1/3">{caseInstance.court}</td>
-                            <td className="basis-1/3">{caseInstance.prosecutor}</td>
+                            <td className="basis-1/3 capitalize">{client?.lastName}, {client?.firstName}</td>
+                            <td className="basis-1/3 capitalize">{caseInstance.court}</td>
+                            <td className="basis-1/3 capitalize">{caseInstance.prosecutor}</td>
                         </tr>
                     )
                 })}

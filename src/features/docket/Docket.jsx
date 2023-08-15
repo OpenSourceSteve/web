@@ -1,8 +1,8 @@
 import { useRef, useState } from 'react'
 
 import { DocketSidebar } from './DocketSidebar'
-import { CreateEventForm } from '../events/EventForm/CreateEventForm'
-import { UpdateEventFormAsync } from '../events/EventForm/UpdateEventFormAsync'
+import { DocketCreateEventForm } from '../events/EventForm/DocketCreateEventForm'
+import { DocketUpdateEventForm } from '../events/EventForm/DocketUpdateEventForm'
 import { Layout, Calendar } from '../../components'
 
 export const Docket = () => {
@@ -31,12 +31,12 @@ export const Docket = () => {
       sectionContent={<Calendar toggleEventForm={toggleUpdateFormHandler} />}
       modalContent={(
         <>
-        <CreateEventForm onCancel={toggleCreateFormHandler} ref={createDialogRef} />
-        <UpdateEventFormAsync caseID={caseId}
-          onToggleForm={toggleUpdateFormHandler}
-          eventId={eventId}
-          ref={updateDialogRef}
-        />
+          <DocketCreateEventForm onCancel={toggleCreateFormHandler} ref={createDialogRef} />
+          <DocketUpdateEventForm caseID={caseId}
+            onToggleForm={toggleUpdateFormHandler}
+            eventId={eventId}
+            ref={updateDialogRef}
+          />
         </>
       )}
     />

@@ -62,7 +62,7 @@ export const ListTab = ({
                     ref={dialogRef}
                     caseID={caseId}
                     onToggleForm={toggleDialog}
-                    event={undefined}
+                    resource={resource}
                 />
             </>
         )

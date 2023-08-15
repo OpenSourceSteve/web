@@ -82,7 +82,7 @@ export const CasesListView = () => {
             )}
             sectionContent={content}
             modalContent={(
-                <CaseForm mode={"add"}
+                <CaseForm
                     onCancel={toggleFormHandler}
                     ref={dialogRef}
                     clientId={createFor}

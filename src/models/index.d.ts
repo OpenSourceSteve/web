@@ -151,7 +151,6 @@ type EagerNote = {
     readOnlyFields: 'createdAt' | 'updatedAt';
   };
   readonly id: string;
-  readonly timestamp?: string | null;
   readonly text?: string | null;
   readonly type?: NoteType | keyof typeof NoteType | null;
   readonly caseID: string;
@@ -167,7 +166,6 @@ type LazyNote = {
     readOnlyFields: 'createdAt' | 'updatedAt';
   };
   readonly id: string;
-  readonly timestamp?: string | null;
   readonly text?: string | null;
   readonly type?: NoteType | keyof typeof NoteType | null;
   readonly caseID: string;

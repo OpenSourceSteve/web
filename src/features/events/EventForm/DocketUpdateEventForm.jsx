@@ -1,7 +1,6 @@
 import { forwardRef, useEffect, useState } from 'react'
 
 import {
-    useCreateEventMutation,
     useGetEventQuery,
     useUpdateEventMutation
 } from "../eventsSlice"
@@ -21,12 +20,10 @@ import {
 
 import { eventAttributes } from './eventAttributes'
 
-export const UpdateEventFormAsync = forwardRef(({ caseID, clientId, onToggleForm, eventId }, ref) => {
+export const DocketUpdateEventForm = forwardRef(({ caseID, onToggleForm, eventId }, ref) => {
     const Logger = logger()
 
     const initialState = {
-        clientId: "",
-        caseID: "",
         startDatetime: "",
         title: "",
         description: "",
@@ -50,7 +47,6 @@ export const UpdateEventFormAsync = forwardRef(({ caseID, clientId, onToggleForm
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isSuccess, event])
 
-    const [createEvent, { isError: isCreateError, error: createError }] = useCreateEventMutation()
     const [updateEvent, { isError: isUpdateError, error: updateError }] = useUpdateEventMutation()
 
     const changeHandler = ({ target }) => {
@@ -86,6 +82,7 @@ export const UpdateEventFormAsync = forwardRef(({ caseID, clientId, onToggleForm
             eventObj[attribute] = eventState[attribute]
         })
 
+        eventObj.caseID = caseID
         eventObj.id = eventState.id
         eventObj.link = eventObj.link || undefined
         eventObj.startDatetime = formatDatetimeWithTimezone(eventObj.startDatetime)
