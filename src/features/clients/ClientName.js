@@ -19,7 +19,7 @@ export const ClientName = ({ clientId }) => {
         content = <div>Loading...</div>
     }
     else if (isSuccess) {
-        content = <div id="clientName" className="pb-2">{client.firstName + " " + client.lastName}</div>
+        content = <div id="clientName" className="pb-2 capitalize">{client.firstName + " " + client.lastName}</div>
     } else if (isError) {
         content = <div>There was an error retrieving client data.</div>>
         Logger.error("Getting client in ClientName", error)

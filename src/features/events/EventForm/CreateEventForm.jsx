@@ -41,6 +41,13 @@ export const CreateEventForm = forwardRef(({ onCancel }, ref) => {
     const [eventState, setEventState] = useState(initialState)
 
     const submitAndReset = () => {
+        if (caseInstance === "") {
+            setEventState({
+                ...eventState,
+                error: {submit: "Events must have a case."}
+            })
+            return
+        }
         onCancel()
         const eventObj = {}
         const eventAttributes = ["caseID", "type", "startDatetime", "duration", "location", "link", "phone", "title", "description"]
@@ -51,7 +58,7 @@ export const CreateEventForm = forwardRef(({ onCancel }, ref) => {
         eventObj.duration = eventObj.duration || 0
         eventObj.link = eventObj.link || undefined
         eventObj.startDatetime = formatDatetimeWithTimezone(eventObj.startDatetime)
-        createEvent({input: eventObj})
+        createEvent({ input: eventObj })
         setEventState(initialState)
     }
 
@@ -110,11 +117,8 @@ export const CreateEventForm = forwardRef(({ onCancel }, ref) => {
                         />
                     )}
                 </div>
-                {caseInstance ? (
-                    <div className="pb-8">
-                        <CaseNumberName caseInstance={caseInstance} />
-                    </div>
-                ) : (
+                {caseInstance && <div className="pb-8"><CaseNumberName caseInstance={caseInstance} /></div>}
+                {(!caseInstance && client.id) && (
                     <div className="pb-8">
                         <CaseSelector clientCases={client.cases?.items}
                             caseInstance={caseInstance}
@@ -123,6 +127,7 @@ export const CreateEventForm = forwardRef(({ onCancel }, ref) => {
                         />
                     </div>
                 )}
+
                 {caseInstance && (
                     <>
                         <div className="pb-8">
@@ -170,6 +175,9 @@ export const CreateEventForm = forwardRef(({ onCancel }, ref) => {
                     className="mt-4 px-4 py-2"
                     onClick={closeHandler} >Cancel</button>
             </Button>
+            <div className="flex justify-center pt-4">
+            <div className="text-red-500">{eventState.error?.["submit"]}</div>
+            </div>
         </dialog>
     )
 })

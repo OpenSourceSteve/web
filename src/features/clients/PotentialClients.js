@@ -5,8 +5,8 @@ import { useGetClientsWithNameQuery } from "./clientsSlice"
 export const PotentialClients = ({ partialName, clientHandler }) => {
     const { data: potentialClients, isLoading, isSuccess } = useGetClientsWithNameQuery({filter: {
         or: [
-            { firstName: { contains: partialName } },
-            { lastName: { contains: partialName } }
+            { firstName: { contains: partialName.toLowerCase() } },
+            { lastName: { contains: partialName.toLowerCase() } }
         ]
     }})
 
@@ -31,7 +31,7 @@ export const PotentialClients = ({ partialName, clientHandler }) => {
                     return (
                     <li key={potentialClient.id}>
                         <div tabIndex={0}
-                            className="hover:bg-slate-100 px-4 py-2"
+                            className="hover:bg-slate-100 px-4 py-2 capitalize cursor-pointer"
                             onClick={() => clientHandler(potentialClient)}
                             onKeyDown={event => keyDownHandler(event, potentialClient)}
                             data-client-id={potentialClient.id}
