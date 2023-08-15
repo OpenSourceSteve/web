@@ -14,13 +14,11 @@ export declare type ValidationResponse = {
 };
 export declare type ValidationFunction<T> = (value: T, validationResponse: ValidationResponse) => ValidationResponse | Promise<ValidationResponse>;
 export declare type NoteUpdateFormInputValues = {
-    timestamp?: string;
     text?: string;
     type?: string;
     caseID?: string;
 };
 export declare type NoteUpdateFormValidationValues = {
-    timestamp?: ValidationFunction<string>;
     text?: ValidationFunction<string>;
     type?: ValidationFunction<string>;
     caseID?: ValidationFunction<string>;
@@ -28,7 +26,6 @@ export declare type NoteUpdateFormValidationValues = {
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type NoteUpdateFormOverridesProps = {
     NoteUpdateFormGrid?: PrimitiveOverrideProps<GridProps>;
-    timestamp?: PrimitiveOverrideProps<TextFieldProps>;
     text?: PrimitiveOverrideProps<TextFieldProps>;
     type?: PrimitiveOverrideProps<SelectFieldProps>;
     caseID?: PrimitiveOverrideProps<TextFieldProps>;

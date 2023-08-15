@@ -24,7 +24,6 @@ export const NoteForm = forwardRef(({ caseID, clientId, onToggleForm, eventID, t
         caseID: "",
         type: "",
         text: "",
-        timestamp: "",
         eventID: "",
         taskID: ""
     }
@@ -81,10 +80,7 @@ export const NoteForm = forwardRef(({ caseID, clientId, onToggleForm, eventID, t
         noteAttributes.forEach(attribute => {
             noteObj[attribute] = noteState[attribute]
         })
-        // set timestamp
-        const now = new Date()
 
-        noteObj["timestamp"] = now.toISOString()
         noteObj["caseID"] = caseID
         noteObj["eventID"] = eventID
         noteObj["taskID"] = taskID

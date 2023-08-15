@@ -383,13 +383,6 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "timestamp": {
-                    "name": "timestamp",
-                    "isArray": false,
-                    "type": "AWSDateTime",
-                    "isRequired": false,
-                    "attributes": []
-                },
                 "text": {
                     "name": "text",
                     "isArray": false,
@@ -1972,5 +1965,5 @@ export const schema = {
     },
     "nonModels": {},
     "codegenVersion": "3.4.4",
-    "version": "e497626e4f330a96c487979737a60151"
+    "version": "69237d82148e3ed118b22a859945eb1c"
 };

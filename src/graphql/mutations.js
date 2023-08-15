@@ -150,7 +150,6 @@ export const createTask = /* GraphQL */ `
       Notes {
         items {
           id
-          timestamp
           text
           type
           caseID
@@ -197,7 +196,6 @@ export const updateTask = /* GraphQL */ `
       Notes {
         items {
           id
-          timestamp
           text
           type
           caseID
@@ -244,7 +242,6 @@ export const deleteTask = /* GraphQL */ `
       Notes {
         items {
           id
-          timestamp
           text
           type
           caseID
@@ -281,7 +278,6 @@ export const createNote = /* GraphQL */ `
   ) {
     createNote(input: $input, condition: $condition) {
       id
-      timestamp
       text
       type
       caseID
@@ -304,7 +300,6 @@ export const updateNote = /* GraphQL */ `
   ) {
     updateNote(input: $input, condition: $condition) {
       id
-      timestamp
       text
       type
       caseID
@@ -327,7 +322,6 @@ export const deleteNote = /* GraphQL */ `
   ) {
     deleteNote(input: $input, condition: $condition) {
       id
-      timestamp
       text
       type
       caseID
@@ -425,7 +419,6 @@ export const createEvent = /* GraphQL */ `
       Notes {
         items {
           id
-          timestamp
           text
           type
           caseID
@@ -472,7 +465,6 @@ export const updateEvent = /* GraphQL */ `
       Notes {
         items {
           id
-          timestamp
           text
           type
           caseID
@@ -519,7 +511,6 @@ export const deleteEvent = /* GraphQL */ `
       Notes {
         items {
           id
-          timestamp
           text
           type
           caseID
@@ -833,7 +824,6 @@ export const createCase = /* GraphQL */ `
           Notes {
             items {
               id
-              timestamp
               text
               type
               caseID
@@ -1184,7 +1174,6 @@ export const updateCase = /* GraphQL */ `
           Notes {
             items {
               id
-              timestamp
               text
               type
               caseID
@@ -1535,7 +1524,6 @@ export const deleteCase = /* GraphQL */ `
           Notes {
             items {
               id
-              timestamp
               text
               type
               caseID
@@ -1737,7 +1725,6 @@ export const createClient = /* GraphQL */ `
           Notes {
             items {
               id
-              timestamp
               text
               type
               caseID
@@ -1937,7 +1924,6 @@ export const updateClient = /* GraphQL */ `
           Notes {
             items {
               id
-              timestamp
               text
               type
               caseID
@@ -2137,7 +2123,6 @@ export const deleteClient = /* GraphQL */ `
           Notes {
             items {
               id
-              timestamp
               text
               type
               caseID
@@ -2608,7 +2593,6 @@ export const createLawyer = /* GraphQL */ `
           Notes {
             items {
               id
-              timestamp
               text
               type
               caseID
@@ -2842,7 +2826,6 @@ export const updateLawyer = /* GraphQL */ `
           Notes {
             items {
               id
-              timestamp
               text
               type
               caseID
@@ -3076,7 +3059,6 @@ export const deleteLawyer = /* GraphQL */ `
           Notes {
             items {
               id
-              timestamp
               text
               type
               caseID

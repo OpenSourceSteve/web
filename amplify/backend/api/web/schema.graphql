@@ -39,7 +39,6 @@ enum NoteType {
 
 type Note @model @auth(rules: [{allow: owner}]) {
   id: ID!
-  timestamp: AWSDateTime
   text: String
   type: NoteType
   caseID: ID! @index(name: "byCase")
