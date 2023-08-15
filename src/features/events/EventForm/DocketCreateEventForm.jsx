@@ -18,7 +18,7 @@ import {
     UrlInput
 } from '../../../components'
 
-export const CreateEventForm = forwardRef(({ onCancel }, ref) => {
+export const DocketCreateEventForm = forwardRef(({ onCancel }, ref) => {
     const timeoutRef = useRef(0)
     const debounced = useRef(false)
 
