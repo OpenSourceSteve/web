@@ -31,12 +31,12 @@ export const Docket = () => {
       sectionContent={<Calendar toggleEventForm={toggleUpdateFormHandler} />}
       modalContent={(
         <>
-        <CreateEventForm onCancel={toggleCreateFormHandler} ref={createDialogRef} />
-        <UpdateEventFormAsync caseID={caseId}
-          onToggleForm={toggleUpdateFormHandler}
-          eventId={eventId}
-          ref={updateDialogRef}
-        />
+          <CreateEventForm onCancel={toggleCreateFormHandler} ref={createDialogRef} />
+          <UpdateEventFormAsync caseID={caseId}
+            onToggleForm={toggleUpdateFormHandler}
+            eventId={eventId}
+            ref={updateDialogRef}
+          />
         </>
       )}
     />

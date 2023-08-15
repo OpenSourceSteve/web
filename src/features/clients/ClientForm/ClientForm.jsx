@@ -16,7 +16,7 @@ import {
     TextInput
 } from "../../../components"
 
-import { logger } from '../../../utils';
+import { logger, trimAndDecreaseCase } from '../../../utils';
 
 import { clientAttributes } from './clientAttributes';
 
@@ -82,14 +82,22 @@ export const ClientForm = forwardRef(({ clientData, onCancel }, ref) => {
             clientAttributes.forEach(attribute => {
                 clientData[attribute] = client[attribute];
             })
-            // TODO: trim and lowercase client names
+
+            const fieldsToTrimAndDecreaseCase = ["firstName", "lastName"]
+            trimAndDecreaseCase(clientData, fieldsToTrimAndDecreaseCase)
+
+            if (clientData.email === "") {
+                clientData.email = null
+            }
 
             try {
                 let clientId;
                 if (isUpdate) {
                     await updateClient({ input: clientData }).unwrap()
+                    setClient(initialState)
                 } else {
                     const { id } = await createClient({ input: clientData }).unwrap()
+                    setClient(initialState)
                     clientId = id;
                 }
 
@@ -166,7 +174,7 @@ export const ClientForm = forwardRef(({ clientData, onCancel }, ref) => {
                 <div className="mt-4">
                     <TextInput name="referralSource" label="Referral Source" state={client} changeHandler={changeHandler} />
                 </div>
-                {clientData && <div className="mt-4"><CheckboxInput name="createCase" label="Create default case" state={client} changeHandler={changeHandler} /></div>}
+                {!clientData && <div className="mt-4"><CheckboxInput name="createCase" label="Create default case" state={client} changeHandler={changeHandler} /></div>}
                 <div className="mt-4">
                     <Button isLoading={isLoading}>
                         <button type="button"

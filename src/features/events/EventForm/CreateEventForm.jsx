@@ -8,7 +8,15 @@ import { ClientName, ClientSelector } from '../../clients'
 import { CaseNumberName, CaseSelector } from '../../cases'
 
 import { eventTypeOptions } from '..'
-import { Button, DatetimeInput, NumberInput, PhoneInput, SelectInput, TextInput, UrlInput } from '../../../components'
+import {
+    Button,
+    DatetimeInput,
+    NumberInput,
+    PhoneInput,
+    SelectInput,
+    TextInput,
+    UrlInput
+} from '../../../components'
 
 export const CreateEventForm = forwardRef(({ onCancel }, ref) => {
     const timeoutRef = useRef(0)

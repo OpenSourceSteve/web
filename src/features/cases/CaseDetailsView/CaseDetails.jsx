@@ -14,11 +14,11 @@ export const CaseDetails = ({caseInstance, dialogRef, toggleFormDialog}) => {
     return (
         <div className="flex w-full px-8">
             <div className="basis-1/2">
-                <div className="mt-2">Client: {firstName} {lastName}</div>
-                <div className="mt-2">Jurisdiction: {jurisdiction}</div>
-                <div className="mt-2">Court: {court}</div>
-                <div className="mt-2">Judge: {judge}</div>
-                <div className="mt-2">Prosecutor: {prosecutor}</div>
+                <div className="mt-2 capitalize">Client: {firstName} {lastName}</div>
+                <div className="mt-2 capitalize">Jurisdiction: {jurisdiction}</div>
+                <div className="mt-2 capitalize">Court: {court}</div>
+                <div className="mt-2 capitalize">Judge: {judge}</div>
+                <div className="mt-2 capitalize">Prosecutor: {prosecutor}</div>
             </div>
             <div className="basis-1/2">
                 <button type="button"

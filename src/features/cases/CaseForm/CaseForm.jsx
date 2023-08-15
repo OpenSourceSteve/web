@@ -1,4 +1,5 @@
 import { forwardRef, useEffect, useState } from "react"
+
 import { Button, TextInput } from "../../../components"
 
 import {
@@ -11,6 +12,8 @@ import { ClientSelector } from "../../clients/ClientSelector"
 import { ClientName } from "../../clients/ClientName"
 
 import { caseAttributes } from "./caseAttributes"
+
+import { trimAndDecreaseCase } from "../../../utils"
 
 export const CaseForm = forwardRef(({ caseInstance, onCancel, clientId }, ref) => {
     const [isLoading, setIsLoading] = useState(false);
@@ -61,7 +64,9 @@ export const CaseForm = forwardRef(({ caseInstance, onCancel, clientId }, ref) =
         caseAttributes.forEach(attribute => {
             caseData[attribute] = caseDetails[attribute];
         })
-        // TODO: trim and lowercase all of the things
+
+        const fieldsToTrimAndDecreaseCase = ["court", "judge", "jurisdiction", "prosecutor"]
+        trimAndDecreaseCase(caseData, fieldsToTrimAndDecreaseCase)
 
         if (caseInstance) {
             await updateCase({ input: caseData }).unwrap()

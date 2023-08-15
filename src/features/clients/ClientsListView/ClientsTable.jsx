@@ -32,8 +32,8 @@ export const ClientsTable = ({ clients }) => {
                         data-client-id={client.id}
                         onClick={clickHandler}
                         onKeyDown={keyDownHandler}>
-                        <td className="basis-1/4">{client.lastName}</td>
-                        <td className="basis-1/4">{client.firstName}</td>
+                        <td className="basis-1/4 capitalize">{client.lastName}</td>
+                        <td className="basis-1/4 capitalize">{client.firstName}</td>
                         <td className="basis-1/4">{client.phone}</td>
                         <td className="basis-1/4">{client.email}</td>
                     </tr>

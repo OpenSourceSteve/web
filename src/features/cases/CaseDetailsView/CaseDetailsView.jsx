@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 
 import { useGetCaseQuery } from '../casesSlice'
@@ -18,6 +19,7 @@ import { CaseDetailsSidebar } from './CaseDetailsSidebar'
 import { CaseDetails } from './CaseDetails'
 
 export const CaseDetailsView = () => {
+    const dispatch = useDispatch()
     const navigate = useNavigate()
 
     const params = useParams();
@@ -83,8 +85,6 @@ export const CaseDetailsView = () => {
     if (isLoading) {
         <h2 className="">Loading...</h2>
     } else if (isSuccess && caseInstance) {
-        // TODO: set caseInstance using Redux
-
         if (caseInstance) {
             const { caseNumber, caseName } = caseInstance;
             content = (
@@ -92,7 +92,7 @@ export const CaseDetailsView = () => {
                     <h1 className="p-8 font-bold">Case: {caseNumber}: {caseName}</h1>
                     <CaseDetails caseInstance={caseInstance} dialogRef={caseDialogRef} toggleFormDialog={toggleDialog}/>
                     <TabbedNav activeTab={activeTab} tabs={navTabs} navTabHandler={navTabHandler}>
-                        {activeTab === "Events" && <EventsTab caseInstance={caseInstance} dialogRef={eventDialogRef} />}
+                        {activeTab === "Events" && <EventsTab dialogRef={eventDialogRef} />}
                         {activeTab === "Charges" && <ChargesTab caseInstance={caseInstance} dialogRef={chargeDialogRef} />}
                         {activeTab === "Notes" && <NotesTab caseInstance={caseInstance} dialogRef={noteDialogRef} />}
                         {activeTab === "Tasks" && <TasksTab caseInstance={caseInstance} dialogRef={taskDialogRef} />}

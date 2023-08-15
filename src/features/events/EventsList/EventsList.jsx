@@ -2,7 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import { useListEventsQuery } from '../eventsSlice';
 
-import { UpdateEventForm } from '../EventForm/UpdateEventForm'
+import { CaseEventForm } from '../EventForm/CaseEventForm'
 
 import { EventsEmptyState } from "./EventsEmptyState"
 
@@ -80,7 +80,7 @@ export const EventsList = ({ dialogRef }) => {
             listHeaders={listHeaders}
             listBodyClassName=""
             listRows={listRows}
-            ResourceForm={UpdateEventForm}
+            ResourceForm={CaseEventForm}
             ResourceEmptyState={EventsEmptyState} />
     )
 }

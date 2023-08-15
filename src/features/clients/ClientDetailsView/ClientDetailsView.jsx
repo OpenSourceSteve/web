@@ -50,7 +50,7 @@ export const ClientDetailsView = () => {
         if (client) {
             content = (
                 <div className="flex flex-col items-center">
-                    <h1 className="p-8 font-bold">Client: {client.firstName} {client.lastName}</h1>
+                    <h1 className="p-8 font-bold capitalize">Client: {client.firstName} {client.lastName}</h1>
                     <ClientDetails client={client} toggleFormDialog={toggleFormDialog} dialogRef={dialogRef} />
                     <TabbedNav activeTab={activeTab} tabs={navTabs} navTabHandler={navTabHandler}>
                         {activeTab === "cases" && <CasesTab clientId={clientId} />}

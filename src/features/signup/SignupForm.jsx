@@ -1,7 +1,12 @@
 import { useState } from "react";
 import { useDispatch } from 'react-redux'
 
-import { createPostJsonOptions, getEnv, logger } from "../../utils";
+import {
+  createPostJsonOptions,
+  trimAndDecreaseCase,
+  getEnv,
+  logger
+} from "../../utils";
 
 import { setUsername } from './signupSlice'
 
@@ -50,12 +55,6 @@ export const SignupForm = ({ onSuccess }) => {
         [field]: errorMessage
       },
       hasErrors: true
-    })
-  }
-
-  const trimAndDecreaseCase = (obj, fields) => {
-    fields.forEach(field => {
-      obj[field] = obj[field].trim().toLowerCase()
     })
   }
 

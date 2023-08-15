@@ -1,7 +1,7 @@
 export const EventsEmptyState = ({ openDialog }) => (
     <div className="flex flex-col justify-items-center items-center">
         <h2>You have don't have any events yet.</h2>
-        <p>Would you like to add a new one?</p>
+        <p>Would you like to create a new one?</p>
         <button onClick={openDialog}
             className={`
                 mt-4
@@ -14,6 +14,6 @@ export const EventsEmptyState = ({ openDialog }) => (
                 focus:ring focus:ring-offset-2 focus:ring-blue-500 focus:ring-opacity-80
                 cursor-pointer
             `}
-        >Add New Event</button>
+        >Create New Event</button>
     </div>
 )
