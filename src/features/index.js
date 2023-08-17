@@ -4,6 +4,7 @@ import { ChargesTab } from './charges'
 import { ClientDetailsView, ClientsListView } from './clients'
 import { Confirmation } from './confirmation'
 import { Docket } from './docket'
+import { ErrorView } from './error'
 import { EventsTab } from './events'
 import { FinancesTab } from './finances'
 import { Home } from './home'
@@ -23,6 +24,7 @@ export {
     ClientsListView,
     Confirmation,
     Docket,
+    ErrorView,
     EventsTab,
     FinancesTab,
     Home,

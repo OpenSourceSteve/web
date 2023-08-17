@@ -7,6 +7,7 @@ import {
     ClientsListView,
     Confirmation,
     Docket,
+    ErrorView,
     // FinancesDetail,
     // FinancesList,
     // Finances,
@@ -62,7 +63,8 @@ import {
     // },
     {
       path: "/",
-      element: <Home />
+      element: <Home />,
+      errorElement: <ErrorView />
     },
     {
       path: "/login",
