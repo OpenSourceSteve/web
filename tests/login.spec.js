@@ -19,7 +19,7 @@ test('page renders', async ({ page }) => {
   await expect(page.getByRole('textbox', {name: 'Email Address'})).toBeVisible();
   await expect(page.getByRole('textbox', {name: 'Password'})).toBeVisible();
   await expect(page.getByRole('button', {name: 'Sign in'})).toBeVisible();
-  await expect(page.getByRole('link', {name: 'Reset Password'})).toBeVisible();
+  await expect(page.getByRole('link', {name: 'Forgot Password?'})).toBeVisible();
 });
 
 // Does the signup link work?

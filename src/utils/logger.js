@@ -11,19 +11,19 @@ export const logger = () => {
     const info = data => {
         console.log(data)
 
-        const postJsonOptions = createPostJsonOptions(data)
+        // const postJsonOptions = createPostJsonOptions(data)
 
-        fetch(loggerURL, postJsonOptions)
+        // fetch(loggerURL, postJsonOptions)
     }
 
     const error = (context, error) => {
         console.error("Context:", context, "\nError:", error)
 
-        const body = {context, error}
+        // const body = {context, error}
 
-        const postJsonOptions = createPostJsonOptions(body)
+        // const postJsonOptions = createPostJsonOptions(body)
 
-        fetch(loggerURL, postJsonOptions)
+        // fetch(loggerURL, postJsonOptions)
     }
 
     return {info, error}

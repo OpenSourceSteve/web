@@ -62,9 +62,9 @@ export const LoginForm = ({ onReset }) => {
         }
     }
 
-    const resetPasswordHandler = event => {
+    const forgotPasswordHandler = event => {
         event.preventDefault()
-        navigate('/reset-password')
+        navigate('/forgot-password')
     }
     return (
         <form className="w-96 border border-black rounded-lg px-8 pt-8">
@@ -89,7 +89,7 @@ export const LoginForm = ({ onReset }) => {
                         `}>Sign in</button>
             </Button>
             <div className="text-red-500 font-bold mt-4 text-center">{state.error?.["submit"]}</div>
-            <a href="/reset-password" onClick={resetPasswordHandler} className={`my-4 block text-sm text-center font-medium text-blue-600 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 self-center`}>Reset Password</a>
+            <a href="/forgot-password" onClick={forgotPasswordHandler} className={`my-4 block text-sm text-center font-medium text-blue-600 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 self-center`}>Forgot Password?</a>
         </form>
     )
 }

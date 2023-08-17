@@ -10,7 +10,7 @@ import { FinancesTab } from './finances'
 import { Home } from './home'
 import { Login } from './login'
 import { NotesTab } from './notes'
-import { PasswordReset } from './passwordReset'
+import { ForgotPassword } from './forgotPassword'
 import { Signup } from './signup'
 import { TasksTab } from './tasks'
 
@@ -26,11 +26,11 @@ export {
     Docket,
     ErrorView,
     EventsTab,
+    ForgotPassword,
     FinancesTab,
     Home,
     Login,
     NotesTab,
-    PasswordReset,
     Signup,
     TasksTab
 }

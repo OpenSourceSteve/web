@@ -6,7 +6,7 @@ import { EmailForm } from './EmailForm'
 import { CollectionForm } from './CollectionForm'
 import { ConfirmationMessage } from './ConfirmationMessage'
 
-export const PasswordReset = ({ onBack }) => {
+export const ForgotPassword = ({ onBack }) => {
     const [state, setState] = useState({ email: "", code: "", password: "" });
     const [showEmailForm, setShowEmailForm] = useState(true)
     const [showCollectionForm, setShowCollectionForm] = useState(false)

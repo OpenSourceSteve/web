@@ -11,8 +11,8 @@ import {
     // FinancesDetail,
     // FinancesList,
     // Finances,
+    ForgotPassword,
     Login,
-    PasswordReset,
     // Profile,
     Home,
     // Settings,
@@ -71,8 +71,8 @@ import {
       element: <Login />
     },
     {
-      path: "/reset-password",
-      element: <PasswordReset />
+      path: "/forgot-password",
+      element: <ForgotPassword />
     },
     // {
     //   path: "/profile",
