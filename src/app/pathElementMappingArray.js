@@ -3,6 +3,7 @@ import {
     Authentication,
     CaseDetailsView,
     CasesListView,
+    ChangePasswordView,
     ClientDetailsView,
     ClientsListView,
     Confirmation,
@@ -13,9 +14,9 @@ import {
     // Finances,
     ForgotPassword,
     Login,
-    // Profile,
+    ProfileView,
     Home,
-    // Settings,
+    SettingsView,
     Signup,
     // Terms
   } from "../features"
@@ -32,6 +33,10 @@ import {
     {
       path: "/cases/:caseId",
       element: <Authentication><CaseDetailsView /></Authentication>
+    },
+    {
+      path: "/change-password",
+      element: <Authentication><ChangePasswordView /></Authentication>
     },
     {
       path: "/clients",
@@ -74,14 +79,14 @@ import {
       path: "/forgot-password",
       element: <ForgotPassword />
     },
-    // {
-    //   path: "/profile",
-    //   element: <Authentication><Profile /></Authentication>
-    // },
-    // {
-    //   path: "/settings",
-    //   element: <Authentication><Settings /></Authentication>
-    // },
+    {
+      path: "/profile",
+      element: <Authentication><ProfileView /></Authentication>
+    },
+    {
+      path: "/settings",
+      element: <Authentication><SettingsView /></Authentication>
+    },
     {
       path: "/signup",
       element: <Signup />
