@@ -30,3 +30,7 @@ test('signup link', async ({ page }) => {
   await expect(page).toHaveTitle(/EasyLegal.app/);
   await expect(page).toHaveURL('http://localhost:3000/signup')
 });
+
+// NOTE: There is no test for logging in in this file because the
+// login page is implicitly tested in fixtures.js and all authenticated
+// tests (e.g. clients, cases, charges...) rely on it.

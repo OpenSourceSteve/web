@@ -195,7 +195,7 @@ export const handler = async (event) => {
       const cognitoUser = await client.send(adminGetUserCommand);
 
       if (cognitoUser.Enabled) {
-        // TODO: send email saying someone tried to create account but account already exists
+        // send email saying someone tried to create account but account already exists
         const electronicMail = new SendEmailCommand({
           Destination: {
             CcAddresses: [],
