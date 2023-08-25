@@ -42,13 +42,12 @@ export const test = baseTest.extend({
       }
       const command = new GetObjectCommand(input);
       const response = await s3Client.send(command);
-      console.log("RESPONSE data:", response);
-      credentials = response.Body;
+      const responseStr = await response.Body.transformToString();
+      credentials = JSON.parse(responseStr)
     }
 
     const page = await browser.newPage({ storageState: undefined });
     const account = await acquireAccount(id);
-    console.log("account:", account)
 
     await page.goto('http://localhost:3000/login');
     await page.getByLabel('Email address').fill(account.username);
