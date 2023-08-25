@@ -3,13 +3,26 @@ const { projects } = require('../playwright.config')
 
 test('webkit is commented', async () => {
 
-  let isCommented = true
+  let isWebkitCommented = true
 
   projects.forEach(project => {
     if (project.name === "webkit") {
-        isCommented = false
+      isWebkitCommented = false
     }
   })
 
-  expect(isCommented).toBeTruthy()
+  expect(isWebkitCommented).toBeTruthy()
+});
+
+test('firefox is NOT commented', async () => {
+
+  let isFirefoxCommented = true
+
+  projects.forEach(project => {
+    if (project.name === "firefox") {
+      isFirefoxCommented = false
+    }
+  })
+
+  expect(isFirefoxCommented).toBeFalsy()
 });
