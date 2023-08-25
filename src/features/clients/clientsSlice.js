@@ -1,7 +1,7 @@
 import { apiSlice } from '../api/apiSlice';
 import { gql } from 'graphql-request'
 import { getClient, listClients } from '../../graphql/queries';
-import { createClient, updateClient } from '../../graphql/mutations';
+import { createClient, updateClient, deleteClient } from '../../graphql/mutations';
 import { createSlice } from '@reduxjs/toolkit';
 
 export const extendedAPISlice = apiSlice.injectEndpoints({
@@ -68,12 +68,23 @@ export const extendedAPISlice = apiSlice.injectEndpoints({
       }),
       invalidatesTags: ['Client'],
       transformResponse: data => data.updateClient
+    }),
+    deleteClient: builder.mutation({
+      query: ({ input, condition }) => ({
+        document: gql`${deleteClient}`,
+        variables: {
+          input,
+          condition
+        }
+      }),
+      invalidatesTags: ['Client']
     })
   })
 })
 
 export const {
   useCreateClientMutation,
+  useDeleteClientMutation,
   useGetClientQuery,
   useListClientsQuery,
   useGetClientsWithNameQuery,

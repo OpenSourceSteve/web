@@ -7,7 +7,7 @@ export const client1 = {
     address1: "Address Line One",
     address2: "Address Line Two",
     city: "Some City",
-    state: "Greate State",
+    state: "Great State",
     zip: "12345",
     referralSource: "None",
     createDefaultCase: true

@@ -40,10 +40,10 @@ test('cases link', async ({ page }) => {
   await expect(page).toHaveURL('http://localhost:3000/cases')
 });
 
-test('create client', async ({ page }) => {
+// I had to combine create and delete because they were running asynchronously
+test('create and delete client', async ({ page }) => {
+  // test create
   await page.goto('http://localhost:3000/clients');
-
-  await expect(page.locator('tbody > tr')).toHaveCount(0);
 
   await page.getByRole('button', { name: 'Add New Client' }).click()
 
@@ -76,7 +76,7 @@ test('create client', async ({ page }) => {
   await page.getByRole('textbox', { name: "State"}).fill(client1.state);
   await page.getByRole('textbox', { name: "Zip"}).fill(client1.zip);
   await page.getByRole('textbox', { name: "Referral Source"}).fill(client1.referralSource);
-  await page.getByRole('checkbox', {name: "Create default case"}).check();
+  await page.getByRole('checkbox', { name: "Create default case" }).check();
 
   await page.getByRole('button', { name: 'Submit' }).click();
 
@@ -85,26 +85,16 @@ test('create client', async ({ page }) => {
 
   await page.goto('http://localhost:3000/clients');
 
-  await expect(page.locator('tbody > tr')).toHaveCount(1);
-})
+  await expect(page.locator('ol > li')).toHaveCount(1);
 
-// Can the user update a client?
-test('update client', async ({ page }) => {
-  /* TODO:
-    click on existing client
-    does a dialog appear?
-    change one or more input fields
-    click submit
-    does the updated client show up?
-  */
-})
+  await page.getByRole('link', { name: `${client1.lastName} ${client1.firstName}`}).click()
 
-// Can the user delete a client?
-test('delete client', async ({ page }) => {
-  /* TODO:
-    list clients
-    delete each one
-    confirm there are no more clients
-  */
+  await expect(page).toHaveURL(/http:\/\/localhost:3000\/clients\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/);
+
+  await page.getByRole('button', { name: 'Delete Client' }).click()
+
+  await expect(page).toHaveURL(/http:\/\/localhost:3000\/clients/);
+
+  await expect(page.locator('ol > li')).toHaveCount(0);
 
 })

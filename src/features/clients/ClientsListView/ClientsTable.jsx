@@ -24,21 +24,22 @@ export const ClientsTable = ({ clients }) => {
                     <th className="basis-1/4 flex justify-start"><span>Email</span></th>
                 </tr>
             </thead>
-            <tbody className="">
+            <ol className="w-full">
                 {clients.map(client => (
-                    <tr key={client.id}
+                    <li key={client.id}
                         tabIndex={0}
-                        className="flex py-4 mx-8 hover:bg-slate-100 cursor-pointer"
+                        className="flex py-4 px-8 hover:bg-slate-100 w-full"
                         data-client-id={client.id}
                         onClick={clickHandler}
-                        onKeyDown={keyDownHandler}>
-                        <td className="basis-1/4 capitalize">{client.lastName}</td>
-                        <td className="basis-1/4 capitalize">{client.firstName}</td>
-                        <td className="basis-1/4">{client.phone}</td>
-                        <td className="basis-1/4">{client.email}</td>
-                    </tr>
+                        onKeyDown={keyDownHandler}><a className="w-full flex" href={`/clients/${client.id}`} aria-label={`${client.lastName} ${client.firstName}`}>
+                        <div className="basis-1/4 capitalize inline">{client.lastName}</div>
+                        <div className="basis-1/4 capitalize inline">{client.firstName}</div>
+                        <div className="basis-1/4 inline">{client.phone}</div>
+                        <div className="basis-1/4 inline">{client.email}</div>
+                        </a>
+                    </li>
                 ))}
-            </tbody>
+            </ol>
         </table>
     )
 }
