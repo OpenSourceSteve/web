@@ -37,9 +37,45 @@
         },
         "signupWorkflow": {
           "deploymentBucketName": "amplify-web-dev-233335-deployment",
-          "s3Key": "amplify-builds/signupWorkflow-2f724466563361383434-build.zip",
+          "s3Key": "amplify-builds/signupWorkflow-30313074717347573557-build.zip",
           "clientId": "520eein2dpa1huqkicuujatkac",
           "userpoolId": "us-west-1_Sdkcf2w67"
+        },
+        "SignupCommand": {
+          "deploymentBucketName": "amplify-web-dev-233335-deployment",
+          "s3Key": "amplify-builds/SignupCommand-2b536648665077696679-build.zip",
+          "clientId": "520eein2dpa1huqkicuujatkac",
+          "apiWebGraphqlapiendpointoutput": "https://ho2ezw3tancixnygtz324wd3qe.appsync-api.us-west-1.amazonaws.com/graphql",
+          "userpoolId": "us-west-1_Sdkcf2w67"
+        },
+        "AdminDisableUserCommand": {
+          "deploymentBucketName": "amplify-web-dev-233335-deployment",
+          "s3Key": "amplify-builds/AdminDisableUserCommand-41396d5a6265566a3454-build.zip",
+          "userpoolId": "us-west-1_Sdkcf2w67"
+        },
+        "CreateAppUser": {
+          "deploymentBucketName": "amplify-web-dev-233335-deployment",
+          "s3Key": "amplify-builds/CreateAppUser-4a6e5a7855794c6b4151-build.zip",
+          "apiWebGraphqlapiendpointoutput": "https://ho2ezw3tancixnygtz324wd3qe.appsync-api.us-west-1.amazonaws.com/graphql"
+        },
+        "CreateConsent": {
+          "deploymentBucketName": "amplify-web-dev-233335-deployment",
+          "s3Key": "amplify-builds/CreateConsent-4159684849702f4a4f38-build.zip",
+          "apiWebGraphqlapiendpointoutput": "https://ho2ezw3tancixnygtz324wd3qe.appsync-api.us-west-1.amazonaws.com/graphql"
+        },
+        "CreateSignup": {
+          "deploymentBucketName": "amplify-web-dev-233335-deployment",
+          "s3Key": "amplify-builds/CreateSignup-39795265653170476f6b-build.zip"
+        },
+        "ConfirmationFlow": {
+          "clientId": "520eein2dpa1huqkicuujatkac",
+          "userpoolId": "us-west-1_Sdkcf2w67",
+          "deploymentBucketName": "amplify-web-dev-233335-deployment",
+          "s3Key": "amplify-builds/ConfirmationFlow-3161526a6b4247325270-build.zip"
+        },
+        "CreateLawyer": {
+          "deploymentBucketName": "amplify-web-dev-233335-deployment",
+          "s3Key": "amplify-builds/CreateLawyer-6357737744537178457a-build.zip"
         }
       }
     }

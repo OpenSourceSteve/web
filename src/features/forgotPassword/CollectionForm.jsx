@@ -6,7 +6,7 @@ import { createPostJsonOptions, getEnv, logger } from "../../utils";
 
 import { useNavigate } from 'react-router-dom';
 
-import { LAMBDAS } from '../../app/lambdas';
+import { URLS } from '../../app/urls';
 
 export const CollectionForm = ({ onSuccess, onChange, state }) => {
     const Logger = logger();
@@ -15,7 +15,7 @@ export const CollectionForm = ({ onSuccess, onChange, state }) => {
 
     const ENV = getEnv()
 
-    const { resendURL } = LAMBDAS[ENV]
+    const { resendLambda } = URLS[ENV]
 
     const [isLoading, setIsLoadiing] = useState(false)
 
@@ -37,7 +37,7 @@ export const CollectionForm = ({ onSuccess, onChange, state }) => {
     const resendHandler = async () => {
         const postJsonOptions = createPostJsonOptions({ username: email })
 
-        const response = await fetch(resendURL, postJsonOptions);
+        const response = await fetch(resendLambda, postJsonOptions);
 
         return response.json().then(data => {
             return {

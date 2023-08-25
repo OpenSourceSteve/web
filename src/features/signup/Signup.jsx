@@ -9,7 +9,7 @@ export const Signup = () => {
 
     const onSignupSuccess = ({ statusCode }) => {
 
-        if (statusCode === 201) {
+        if (statusCode === 202) {
             navigate('/confirmation')
         }
     }

@@ -58,6 +58,81 @@
     }
   },
   "function": {
+    "AdminDisableUserCommand": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "ConfirmationFlow": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "CreateAppUser": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput"
+          ],
+          "category": "api",
+          "resourceName": "web"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "CreateConsent": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput"
+          ],
+          "category": "api",
+          "resourceName": "web"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "CreateLawyer": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput"
+          ],
+          "category": "api",
+          "resourceName": "web"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "CreateSignup": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput"
+          ],
+          "category": "api",
+          "resourceName": "web"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "SignupCommand": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "clientLogger": {
       "build": true,
       "providerPlugin": "awscloudformation",
@@ -101,6 +176,182 @@
     }
   },
   "parameters": {
+    "AMPLIFY_function_AdminDisableUserCommand_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "AdminDisableUserCommand"
+        }
+      ]
+    },
+    "AMPLIFY_function_AdminDisableUserCommand_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "AdminDisableUserCommand"
+        }
+      ]
+    },
+    "AMPLIFY_function_AdminDisableUserCommand_userpoolId": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "AdminDisableUserCommand"
+        }
+      ]
+    },
+    "AMPLIFY_function_ConfirmationFlow_clientId": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ConfirmationFlow"
+        }
+      ]
+    },
+    "AMPLIFY_function_ConfirmationFlow_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ConfirmationFlow"
+        }
+      ]
+    },
+    "AMPLIFY_function_ConfirmationFlow_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ConfirmationFlow"
+        }
+      ]
+    },
+    "AMPLIFY_function_ConfirmationFlow_userpoolId": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ConfirmationFlow"
+        }
+      ]
+    },
+    "AMPLIFY_function_CreateAppUser_apiWebGraphqlapiendpointoutput": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreateAppUser"
+        }
+      ]
+    },
+    "AMPLIFY_function_CreateAppUser_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreateAppUser"
+        }
+      ]
+    },
+    "AMPLIFY_function_CreateAppUser_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreateAppUser"
+        }
+      ]
+    },
+    "AMPLIFY_function_CreateConsent_apiWebGraphqlapiendpointoutput": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreateConsent"
+        }
+      ]
+    },
+    "AMPLIFY_function_CreateConsent_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreateConsent"
+        }
+      ]
+    },
+    "AMPLIFY_function_CreateConsent_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreateConsent"
+        }
+      ]
+    },
+    "AMPLIFY_function_CreateLawyer_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreateLawyer"
+        }
+      ]
+    },
+    "AMPLIFY_function_CreateLawyer_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreateLawyer"
+        }
+      ]
+    },
+    "AMPLIFY_function_CreateSignup_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreateSignup"
+        }
+      ]
+    },
+    "AMPLIFY_function_CreateSignup_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreateSignup"
+        }
+      ]
+    },
+    "AMPLIFY_function_SignupCommand_apiWebGraphqlapiendpointoutput": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "SignupCommand"
+        }
+      ]
+    },
+    "AMPLIFY_function_SignupCommand_clientId": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "SignupCommand"
+        }
+      ]
+    },
+    "AMPLIFY_function_SignupCommand_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "SignupCommand"
+        }
+      ]
+    },
+    "AMPLIFY_function_SignupCommand_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "SignupCommand"
+        }
+      ]
+    },
+    "AMPLIFY_function_SignupCommand_userpoolId": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "SignupCommand"
+        }
+      ]
+    },
     "AMPLIFY_function_clientLogger_deploymentBucketName": {
       "usedBy": [
         {
