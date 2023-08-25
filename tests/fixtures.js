@@ -1,18 +1,19 @@
-import { test as baseTest, expect } from '@playwright/test';
 import fs from 'fs';
 import path from 'path';
 
-import { account0 } from './.auth/initial_0.js'
-import { account1 } from './.auth/initial_1.js'
-import { account2 } from './.auth/initial_2.js'
-import { account3 } from './.auth/initial_3.js'
+import { S3Client, GetObjectCommand } from "@aws-sdk/client-s3";
+import { test as baseTest, expect } from '@playwright/test';
 
-const accounts = [account0, account1, account2, account3]
+import { credentials } from './.auth/credentials.js';
 
 export * from '@playwright/test';
 
+const ENV = process.env.ENV;
+
+const s3Client = new S3Client({ AWS_REGION: ENV})
+
 const acquireAccount = accountId => {
-    return accounts[accountId]
+    return credentials[accountId]
 }
 
 export const test = baseTest.extend({
@@ -28,6 +29,14 @@ export const test = baseTest.extend({
     if (fs.existsSync(fileName)) {
       await use(fileName);
       return;
+    } else {
+      const input = {
+        Bucket: "testaccounts213993515054",
+        Key: "credentials.js"
+      }
+      const command = new GetObjectCommand(input);
+      const response = await s3Client.send(command);
+      console.log("RESPONSE:", response);
     }
 
     const page = await browser.newPage({ storageState: undefined });

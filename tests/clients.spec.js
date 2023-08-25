@@ -85,16 +85,19 @@ test('create and delete client', async ({ page }) => {
 
   await page.goto('http://localhost:3000/clients');
 
+  // Confirm client was created
   await expect(page.locator('ol > li')).toHaveCount(1);
 
   await page.getByRole('link', { name: `${client1.lastName} ${client1.firstName}`}).click()
 
   await expect(page).toHaveURL(/http:\/\/localhost:3000\/clients\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/);
 
+  // Delete client
   await page.getByRole('button', { name: 'Delete Client' }).click()
 
   await expect(page).toHaveURL(/http:\/\/localhost:3000\/clients/);
 
+  // Confirm client was deleted
   await expect(page.locator('ol > li')).toHaveCount(0);
 
 })

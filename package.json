@@ -5,6 +5,7 @@
   "dependencies": {
     "@aws-amplify/api-graphql": "^3.4.5",
     "@aws-amplify/cli-extensibility-helper": "^3.0.13",
+    "@aws-sdk/client-s3": "^3.398.0",
     "@aws-sdk/client-ses": "^3.379.1",
     "@reduxjs/toolkit": "^1.9.5",
     "@rtk-query/graphql-request-base-query": "^2.2.0",
