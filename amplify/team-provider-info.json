@@ -77,6 +77,55 @@
           "deploymentBucketName": "amplify-web-dev-233335-deployment",
           "s3Key": "amplify-builds/CreateLawyer-6357737744537178457a-build.zip"
         }
+        "web": {},
+        "web1c61ecc2": {}
+      }
+    }
+  },
+  "demo": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-web-demo-111442-authRole",
+      "UnauthRoleArn": "arn:aws:iam::213993515054:role/amplify-web-demo-111442-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::213993515054:role/amplify-web-demo-111442-authRole",
+      "Region": "us-west-1",
+      "DeploymentBucketName": "amplify-web-demo-111442-deployment",
+      "UnauthRoleName": "amplify-web-demo-111442-unauthRole",
+      "StackName": "amplify-web-demo-111442",
+      "StackId": "arn:aws:cloudformation:us-west-1:213993515054:stack/amplify-web-demo-111442/72b2ab90-3ace-11ee-afc6-020a83ebf373",
+      "AmplifyAppId": "d1vcxk6a0g3i5"
+    },
+    "categories": {
+      "auth": {
+        "web1c61ecc2": {}
+      },
+      "function": {
+        "clientLogger": {
+          "deploymentBucketName": "amplify-web-demo-111442-deployment",
+          "s3Key": "amplify-builds/clientLogger-36753765586d742f3464-build.zip"
+        },
+        "confirmationWorkflow": {
+          "deploymentBucketName": "amplify-web-demo-111442-deployment",
+          "s3Key": "amplify-builds/confirmationWorkflow-512b574a396b42364d4c-build.zip",
+          "clientId": "6pmncb8o89v3gh2dd31upotlp",
+          "userpoolId": "us-west-1_MavgXtULP"
+        },
+        "resendConfirmationCode": {
+          "deploymentBucketName": "amplify-web-demo-111442-deployment",
+          "s3Key": "amplify-builds/resendConfirmationCode-7968376e676536446261-build.zip",
+          "clientId": "6pmncb8o89v3gh2dd31upotlp",
+          "userpoolId": "us-west-1_MavgXtULP"
+        },
+        "signupWorkflow": {
+          "deploymentBucketName": "amplify-web-demo-111442-deployment",
+          "s3Key": "amplify-builds/signupWorkflow-2f724466563361383434-build.zip",
+          "clientId": "6pmncb8o89v3gh2dd31upotlp",
+          "userpoolId": "us-west-1_MavgXtULP"
+        },
+        "web": {},
+        "web1c61ecc2": {}
+      },
+      "api": {
+        "web": {}
       }
     }
   }
