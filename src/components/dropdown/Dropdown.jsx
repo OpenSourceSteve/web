@@ -3,8 +3,6 @@ import { useNavigate } from "react-router-dom"
 
 import { Link } from "../link";
 
-// import styles from "./Dropdown.module.css"
-
 export const Dropdown = ({ title, signOut }) => {
     const navigate = useNavigate()
 

@@ -18,7 +18,7 @@ import {
   TextInput
 } from "../../components";
 
-import { LAMBDAS } from "../../app/lambdas";
+import { URLS } from "../../app/urls";
 
 export const SignupForm = ({ onSuccess }) => {
   const Logger = logger();
@@ -101,7 +101,7 @@ export const SignupForm = ({ onSuccess }) => {
       // Create user and record of consent
       const postJsonOptions = createPostJsonOptions(userSubmittedData);
       try {
-        const response = await fetch(LAMBDAS[ENV].signupURL, postJsonOptions);
+        const response = await fetch(URLS[ENV].signupLambda, postJsonOptions);
 
         response.json().then(data => {
           setIsLoading(false);
@@ -110,6 +110,7 @@ export const SignupForm = ({ onSuccess }) => {
         })
       } catch (error) {
         Logger.error("Sign up:", error);
+        setIsLoading(false);
       }
     } else {
       setIsLoading(false);

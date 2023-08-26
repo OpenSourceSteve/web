@@ -22,7 +22,7 @@ export const Link = ({ path, text, color, onClick, inline }) => {
 
     // 1. current resource view is list page -> bold text but no hyperlink
     if (currentPage === path && !location.search) {
-        return <div className={`text-${color} font-bold`}>{text || path}</div>
+        return <div className={`text-${color} font-bold capitalize`}>{text || path}</div>
     }
 
     // 2. current resource view is detail page -> bold text and hyperlink

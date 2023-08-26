@@ -1,0 +1,8 @@
+{
+    "adminRoleNames": [
+        "arn:aws:iam::213993515054:role/webLambdaRole7fbc5a39-dev",
+        "arn:aws:iam::213993515054:role/webLambdaRoledbb5daf3-dev",
+        "arn:aws:iam::213993515054:role/webLambdaRole70fed293-dev",
+        "arn:aws:iam::213993515054:role/webLambdaRole8719fb9e-dev "
+    ]
+}

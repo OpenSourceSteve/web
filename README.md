@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Welcome to EasyLegal.app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+EasyLegal.app is an integrated attorney productivity suite that keeps track of clients, cases, court dates and financial accounts. It is a React app built on Amazon Web Services (AWS) and is currently deployed at [EasyLegal.app](https://demo.easylegal.app). Feel free to visit and create an account.
 
-## Available Scripts
+## Features
+EasyLegal.app is designed to make the life of criminal defense attorneys easier.  It has a number of features to that end.
 
-In the project directory, you can run:
+### Client Management
 
-### `npm start`
+### Case Management
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Automated Reminders
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Integrated Stripe Billing
 
-### `npm test`
+## Achitecture
+As mentioned before, the app is built on AWS's Amplify framework.  Below are some of the AWS services used.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### AWS Cloudfront
+Here you can talk about the frontend stack.
 
-### `npm run build`
+### AWS Lambdas and CloudWatch
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### AWS Cognito
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### AWS AppSync and DynamoDB
+Talk about GraphQL
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Playwright Testing Framework
 
-### `npm run eject`
+## Statistics
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Bundle Size
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Etc.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Why did I build this?
+Help a friend solve a problem.

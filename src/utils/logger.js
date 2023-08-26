@@ -1,29 +1,29 @@
 import { createPostJsonOptions } from "./functions/createPostJsonOptions"
 import { getEnv } from "./functions/getEnv"
-import { LAMBDAS } from "../app/lambdas"
+import { URLS } from "../app/urls"
 
 export const logger = () => {
 
     const ENV = getEnv()
 
-    const { loggerURL } = LAMBDAS[ENV];
+    const { loggerLambda } = URLS[ENV];
 
     const info = data => {
         console.log(data)
 
-        const postJsonOptions = createPostJsonOptions(data)
+        // const postJsonOptions = createPostJsonOptions(data)
 
-        fetch(loggerURL, postJsonOptions)
+        // fetch(loggerLambda, postJsonOptions)
     }
 
     const error = (context, error) => {
         console.error("Context:", context, "\nError:", error)
 
-        const body = {context, error}
+        // const body = {context, error}
 
-        const postJsonOptions = createPostJsonOptions(body)
+        // const postJsonOptions = createPostJsonOptions(body)
 
-        fetch(loggerURL, postJsonOptions)
+        // fetch(loggerLambda, postJsonOptions)
     }
 
     return {info, error}

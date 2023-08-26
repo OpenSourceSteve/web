@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "api": {
+      "web": [
+        "Mutation"
+      ]
+    }
+  },
+  "lambdaLayers": [],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "apiWebGraphqlapiendpointoutput",
+      "environmentVariableName": "API_WEB_GRAPHQLAPIENDPOINTOUTPUT"
+    }
+  ]
+}

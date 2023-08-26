@@ -5,6 +5,7 @@
   "dependencies": {
     "@aws-amplify/api-graphql": "^3.4.5",
     "@aws-amplify/cli-extensibility-helper": "^3.0.13",
+    "@aws-sdk/client-s3": "^3.398.0",
     "@aws-sdk/client-ses": "^3.379.1",
     "@reduxjs/toolkit": "^1.9.5",
     "@rtk-query/graphql-request-base-query": "^2.2.0",
@@ -22,7 +23,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -44,8 +46,11 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@playwright/test": "^1.37.0",
     "@tailwindcss/forms": "^0.5.4",
     "@testing-library/react": "^14.0.0",
-    "tailwindcss": "^3.3.3"
+    "husky": "^8.0.0",
+    "tailwindcss": "^3.3.3",
+    "v8-to-istanbul": "^9.1.0"
   }
 }

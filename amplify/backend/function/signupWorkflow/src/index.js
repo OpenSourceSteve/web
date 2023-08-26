@@ -1,8 +1,8 @@
 /* Amplify Params - DO NOT EDIT
-	API_WEB_GRAPHQLAPIENDPOINTOUTPUT
-	API_WEB_GRAPHQLAPIIDOUTPUT
-	ENV
-	REGION
+  API_WEB_GRAPHQLAPIENDPOINTOUTPUT
+  API_WEB_GRAPHQLAPIIDOUTPUT
+  ENV
+  REGION
 Amplify Params - DO NOT EDIT */
 
 import crypto from '@aws-crypto/sha256-js';
@@ -20,7 +20,7 @@ import {
 } from "@aws-sdk/client-cognito-identity-provider";
 
 const GRAPHQL_ENDPOINT = process.env.API_WEB_GRAPHQLAPIENDPOINTOUTPUT;
-const AWS_REGION = process.env.AWS_REGION || 'us-east-1';
+const AWS_REGION = process.env.AWS_REGION;
 const CLIENT_ID = process.env.CLIENT_ID;
 const USERPOOL_ID = process.env.USERPOOL_ID;
 const { Sha256 } = crypto;
@@ -185,8 +185,7 @@ export const handler = async (event) => {
     if (error.name === "UsernameExistsException") {
       // NOTE: there are two *likely* scenarios here:
       // 1. user didn't confirm their account first time through sign up process
-      // 2. someone is trying to create an account that already exists (maybe maliciouss, maybe not)
-      // get existing user
+      // 2. someone is trying to create an account that already exists (maybe malicious, maybe not)
       const adminGetUserCommand = new AdminGetUserCommand({
         Username: email,
         UserPoolId: USERPOOL_ID
@@ -195,7 +194,7 @@ export const handler = async (event) => {
       const cognitoUser = await client.send(adminGetUserCommand);
 
       if (cognitoUser.Enabled) {
-        // TODO: send email saying someone tried to create account but account already exists
+        // send email saying someone tried to create account but account already exists
         const electronicMail = new SendEmailCommand({
           Destination: {
             CcAddresses: [],

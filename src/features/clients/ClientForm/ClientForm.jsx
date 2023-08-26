@@ -86,6 +86,10 @@ export const ClientForm = forwardRef(({ clientData, onCancel }, ref) => {
             const fieldsToTrimAndDecreaseCase = ["firstName", "lastName"]
             trimAndDecreaseCase(clientData, fieldsToTrimAndDecreaseCase)
 
+            if (clientData.dateOfBirth === "") {
+                clientData.dateOfBirth = null
+            }
+
             if (clientData.email === "") {
                 clientData.email = null
             }

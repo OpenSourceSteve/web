@@ -11,7 +11,8 @@ export const Login = () => {
             <Header links={links} />
             <main className="h-full">
                 <Section>
-                    <div className="flex justify-center items-center h-full">
+                    <div className="flex flex-col justify-center items-center h-full">
+                        <h1 className="text-black">Login</h1>
                         <LoginForm />
                     </div>
                 </Section>

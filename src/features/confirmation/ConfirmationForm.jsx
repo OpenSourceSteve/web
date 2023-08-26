@@ -1,14 +1,14 @@
 import { useState } from "react";
 
 import { createPostJsonOptions, getEnv } from "../../utils";
-import { LAMBDAS } from "../../app/lambdas";
+import { URLS } from "../../app/urls";
 
 import { Button, NumberInput } from "../../components";
 
 export const ConfirmationForm = ({ onSuccess, username }) => {
   const ENV = getEnv()
 
-  const { confirmationURL, resendURL } = LAMBDAS[ENV];
+  const { confirmationLambda, resendLambda } = URLS[ENV];
 
   const [state, setState] = useState({ code: "" })
   const [isLoading, setIsLoading] = useState(false);
@@ -25,10 +25,10 @@ export const ConfirmationForm = ({ onSuccess, username }) => {
 
     const postJsonOptions = createPostJsonOptions({ username, code: state.code })
 
-    const response = await fetch(confirmationURL, postJsonOptions);
+    const response = await fetch(confirmationLambda, postJsonOptions);
 
     response.json().then(data => {
-      if (response.status === 201) {
+      if (response.status === 200) {
         onSuccess()
         setIsLoading(false)
       }
@@ -46,7 +46,7 @@ export const ConfirmationForm = ({ onSuccess, username }) => {
   const resendHandler = async () => {
     const postJsonOptions = createPostJsonOptions({ username })
 
-    const response = await fetch(resendURL, postJsonOptions);
+    const response = await fetch(resendLambda, postJsonOptions);
 
     return response.json().then(data => {
         return {

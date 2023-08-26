@@ -9,7 +9,7 @@ export const Signup = () => {
 
     const onSignupSuccess = ({ statusCode }) => {
 
-        if (statusCode === 201) {
+        if (statusCode === 202) {
             navigate('/confirmation')
         }
     }
@@ -21,7 +21,8 @@ export const Signup = () => {
             <Header links={links} />
             <main className="h-full">
                 <Section>
-                    <div className="flex justify-center items-center h-full">
+                    <div className="flex flex-col justify-center items-center h-full">
+                        <h1>Sign Up</h1>
                         <SignupForm onSuccess={onSignupSuccess} />
                     </div>
                 </Section>

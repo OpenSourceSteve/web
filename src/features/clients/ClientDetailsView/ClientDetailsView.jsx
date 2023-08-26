@@ -1,7 +1,10 @@
 import { useRef, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
-import { useGetClientQuery } from '../clientsSlice'
+import {
+    useDeleteClientMutation,
+    useGetClientQuery
+} from '../clientsSlice'
 
 import { CasesTab } from '../../cases'
 import { FinancesTab } from '../../finances'
@@ -33,6 +36,8 @@ export const ClientDetailsView = () => {
         error
     } = useGetClientQuery({ id: clientId })
 
+    const [deleteClient] = useDeleteClientMutation()
+
     const toggleFormDialog = () => {
         const { current } = dialogRef;
         current.open ? current.close() : current.showModal()
@@ -40,6 +45,16 @@ export const ClientDetailsView = () => {
 
     const navTabHandler = ({ target }) => {
         setActiveTab(target.dataset['tab'])
+    }
+
+    const deleteClientHandler = async setIsDeleting => {
+        setIsDeleting(true)
+        await deleteClient({input: {
+            id: clientId,
+            _version: client._version
+        }})
+        setIsDeleting(false)
+        navigate("/clients")
     }
 
     let content
@@ -51,7 +66,7 @@ export const ClientDetailsView = () => {
             content = (
                 <div className="flex flex-col items-center">
                     <h1 className="p-8 font-bold capitalize">Client: {client.firstName} {client.lastName}</h1>
-                    <ClientDetails client={client} toggleFormDialog={toggleFormDialog} dialogRef={dialogRef} />
+                    <ClientDetails client={client} toggleFormDialog={toggleFormDialog} deleteClient={deleteClientHandler} dialogRef={dialogRef} />
                     <TabbedNav activeTab={activeTab} tabs={navTabs} navTabHandler={navTabHandler}>
                         {activeTab === "cases" && <CasesTab clientId={clientId} />}
                         {activeTab === "finances" && <FinancesTab clientId={clientId} />}
