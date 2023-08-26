@@ -49,13 +49,18 @@ export const test = baseTest.extend({
     const page = await browser.newPage({ storageState: undefined });
     const account = await acquireAccount(id);
 
-    await page.goto('http://localhost:3000/login');
+    const env = process.env.ENV;
+    const loginUrl = `https://${env}.easylegal.app/login`;
+    // console.log(`Attempting to login into ${loginUrl}`);
+    // console.log(`As ${account.username}`);
+    // console.log(`with password ${account.password}`);
+    await page.goto(loginUrl);
     await page.getByLabel('Email address').fill(account.username);
     await page.getByLabel('Password').fill(account.password);
     await page.getByRole('button', { name: 'Sign in' }).click();
 
 
-    await page.waitForURL('http://localhost:3000/docket');
+    await page.waitForURL(`https://${env}.easylegal.app/docket`);
     await expect(page.getByRole('link', { name: 'Clients' })).toBeVisible();
     await expect(page).toHaveTitle(/EasyLegal.app/);
 
