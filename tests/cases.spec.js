@@ -1,8 +1,8 @@
 // @ts-check
 import { test, expect } from './fixtures';
 
-const env = process.env.ENV;
-const host = `https://${env}.easylegal.app`
+const ENV = process.env.USER_BRANCH;
+const host = `https://${ENV}.easylegal.app`
 // Are there no funky redirects?
 test('page loads', async ({ page }) => {
   await page.goto(`${host}/cases`);
