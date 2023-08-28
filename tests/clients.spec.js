@@ -3,14 +3,13 @@ import { test, expect } from './fixtures';
 
 import { client1 } from './data/client1';
 
-const ENV = process.env.USER_BRANCH;
-const host = `https://${ENV}.easylegal.app`
+const host = "http://localhost:3000"
 
 // Are there no funky redirects?
 test('page loads', async ({ page }) => {
   await page.goto(`${host}/clients`);
 
-  // await expect(page).toHaveTitle("EasyLegal.app");
+  await expect(page).toHaveTitle("EasyLegal.app");
   await expect(page).toHaveURL(`${host}/clients`)
 });
 
@@ -30,7 +29,7 @@ test('docket link', async ({ page }) => {
   await page.goto(`${host}/clients`);
 
   await page.getByRole('link', { name: 'Docket' }).click();
-  // await expect(page).toHaveTitle(/EasyLegal.app/);
+  await expect(page).toHaveTitle(/EasyLegal.app/);
   await expect(page).toHaveURL(`${host}/docket`)
 });
 
@@ -39,7 +38,7 @@ test('cases link', async ({ page }) => {
   await page.goto(`${host}/clients`);
 
   await page.getByRole('link', { name: 'Cases' }).click();
-  // await expect(page).toHaveTitle(/EasyLegal.app/);
+  await expect(page).toHaveTitle(/EasyLegal.app/);
   await expect(page).toHaveURL(`${host}/cases`)
 });
 
@@ -84,23 +83,22 @@ test('create and delete client', async ({ page }) => {
   await page.getByRole('button', { name: 'Submit' }).click();
 
   // Regex below is of the form http://localhost:3000/cases?createFor=12345678-1234-1234-1234-123456789012
-  await expect(page).toHaveURL(/https:\/\/(dev|demo)\.easylegal\.app\/cases\?createFor=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/);
-
+  await expect(page).toHaveURL(/http:\/\/localhost:3000\/cases\?createFor=[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/);
   await page.goto(`${host}/clients`);
 
   // Confirm client was created
-  // await expect(page.locator('ol > li')).toHaveCount(1);
+  await expect(page.locator('ol > li')).toHaveCount(1);
 
-  // await page.getByRole('link', { name: `${client1.lastName} ${client1.firstName}`}).click()
-
-  // await expect(page).toHaveURL(/http:\/\/[dev|demo]\.easylegal\.app\/clients\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/);
+  // Go to client detail page
+  await page.getByRole('link', { name: `${client1.lastName} ${client1.firstName}`}).click()
+  await expect(page).toHaveURL(/http:\/\/localhost:3000\/clients\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/);
 
   // Delete client
-  // await page.getByRole('button', { name: 'Delete Client' }).click()
+  await page.getByRole('button', { name: 'Delete Client' }).click()
 
-  // await expect(page).toHaveURL(/http:\/\/[dev|demo]\.easylegal\.app\/clients/);
+  await expect(page).toHaveURL(/http:\/\/localhost:3000\/clients/);
 
   // Confirm client was deleted
-  // await expect(page.locator('ol > li')).toHaveCount(0);
+  await expect(page.locator('ol > li')).toHaveCount(0);
 
 })
