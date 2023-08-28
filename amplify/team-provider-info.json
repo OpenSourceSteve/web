@@ -117,12 +117,48 @@
         },
         "signupWorkflow": {
           "deploymentBucketName": "amplify-web-demo-111442-deployment",
-          "s3Key": "amplify-builds/signupWorkflow-2f724466563361383434-build.zip",
+          "s3Key": "amplify-builds/signupWorkflow-30313074717347573557-build.zip",
           "clientId": "6pmncb8o89v3gh2dd31upotlp",
           "userpoolId": "us-west-1_MavgXtULP"
         },
         "web": {},
-        "web1c61ecc2": {}
+        "web1c61ecc2": {},
+        "AdminDisableUserCommand": {
+          "userpoolId": "us-west-1_MavgXtULP",
+          "deploymentBucketName": "amplify-web-demo-111442-deployment",
+          "s3Key": "amplify-builds/AdminDisableUserCommand-41396d5a6265566a3454-build.zip"
+        },
+        "ConfirmationFlow": {
+          "clientId": "6pmncb8o89v3gh2dd31upotlp",
+          "userpoolId": "us-west-1_MavgXtULP",
+          "deploymentBucketName": "amplify-web-demo-111442-deployment",
+          "s3Key": "amplify-builds/ConfirmationFlow-3161526a6b4247325270-build.zip"
+        },
+        "CreateAppUser": {
+          "apiWebGraphqlapiendpointoutput": "https://hg2rmqv7p5ad7cevcr5m7g44j4.appsync-api.us-west-1.amazonaws.com/graphql",
+          "deploymentBucketName": "amplify-web-demo-111442-deployment",
+          "s3Key": "amplify-builds/CreateAppUser-4a6e5a7855794c6b4151-build.zip"
+        },
+        "CreateConsent": {
+          "apiWebGraphqlapiendpointoutput": "https://hg2rmqv7p5ad7cevcr5m7g44j4.appsync-api.us-west-1.amazonaws.com/graphql",
+          "deploymentBucketName": "amplify-web-demo-111442-deployment",
+          "s3Key": "amplify-builds/CreateConsent-4159684849702f4a4f38-build.zip"
+        },
+        "CreateLawyer": {
+          "deploymentBucketName": "amplify-web-demo-111442-deployment",
+          "s3Key": "amplify-builds/CreateLawyer-6357737744537178457a-build.zip"
+        },
+        "CreateSignup": {
+          "deploymentBucketName": "amplify-web-demo-111442-deployment",
+          "s3Key": "amplify-builds/CreateSignup-39795265653170476f6b-build.zip"
+        },
+        "SignupCommand": {
+          "clientId": "6pmncb8o89v3gh2dd31upotlp",
+          "apiWebGraphqlapiendpointoutput": "https://hg2rmqv7p5ad7cevcr5m7g44j4.appsync-api.us-west-1.amazonaws.com/graphql",
+          "userpoolId": "us-west-1_MavgXtULP",
+          "deploymentBucketName": "amplify-web-demo-111442-deployment",
+          "s3Key": "amplify-builds/SignupCommand-2b536648665077696679-build.zip"
+        }
       },
       "api": {
         "web": {}

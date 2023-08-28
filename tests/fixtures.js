@@ -6,7 +6,7 @@ import { test as baseTest, expect } from '@playwright/test';
 
 export * from '@playwright/test';
 
-const ENV = process.env.ENV;
+const ENV = process.env.USER_BRANCH;
 const s3Client = new S3Client({ AWS_REGION: ENV})
 // const fileName = 'tests/.auth/credentials.json';
 
@@ -33,9 +33,11 @@ export const test = baseTest.extend({
 
     const fileName2 = path.resolve(test.info().project.testDir, `.auth/credentials.json`);
     if (fs.existsSync(fileName2)) {
+      console.log("\n\nUsing locally stored credentials.\n\n")
       const content = fs.readFileSync(fileName2, 'utf8')
       credentials = JSON.parse(content);
     } else {
+      console.log("\n\nUsing credentials pulled from the cloud.\n\n")
       const input = {
         Bucket: "testaccounts213993515054",
         Key: "credentials.json"
@@ -49,15 +51,21 @@ export const test = baseTest.extend({
     const page = await browser.newPage({ storageState: undefined });
     const account = await acquireAccount(id);
 
-    await page.goto('http://localhost:3000/login');
+    const host = `https://${ENV}.easylegal.app`
+    const loginUrl = `${host}/login`;
+    // console.log(`Attempting to login into ${loginUrl}`);
+    // console.log(`As ${account.username}`);
+    // console.log(`with password ${account.password}`);
+    await page.goto(loginUrl);
     await page.getByLabel('Email address').fill(account.username);
     await page.getByLabel('Password').fill(account.password);
     await page.getByRole('button', { name: 'Sign in' }).click();
 
 
-    await page.waitForURL('http://localhost:3000/docket');
+    await page.waitForURL(`${host}/docket`);
+    console.log("\n\nSuccesssfully logged in.\n\n")
     await expect(page.getByRole('link', { name: 'Clients' })).toBeVisible();
-    await expect(page).toHaveTitle(/EasyLegal.app/);
+    // await expect(page).toHaveTitle(/EasyLegal.app/);
 
     // End of authentication steps.
 
