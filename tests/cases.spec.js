@@ -1,13 +1,17 @@
 // @ts-check
 import { test, expect } from './fixtures';
 
-const ENV = process.env.USER_BRANCH;
 const host = `http://localhost:3000`
+
+const ENV = process.env.REACT_APP_ENVIRONMENT
+
+console.log("Running tests with ENV:", ENV)
+
 // Are there no funky redirects?
 test('page loads', async ({ page }) => {
   await page.goto(`${host}/cases`);
 
-  // await expect(page).toHaveTitle("EasyLegal.app");
+  await expect(page).toHaveTitle("EasyLegal.app");
   await expect(page).toHaveURL(`${host}/cases`)
 });
 
@@ -27,7 +31,7 @@ test('docket link', async ({ page }) => {
   await page.goto(`${host}/cases`);
 
   await page.getByRole('link', { name: 'Docket' }).click();
-  // await expect(page).toHaveTitle(/EasyLegal.app/);
+  await expect(page).toHaveTitle(/EasyLegal.app/);
   await expect(page).toHaveURL(`${host}/docket`)
 });
 
@@ -38,5 +42,5 @@ test('cases link', async ({ page }) => {
   await page.getByRole('link', { name: 'Clients' }).click();
 
   await expect(page).toHaveTitle(/EasyLegal.app/);
-  await expect(page).toHaveURL('http://localhost:3000/clients')
+  await expect(page).toHaveURL(`${host}/clients`)
 });
