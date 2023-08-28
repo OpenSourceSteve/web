@@ -3,6 +3,10 @@ import { test, expect } from './fixtures';
 
 const host = `http://localhost:3000`
 
+const ENV = process.env.REACT_APP_ENVIRONMENT
+
+console.log("Running tests with ENV:", ENV)
+
 // Are there no funky redirects?
 test('page loads', async ({ page }) => {
   await page.goto(`${host}/cases`);

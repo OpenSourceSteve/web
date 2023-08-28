@@ -6,9 +6,11 @@ import { test as baseTest, expect } from '@playwright/test';
 
 export * from '@playwright/test';
 
-const ENV = process.env.USER_BRANCH;
+const ENV = process.env.REACT_APP_ENVIRONMENT;
+
 const s3Client = new S3Client({ AWS_REGION: ENV})
-// const fileName = 'tests/.auth/credentials.json';
+
+const host = "http://localhost:3000"
 
 let credentials;
 
@@ -51,7 +53,6 @@ export const test = baseTest.extend({
     const page = await browser.newPage({ storageState: undefined });
     const account = await acquireAccount(id);
 
-    const host = `https://${ENV}.easylegal.app`
     const loginUrl = `${host}/login`;
     // console.log(`Attempting to login into ${loginUrl}`);
     // console.log(`As ${account.username}`);
