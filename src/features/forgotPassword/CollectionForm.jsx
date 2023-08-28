@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Auth } from 'aws-amplify'
 
 import { Button, EmailInput, PasswordInput, TextInput } from "../../components"
-import { createPostJsonOptions, getEnv, logger } from "../../utils";
+import { createPostJsonOptions, logger } from "../../utils";
 
 import { useNavigate } from 'react-router-dom';
 
@@ -13,7 +13,7 @@ export const CollectionForm = ({ onSuccess, onChange, state }) => {
 
     const navigate = useNavigate()
 
-    const ENV = getEnv()
+    const ENV = process.env.REACT_APP_ENVIRONMENT || "dev";
 
     const { resendLambda } = URLS[ENV]
 

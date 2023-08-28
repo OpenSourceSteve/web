@@ -1,12 +1,12 @@
 import { useState } from "react";
 
-import { createPostJsonOptions, getEnv } from "../../utils";
+import { createPostJsonOptions } from "../../utils";
 import { URLS } from "../../app/urls";
 
 import { Button, NumberInput } from "../../components";
 
 export const ConfirmationForm = ({ onSuccess, username }) => {
-  const ENV = getEnv()
+  const ENV = process.env.REACT_APP_ENVIRONMENT || "dev";
 
   const { confirmationLambda, resendLambda } = URLS[ENV];
 
