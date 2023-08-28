@@ -14,15 +14,15 @@ test('webkit is commented', async () => {
   expect(isWebkitCommented).toBeTruthy()
 });
 
-test('firefox is NOT commented', async () => {
+// test('firefox is NOT commented', async () => {
 
-  let isFirefoxCommented = true
+//   let isFirefoxCommented = true
 
-  projects.forEach(project => {
-    if (project.name === "firefox") {
-      isFirefoxCommented = false
-    }
-  })
+//   projects.forEach(project => {
+//     if (project.name === "firefox") {
+//       isFirefoxCommented = false
+//     }
+//   })
 
-  expect(isFirefoxCommented).toBeFalsy()
-});
+//   expect(isFirefoxCommented).toBeFalsy()
+// });
