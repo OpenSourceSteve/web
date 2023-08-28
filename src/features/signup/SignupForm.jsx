@@ -4,7 +4,6 @@ import { useDispatch } from 'react-redux'
 import {
   createPostJsonOptions,
   trimAndDecreaseCase,
-  getEnv,
   logger
 } from "../../utils";
 
@@ -25,7 +24,7 @@ export const SignupForm = ({ onSuccess }) => {
 
   const dispatch = useDispatch()
 
-  const ENV = getEnv()
+  const ENV = process.env.REACT_APP_ENVIRONMENT || "dev";
 
   const [userData, setUserData] = useState({
     firstName: "",

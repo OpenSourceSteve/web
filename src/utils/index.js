@@ -6,7 +6,6 @@ import { constructTomorrowString } from './functions/constructTomorrowString'
 import { createPostJsonOptions } from './functions/createPostJsonOptions'
 import { formatDatetimeWithTimezone } from './functions/formatDatetimeWithTimezone'
 import { trimAndDecreaseCase } from './functions/trimAndDecreaseCase'
-import { getEnv } from './functions/getEnv'
 import { days } from './constants/days'
 import { hours } from './constants/hours'
 import { months } from './constants/months'
@@ -20,7 +19,6 @@ export {
     constructTomorrowString,
     createPostJsonOptions,
     formatDatetimeWithTimezone,
-    getEnv,
     trimAndDecreaseCase,
     days,
     hours,

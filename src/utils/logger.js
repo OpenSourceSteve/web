@@ -1,10 +1,9 @@
 import { createPostJsonOptions } from "./functions/createPostJsonOptions"
-import { getEnv } from "./functions/getEnv"
 import { URLS } from "../app/urls"
 
-export const logger = () => {
+const ENV = process.env.REACT_APP_ENVIRONMENT || "dev";
 
-    const ENV = getEnv()
+export const logger = () => {
 
     const { loggerLambda } = URLS[ENV];
 

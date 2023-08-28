@@ -3,11 +3,9 @@ import { graphqlRequestBaseQuery } from '@rtk-query/graphql-request-base-query'
 
 import { Auth } from 'aws-amplify';
 
-import { getEnv } from '../../utils';
-
 import { APIs } from '../../app/apis';
 
-const ENV = getEnv()
+const ENV = process.env.REACT_APP_ENVIRONMENT || "dev";
 
 const API_DOMAIN = APIs[ENV]
 

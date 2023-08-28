@@ -2,7 +2,7 @@
 import { test, expect } from './fixtures';
 
 const ENV = process.env.USER_BRANCH;
-const host = `https://${ENV}.easylegal.app`
+const host = `http://localhost:3000`
 // Are there no funky redirects?
 test('page loads', async ({ page }) => {
   await page.goto(`${host}/cases`);
@@ -36,28 +36,7 @@ test('cases link', async ({ page }) => {
   await page.goto(`${host}/cases`);
 
   await page.getByRole('link', { name: 'Clients' }).click();
-  // await expect(page).toHaveTitle(/EasyLegal.app/);
-  await expect(page).toHaveURL(`${host}/clients`)
+
+  await expect(page).toHaveTitle(/EasyLegal.app/);
+  await expect(page).toHaveURL('http://localhost:3000/clients')
 });
-
-test('create case', async ({ page }) => {
-  /* TODO:
-    click create case
-    does a dialog appear?
-    enter input
-    click submit
-    does a case show up?
-    is the user forwarded when they are supposed to be?
-  */
-})
-
-// Can the user update a case?
-test('update case', async ({ page }) => {
-  /* TODO:
-    click on existing case
-    does a dialog appear?
-    change one or more input fields
-    click submit
-    does the updated case show up?
-  */
-})
