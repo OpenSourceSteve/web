@@ -12,7 +12,7 @@ Redux is an open-source library used to manage frontend application state and is
 
 GraphQL is a query language that you can include in your frontend code to request exactly what information the view needs from the API. EasyLegal.app uses an AWS-managed GraphQL API to fulfill these requests. This too is further discussed in the `Resource CRUD` section below.
 
-Tailwind CSS... CSS classes
+Tailwind CSS... well thought out CSS classes
 
 ## How the backend works
 On the backend, EasyLegal.app is a serverless application, built on a number of [Amazon Web Services](https://aws.amazon.com/) (AWS) mananged services. The middleware (APIs, auth, lambdas) for interacting with the AWS managed services is located in the `/amplify` directory. [Amplify](https://aws.amazon.com/amplify/) is a framework offered by AWS that makes it relatively easy to setup different services, get them configured and working with one another. I used Amplify to setup and configure about half of the backend services used in this project (authentication, lambda, the GraphQL API) while the other half (DNS, message queues, scheduling and sending of emails) I had to setup and configure myself.
@@ -25,10 +25,12 @@ On the backend, EasyLegal.app is a serverless application, built on a number of 
 
 ## Testing and Accessiblity
 Playwright. Accessiblity concerns.
+Auth Secrets.
 
 
 ## What I would do next
-Mobile
-Reminder configuration
+Mobile-first, supported by Tailwind
 optimize queries
+Lambda Layers
+Reminder configuration
 Billing

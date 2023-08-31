@@ -1,23 +1,19 @@
+import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 
 import { useListEventsQuery } from '../../../features/events/eventsSlice'
 
 import {
+    adjustForTimezoneOffset,
     constructBeginString,
+    constructDateString,
     constructEndString,
-    constructTomorrowString
+    constructTomorrowString,
+    days,
+    months
 } from "../../../utils"
 
 import { DayCalendar } from "./DayCalendar"
-
-// import static data
-import {
-    adjustForTimezoneOffset,
-    constructDateString,
-    days,
-    months
-} from '../../../utils'
-import { useEffect } from "react"
 
 export const DayView = ({ date, toggleEventForm }) => {
     const navigate = useNavigate()
