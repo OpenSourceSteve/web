@@ -940,6 +940,94 @@ export const getEvent = /* GraphQL */ `
         startedAt
         __typename
       }
+      Clients {
+        items {
+          id
+          eventId
+          clientId
+          event {
+            id
+            caseID
+            type
+            startDatetime
+            duration
+            location
+            link
+            phone
+            title
+            description
+            Notes {
+              nextToken
+              startedAt
+              __typename
+            }
+            Clients {
+              nextToken
+              startedAt
+              __typename
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            owner
+            __typename
+          }
+          client {
+            id
+            userID
+            firstName
+            lastName
+            dateOfBirth
+            phone
+            email
+            address1
+            address2
+            city
+            state
+            zip
+            referralSource
+            cases {
+              nextToken
+              startedAt
+              __typename
+            }
+            events {
+              nextToken
+              startedAt
+              __typename
+            }
+            Tasks {
+              nextToken
+              startedAt
+              __typename
+            }
+            Finances {
+              nextToken
+              startedAt
+              __typename
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            owner
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          owner
+          __typename
+        }
+        nextToken
+        startedAt
+        __typename
+      }
       createdAt
       updatedAt
       _version
@@ -976,6 +1064,64 @@ export const listEvents = /* GraphQL */ `
             caseID
             eventID
             taskID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            owner
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        Clients {
+          items {
+            id
+            eventId
+            clientId
+            event {
+              id
+              caseID
+              type
+              startDatetime
+              duration
+              location
+              link
+              phone
+              title
+              description
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            client {
+              id
+              userID
+              firstName
+              lastName
+              dateOfBirth
+              phone
+              email
+              address1
+              address2
+              city
+              state
+              zip
+              referralSource
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
             createdAt
             updatedAt
             _version
@@ -1046,6 +1192,64 @@ export const syncEvents = /* GraphQL */ `
           startedAt
           __typename
         }
+        Clients {
+          items {
+            id
+            eventId
+            clientId
+            event {
+              id
+              caseID
+              type
+              startDatetime
+              duration
+              location
+              link
+              phone
+              title
+              description
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            client {
+              id
+              userID
+              firstName
+              lastName
+              dateOfBirth
+              phone
+              email
+              address1
+              address2
+              city
+              state
+              zip
+              referralSource
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            owner
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -1094,6 +1298,182 @@ export const eventsByCaseID = /* GraphQL */ `
             caseID
             eventID
             taskID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            owner
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        Clients {
+          items {
+            id
+            eventId
+            clientId
+            event {
+              id
+              caseID
+              type
+              startDatetime
+              duration
+              location
+              link
+              phone
+              title
+              description
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            client {
+              id
+              userID
+              firstName
+              lastName
+              dateOfBirth
+              phone
+              email
+              address1
+              address2
+              city
+              state
+              zip
+              referralSource
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            owner
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+        __typename
+      }
+      nextToken
+      startedAt
+      __typename
+    }
+  }
+`;
+export const eventsByStartDatetime = /* GraphQL */ `
+  query EventsByStartDatetime(
+    $startDatetime: AWSDateTime!
+    $sortDirection: ModelSortDirection
+    $filter: ModelEventFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    eventsByStartDatetime(
+      startDatetime: $startDatetime
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        caseID
+        type
+        startDatetime
+        duration
+        location
+        link
+        phone
+        title
+        description
+        Notes {
+          items {
+            id
+            text
+            type
+            caseID
+            eventID
+            taskID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            owner
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        Clients {
+          items {
+            id
+            eventId
+            clientId
+            event {
+              id
+              caseID
+              type
+              startDatetime
+              duration
+              location
+              link
+              phone
+              title
+              description
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            client {
+              id
+              userID
+              firstName
+              lastName
+              dateOfBirth
+              phone
+              email
+              address1
+              address2
+              city
+              state
+              zip
+              referralSource
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
             createdAt
             updatedAt
             _version
@@ -1199,6 +1579,11 @@ export const getCase = /* GraphQL */ `
             zip
             referralSource
             cases {
+              nextToken
+              startedAt
+              __typename
+            }
+            events {
               nextToken
               startedAt
               __typename
@@ -2046,6 +2431,99 @@ export const getClient = /* GraphQL */ `
               startedAt
               __typename
             }
+            events {
+              nextToken
+              startedAt
+              __typename
+            }
+            Tasks {
+              nextToken
+              startedAt
+              __typename
+            }
+            Finances {
+              nextToken
+              startedAt
+              __typename
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            owner
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          owner
+          __typename
+        }
+        nextToken
+        startedAt
+        __typename
+      }
+      events {
+        items {
+          id
+          eventId
+          clientId
+          event {
+            id
+            caseID
+            type
+            startDatetime
+            duration
+            location
+            link
+            phone
+            title
+            description
+            Notes {
+              nextToken
+              startedAt
+              __typename
+            }
+            Clients {
+              nextToken
+              startedAt
+              __typename
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            owner
+            __typename
+          }
+          client {
+            id
+            userID
+            firstName
+            lastName
+            dateOfBirth
+            phone
+            email
+            address1
+            address2
+            city
+            state
+            zip
+            referralSource
+            cases {
+              nextToken
+              startedAt
+              __typename
+            }
+            events {
+              nextToken
+              startedAt
+              __typename
+            }
             Tasks {
               nextToken
               startedAt
@@ -2185,6 +2663,64 @@ export const listClients = /* GraphQL */ `
               prosecutor
               caseNumber
               caseName
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            client {
+              id
+              userID
+              firstName
+              lastName
+              dateOfBirth
+              phone
+              email
+              address1
+              address2
+              city
+              state
+              zip
+              referralSource
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            owner
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        events {
+          items {
+            id
+            eventId
+            clientId
+            event {
+              id
+              caseID
+              type
+              startDatetime
+              duration
+              location
+              link
+              phone
+              title
+              description
               createdAt
               updatedAt
               _version
@@ -2373,6 +2909,64 @@ export const syncClients = /* GraphQL */ `
           startedAt
           __typename
         }
+        events {
+          items {
+            id
+            eventId
+            clientId
+            event {
+              id
+              caseID
+              type
+              startDatetime
+              duration
+              location
+              link
+              phone
+              title
+              description
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            client {
+              id
+              userID
+              firstName
+              lastName
+              dateOfBirth
+              phone
+              email
+              address1
+              address2
+              city
+              state
+              zip
+              referralSource
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            owner
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         Tasks {
           items {
             id
@@ -2479,6 +3073,64 @@ export const clientsByUserID = /* GraphQL */ `
               prosecutor
               caseNumber
               caseName
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            client {
+              id
+              userID
+              firstName
+              lastName
+              dateOfBirth
+              phone
+              email
+              address1
+              address2
+              city
+              state
+              zip
+              referralSource
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            owner
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        events {
+          items {
+            id
+            eventId
+            clientId
+            event {
+              id
+              caseID
+              type
+              startDatetime
+              duration
+              location
+              link
+              phone
+              title
+              description
               createdAt
               updatedAt
               _version
@@ -3881,6 +4533,1054 @@ export const syncUsers = /* GraphQL */ `
     }
   }
 `;
+export const getClientEvent = /* GraphQL */ `
+  query GetClientEvent($id: ID!) {
+    getClientEvent(id: $id) {
+      id
+      eventId
+      clientId
+      event {
+        id
+        caseID
+        type
+        startDatetime
+        duration
+        location
+        link
+        phone
+        title
+        description
+        Notes {
+          items {
+            id
+            text
+            type
+            caseID
+            eventID
+            taskID
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            owner
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        Clients {
+          items {
+            id
+            eventId
+            clientId
+            event {
+              id
+              caseID
+              type
+              startDatetime
+              duration
+              location
+              link
+              phone
+              title
+              description
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            client {
+              id
+              userID
+              firstName
+              lastName
+              dateOfBirth
+              phone
+              email
+              address1
+              address2
+              city
+              state
+              zip
+              referralSource
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            owner
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+        __typename
+      }
+      client {
+        id
+        userID
+        firstName
+        lastName
+        dateOfBirth
+        phone
+        email
+        address1
+        address2
+        city
+        state
+        zip
+        referralSource
+        cases {
+          items {
+            id
+            caseId
+            clientId
+            case {
+              id
+              jurisdiction
+              court
+              judge
+              prosecutor
+              caseNumber
+              caseName
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            client {
+              id
+              userID
+              firstName
+              lastName
+              dateOfBirth
+              phone
+              email
+              address1
+              address2
+              city
+              state
+              zip
+              referralSource
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            owner
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        events {
+          items {
+            id
+            eventId
+            clientId
+            event {
+              id
+              caseID
+              type
+              startDatetime
+              duration
+              location
+              link
+              phone
+              title
+              description
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            client {
+              id
+              userID
+              firstName
+              lastName
+              dateOfBirth
+              phone
+              email
+              address1
+              address2
+              city
+              state
+              zip
+              referralSource
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            owner
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        Tasks {
+          items {
+            id
+            title
+            description
+            deadline
+            assignee
+            caseID
+            lawyerID
+            clientID
+            Notes {
+              nextToken
+              startedAt
+              __typename
+            }
+            isAssigneeComplete
+            isVerifiedComplete
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            owner
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        Finances {
+          items {
+            id
+            caseID
+            clientID
+            expense
+            payment
+            title
+            description
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            owner
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const listClientEvents = /* GraphQL */ `
+  query ListClientEvents(
+    $filter: ModelClientEventFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listClientEvents(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        eventId
+        clientId
+        event {
+          id
+          caseID
+          type
+          startDatetime
+          duration
+          location
+          link
+          phone
+          title
+          description
+          Notes {
+            items {
+              id
+              text
+              type
+              caseID
+              eventID
+              taskID
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            nextToken
+            startedAt
+            __typename
+          }
+          Clients {
+            items {
+              id
+              eventId
+              clientId
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            nextToken
+            startedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          owner
+          __typename
+        }
+        client {
+          id
+          userID
+          firstName
+          lastName
+          dateOfBirth
+          phone
+          email
+          address1
+          address2
+          city
+          state
+          zip
+          referralSource
+          cases {
+            items {
+              id
+              caseId
+              clientId
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            nextToken
+            startedAt
+            __typename
+          }
+          events {
+            items {
+              id
+              eventId
+              clientId
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            nextToken
+            startedAt
+            __typename
+          }
+          Tasks {
+            items {
+              id
+              title
+              description
+              deadline
+              assignee
+              caseID
+              lawyerID
+              clientID
+              isAssigneeComplete
+              isVerifiedComplete
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            nextToken
+            startedAt
+            __typename
+          }
+          Finances {
+            items {
+              id
+              caseID
+              clientID
+              expense
+              payment
+              title
+              description
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            nextToken
+            startedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          owner
+          __typename
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+        __typename
+      }
+      nextToken
+      startedAt
+      __typename
+    }
+  }
+`;
+export const syncClientEvents = /* GraphQL */ `
+  query SyncClientEvents(
+    $filter: ModelClientEventFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncClientEvents(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        eventId
+        clientId
+        event {
+          id
+          caseID
+          type
+          startDatetime
+          duration
+          location
+          link
+          phone
+          title
+          description
+          Notes {
+            items {
+              id
+              text
+              type
+              caseID
+              eventID
+              taskID
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            nextToken
+            startedAt
+            __typename
+          }
+          Clients {
+            items {
+              id
+              eventId
+              clientId
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            nextToken
+            startedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          owner
+          __typename
+        }
+        client {
+          id
+          userID
+          firstName
+          lastName
+          dateOfBirth
+          phone
+          email
+          address1
+          address2
+          city
+          state
+          zip
+          referralSource
+          cases {
+            items {
+              id
+              caseId
+              clientId
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            nextToken
+            startedAt
+            __typename
+          }
+          events {
+            items {
+              id
+              eventId
+              clientId
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            nextToken
+            startedAt
+            __typename
+          }
+          Tasks {
+            items {
+              id
+              title
+              description
+              deadline
+              assignee
+              caseID
+              lawyerID
+              clientID
+              isAssigneeComplete
+              isVerifiedComplete
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            nextToken
+            startedAt
+            __typename
+          }
+          Finances {
+            items {
+              id
+              caseID
+              clientID
+              expense
+              payment
+              title
+              description
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            nextToken
+            startedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          owner
+          __typename
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+        __typename
+      }
+      nextToken
+      startedAt
+      __typename
+    }
+  }
+`;
+export const clientEventsByEventId = /* GraphQL */ `
+  query ClientEventsByEventId(
+    $eventId: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelClientEventFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    clientEventsByEventId(
+      eventId: $eventId
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        eventId
+        clientId
+        event {
+          id
+          caseID
+          type
+          startDatetime
+          duration
+          location
+          link
+          phone
+          title
+          description
+          Notes {
+            items {
+              id
+              text
+              type
+              caseID
+              eventID
+              taskID
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            nextToken
+            startedAt
+            __typename
+          }
+          Clients {
+            items {
+              id
+              eventId
+              clientId
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            nextToken
+            startedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          owner
+          __typename
+        }
+        client {
+          id
+          userID
+          firstName
+          lastName
+          dateOfBirth
+          phone
+          email
+          address1
+          address2
+          city
+          state
+          zip
+          referralSource
+          cases {
+            items {
+              id
+              caseId
+              clientId
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            nextToken
+            startedAt
+            __typename
+          }
+          events {
+            items {
+              id
+              eventId
+              clientId
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            nextToken
+            startedAt
+            __typename
+          }
+          Tasks {
+            items {
+              id
+              title
+              description
+              deadline
+              assignee
+              caseID
+              lawyerID
+              clientID
+              isAssigneeComplete
+              isVerifiedComplete
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            nextToken
+            startedAt
+            __typename
+          }
+          Finances {
+            items {
+              id
+              caseID
+              clientID
+              expense
+              payment
+              title
+              description
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            nextToken
+            startedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          owner
+          __typename
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+        __typename
+      }
+      nextToken
+      startedAt
+      __typename
+    }
+  }
+`;
+export const clientEventsByClientId = /* GraphQL */ `
+  query ClientEventsByClientId(
+    $clientId: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelClientEventFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    clientEventsByClientId(
+      clientId: $clientId
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        eventId
+        clientId
+        event {
+          id
+          caseID
+          type
+          startDatetime
+          duration
+          location
+          link
+          phone
+          title
+          description
+          Notes {
+            items {
+              id
+              text
+              type
+              caseID
+              eventID
+              taskID
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            nextToken
+            startedAt
+            __typename
+          }
+          Clients {
+            items {
+              id
+              eventId
+              clientId
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            nextToken
+            startedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          owner
+          __typename
+        }
+        client {
+          id
+          userID
+          firstName
+          lastName
+          dateOfBirth
+          phone
+          email
+          address1
+          address2
+          city
+          state
+          zip
+          referralSource
+          cases {
+            items {
+              id
+              caseId
+              clientId
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            nextToken
+            startedAt
+            __typename
+          }
+          events {
+            items {
+              id
+              eventId
+              clientId
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            nextToken
+            startedAt
+            __typename
+          }
+          Tasks {
+            items {
+              id
+              title
+              description
+              deadline
+              assignee
+              caseID
+              lawyerID
+              clientID
+              isAssigneeComplete
+              isVerifiedComplete
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            nextToken
+            startedAt
+            __typename
+          }
+          Finances {
+            items {
+              id
+              caseID
+              clientID
+              expense
+              payment
+              title
+              description
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            nextToken
+            startedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          owner
+          __typename
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+        __typename
+      }
+      nextToken
+      startedAt
+      __typename
+    }
+  }
+`;
 export const getCaseClient = /* GraphQL */ `
   query GetCaseClient($id: ID!) {
     getCaseClient(id: $id) {
@@ -4142,6 +5842,64 @@ export const getCaseClient = /* GraphQL */ `
               prosecutor
               caseNumber
               caseName
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            client {
+              id
+              userID
+              firstName
+              lastName
+              dateOfBirth
+              phone
+              email
+              address1
+              address2
+              city
+              state
+              zip
+              referralSource
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            owner
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        events {
+          items {
+            id
+            eventId
+            clientId
+            event {
+              id
+              caseID
+              type
+              startDatetime
+              duration
+              location
+              link
+              phone
+              title
+              description
               createdAt
               updatedAt
               _version
@@ -4446,6 +6204,23 @@ export const listCaseClients = /* GraphQL */ `
             startedAt
             __typename
           }
+          events {
+            items {
+              id
+              eventId
+              clientId
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            nextToken
+            startedAt
+            __typename
+          }
           Tasks {
             items {
               id
@@ -4700,6 +6475,23 @@ export const syncCaseClients = /* GraphQL */ `
             items {
               id
               caseId
+              clientId
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            nextToken
+            startedAt
+            __typename
+          }
+          events {
+            items {
+              id
+              eventId
               clientId
               createdAt
               updatedAt
@@ -4982,6 +6774,23 @@ export const caseClientsByCaseId = /* GraphQL */ `
             startedAt
             __typename
           }
+          events {
+            items {
+              id
+              eventId
+              clientId
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            nextToken
+            startedAt
+            __typename
+          }
           Tasks {
             items {
               id
@@ -5238,6 +7047,23 @@ export const caseClientsByClientId = /* GraphQL */ `
             items {
               id
               caseId
+              clientId
+              createdAt
+              updatedAt
+              _version
+              _deleted
+              _lastChangedAt
+              owner
+              __typename
+            }
+            nextToken
+            startedAt
+            __typename
+          }
+          events {
+            items {
+              id
+              eventId
               clientId
               createdAt
               updatedAt

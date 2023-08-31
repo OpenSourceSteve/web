@@ -78,7 +78,11 @@
           "s3Key": "amplify-builds/CreateLawyer-6357737744537178457a-build.zip"
         },
         "web": {},
-        "web1c61ecc2": {}
+        "web1c61ecc2": {},
+        "SendReminders": {
+          "deploymentBucketName": "amplify-web-dev-233335-deployment",
+          "s3Key": "amplify-builds/SendReminders-2b59507831724d4d466c-build.zip"
+        }
       }
     }
   },

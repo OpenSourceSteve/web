@@ -23,7 +23,7 @@ const EventType = {
   "OTHER_HOURS_BILLABLE": "OTHER_HOURS_BILLABLE"
 };
 
-const { Finance, Signup, Task, Note, Charge, Event, Case, Client, Consent, Practice, Lawyer, User, CaseClient, CaseLawyer, PracticeLawyer } = initSchema(schema);
+const { Finance, Signup, Task, Note, Charge, Event, Case, Client, Consent, Practice, Lawyer, User, ClientEvent, CaseClient, CaseLawyer, PracticeLawyer } = initSchema(schema);
 
 export {
   Finance,
@@ -38,6 +38,7 @@ export {
   Practice,
   Lawyer,
   User,
+  ClientEvent,
   CaseClient,
   CaseLawyer,
   PracticeLawyer,
