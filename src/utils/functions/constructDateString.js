@@ -1,11 +1,6 @@
 export const constructDateString = date => {
-    let month = date.getMonth() + 1
-    if (month < 10) {
-        month = "0" + month
-    }
-    let dayOfMonth = date.getDate()
-    if (dayOfMonth < 10) {
-        dayOfMonth = "0" + dayOfMonth
-    }
-    return `${date.getFullYear()}-${month}-${dayOfMonth}`
+    const month = String(date.getMonth() + 1).padStart(2, "0")
+    const dayOfMonth = String(date.getDate()).padStart(2, "0")
+    const year = date.getFullYear()
+    return `${year}-${month}-${dayOfMonth}`
 }

@@ -677,6 +677,22 @@ export const schema = {
                         ]
                     }
                 },
+                "Clients": {
+                    "name": "Clients",
+                    "isArray": true,
+                    "type": {
+                        "model": "ClientEvent"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": [
+                            "event"
+                        ]
+                    }
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -707,6 +723,15 @@ export const schema = {
                         "name": "byCase",
                         "fields": [
                             "caseID"
+                        ]
+                    }
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byStartDatetime",
+                        "fields": [
+                            "startDatetime"
                         ]
                     }
                 },
@@ -1039,6 +1064,22 @@ export const schema = {
                     "isArray": true,
                     "type": {
                         "model": "CaseClient"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": [
+                            "client"
+                        ]
+                    }
+                },
+                "events": {
+                    "name": "events",
+                    "isArray": true,
+                    "type": {
+                        "model": "ClientEvent"
                     },
                     "isRequired": false,
                     "attributes": [],
@@ -1639,6 +1680,104 @@ export const schema = {
                 }
             ]
         },
+        "ClientEvent": {
+            "name": "ClientEvent",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "eventId": {
+                    "name": "eventId",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "clientId": {
+                    "name": "clientId",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "event": {
+                    "name": "event",
+                    "isArray": false,
+                    "type": {
+                        "model": "Event"
+                    },
+                    "isRequired": true,
+                    "attributes": [],
+                    "association": {
+                        "connectionType": "BELONGS_TO",
+                        "targetNames": [
+                            "eventId"
+                        ]
+                    }
+                },
+                "client": {
+                    "name": "client",
+                    "isArray": false,
+                    "type": {
+                        "model": "Client"
+                    },
+                    "isRequired": true,
+                    "attributes": [],
+                    "association": {
+                        "connectionType": "BELONGS_TO",
+                        "targetNames": [
+                            "clientId"
+                        ]
+                    }
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                }
+            },
+            "syncable": true,
+            "pluralName": "ClientEvents",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byEvent",
+                        "fields": [
+                            "eventId"
+                        ]
+                    }
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byClient",
+                        "fields": [
+                            "clientId"
+                        ]
+                    }
+                }
+            ]
+        },
         "CaseClient": {
             "name": "CaseClient",
             "fields": {
@@ -1965,5 +2104,5 @@ export const schema = {
     },
     "nonModels": {},
     "codegenVersion": "3.4.4",
-    "version": "69237d82148e3ed118b22a859945eb1c"
+    "version": "ae2f94ce438cd2cfa5080b8a5829e388"
 };

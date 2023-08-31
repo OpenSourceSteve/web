@@ -73,7 +73,7 @@ type Event @model @auth(rules: [{allow: owner}]) {
   id: ID!
   caseID: ID! @index(name: "byCase")
   type: EventType
-  startDatetime: AWSDateTime!
+  startDatetime: AWSDateTime! @index(name: "byStartDatetime")
   duration: Int
   location: String
   link: AWSURL
@@ -81,6 +81,7 @@ type Event @model @auth(rules: [{allow: owner}]) {
   title: String
   description: String
   Notes: [Note] @hasMany(indexName: "byEvent", fields: ["id"])
+  Clients: [Client] @manyToMany(relationName: "ClientEvent")
 }
 
 type Case @model @auth(rules: [{allow: owner}]) {
@@ -115,6 +116,7 @@ type Client @model @auth(rules: [{allow: owner}]) {
   zip: String
   referralSource: String
   cases: [Case] @manyToMany(relationName: "CaseClient")
+  events: [Event] @manyToMany(relationName: "ClientEvent")
   Tasks: [Task] @hasMany(indexName: "byClient", fields: ["id"])
   Finances: [Finance] @hasMany(indexName: "byClient", fields: ["id"])
 }

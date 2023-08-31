@@ -231,6 +231,7 @@ type EagerEvent = {
   readonly title?: string | null;
   readonly description?: string | null;
   readonly Notes?: (Note | null)[] | null;
+  readonly Clients?: (ClientEvent | null)[] | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -251,6 +252,7 @@ type LazyEvent = {
   readonly title?: string | null;
   readonly description?: string | null;
   readonly Notes: AsyncCollection<Note>;
+  readonly Clients: AsyncCollection<ClientEvent>;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -332,6 +334,7 @@ type EagerClient = {
   readonly zip?: string | null;
   readonly referralSource?: string | null;
   readonly cases?: (CaseClient | null)[] | null;
+  readonly events?: (ClientEvent | null)[] | null;
   readonly Tasks?: (Task | null)[] | null;
   readonly Finances?: (Finance | null)[] | null;
   readonly createdAt?: string | null;
@@ -357,6 +360,7 @@ type LazyClient = {
   readonly zip?: string | null;
   readonly referralSource?: string | null;
   readonly cases: AsyncCollection<CaseClient>;
+  readonly events: AsyncCollection<ClientEvent>;
   readonly Tasks: AsyncCollection<Task>;
   readonly Finances: AsyncCollection<Finance>;
   readonly createdAt?: string | null;
@@ -521,6 +525,40 @@ export declare type User = LazyLoading extends LazyLoadingDisabled ? EagerUser :
 
 export declare const User: (new (init: ModelInit<User>) => User) & {
   copyOf(source: User, mutator: (draft: MutableModel<User>) => MutableModel<User> | void): User;
+}
+
+type EagerClientEvent = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<ClientEvent, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly eventId?: string | null;
+  readonly clientId?: string | null;
+  readonly event: Event;
+  readonly client: Client;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+type LazyClientEvent = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<ClientEvent, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly eventId?: string | null;
+  readonly clientId?: string | null;
+  readonly event: AsyncItem<Event>;
+  readonly client: AsyncItem<Client>;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+export declare type ClientEvent = LazyLoading extends LazyLoadingDisabled ? EagerClientEvent : LazyClientEvent
+
+export declare const ClientEvent: (new (init: ModelInit<ClientEvent>) => ClientEvent) & {
+  copyOf(source: ClientEvent, mutator: (draft: MutableModel<ClientEvent>) => MutableModel<ClientEvent> | void): ClientEvent;
 }
 
 type EagerCaseClient = {
