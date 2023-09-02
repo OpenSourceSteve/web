@@ -18,10 +18,15 @@ Tailwind CSS... well thought out CSS classes
 On the backend, EasyLegal.app is a serverless application, built on a number of [Amazon Web Services](https://aws.amazon.com/) (AWS) mananged services. The middleware (APIs, auth, lambdas) for interacting with the AWS managed services is located in the `/amplify` directory. [Amplify](https://aws.amazon.com/amplify/) is a framework offered by AWS that makes it relatively easy to setup different services, get them configured and working with one another. I used Amplify to setup and configure about half of the backend services used in this project (authentication, lambda, the GraphQL API) while the other half (DNS, message queues, scheduling and sending of emails) I had to setup and configure myself.
 
 ### Authentication
+EasyLegal.app uses AWS Cognito to authenticate and authorize users. It integrates automatically with our backend datastore, DynamoDB, so it was a natural choice.
 
 ### Data Model
+When a user signs up.
+
+When a user is verified.
 
 ### Resource CRUD
+GraphQL
 
 ## Testing and Accessiblity
 Playwright. Accessiblity concerns.
@@ -33,4 +38,5 @@ Mobile-first, supported by Tailwind
 optimize queries
 Lambda Layers
 Reminder configuration
+Alerts
 Billing
