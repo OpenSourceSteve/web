@@ -1,3 +1,5 @@
+import { expect, test } from '@jest/globals'
+
 import { trimAndDecreaseCase } from "../trimAndDecreaseCase";
 
 const testObj = {
