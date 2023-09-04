@@ -23,7 +23,7 @@ export const PotentialCases = ({ caseNumberName, caseHandler, clientCases }) => 
                             onClick={() => caseHandler(caseInstance)}
                             onKeyDown={event => keyDownHandler(event, caseInstance)}
                             data-client-id={caseInstance.id}
-                        >{caseInstance.caseNumber}: {caseInstance.caseName}</div>
+                        >{caseInstance.caseNumber || "No case number"}: {caseInstance.caseName || "No case name"}</div>
                     </li>
                 )})}
             </ul>
