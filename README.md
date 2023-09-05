@@ -18,19 +18,52 @@ Tailwind CSS... well thought out CSS classes
 On the backend, EasyLegal.app is a serverless application, built on a number of [Amazon Web Services](https://aws.amazon.com/) (AWS) mananged services. The middleware (APIs, auth, lambdas) for interacting with the AWS managed services is located in the `/amplify` directory. [Amplify](https://aws.amazon.com/amplify/) is a framework offered by AWS that makes it relatively easy to setup different services, get them configured and working with one another. I used Amplify to setup and configure about half of the backend services used in this project (authentication, lambda, the GraphQL API) while the other half (DNS, message queues, scheduling and sending of emails) I had to setup and configure myself.
 
 ### Authentication
+EasyLegal.app uses AWS Cognito to authenticate and authorize users. It integrates automatically with our backend datastore, DynamoDB, so it was a natural choice.
 
 ### Data Model
+The app schema is located in [schema.graphql](https://github.com/OpenSourceSteve/web/blob/dev/amplify/backend/api/web/schema.graphql). This section provides a brief, high-level explanation of what's going on from a workflow perspective.
 
-### Resource CRUD
+#### Signup
+When a user signs up, the user submitted data (name and email address) are sent to the [SignupCommand](https://github.com/OpenSourceSteve/web/blob/dev/amplify/backend/function/SignupCommand/src/index.js) lambda where an AWS Cognito user is created and then the data are sent onward to 2 queues: the CreateAppUser queue and the AdminDisableUserCommand queue (both maintained in AWS console). The user only actually needs to wait on the creation of a cognito user. By offloading the provisioning responsiblities of creating an app user and disabling the cognito user to queues running in the background, we're able to reduce user wait time from about 3.5 seconds down to about 1.5 seconds on initial signup.
+
+A Cognito user is just a mapping from email address to UUID (GUID). It exists solely for interacting with the datastore (DynamoDB).  Cognito users are enabled by default, before their emails are verified, so the [AdminDisableUserCommand](https://github.com/OpenSourceSteve/web/blob/dev/amplify/backend/function/AdminDisableUserCommand/src/index.js) lambda (which is triggered by the AdminDisableUserCommand queue) immediately disables them. The [CreateAppUser](https://github.com/OpenSourceSteve/web/blob/dev/amplify/backend/function/CreateAppUser/src/index.js) lambda (triggered by the CreateAppUser queue) does 3 things:
+1. It creates a mapping between the Cognito user ID and an EasyLegal.app ID. This allows for future decoupling from the Cognito auth service. (See `What I would do next` below for more information.)
+2. It creates a record of consent to the site's terms and conditions
+3. It creates a temporary record of user data to be used later when the user confirms her email address
+
+#### Email verification
+Cognito uses a standard email confirmation workflow.  When a user successfully enters a confirmation code that has been sent to the email address they've provided, the [ConfirmationFlow](https://github.com/OpenSourceSteve/web/blob/dev/amplify/backend/function/ConfirmationFlow/src/index.js) lambda re-enables their account and marks it as email verified. The user's info is then again forwarded to another queue (CreateLawyer) to be processed in the background as the user logs in for the first time, again saving the user a couple seconds of wait time.
+
+The [CreateLawyer](https://github.com/OpenSourceSteve/web/blob/dev/amplify/backend/function/CreateLawyer/src/index.js) lambda (triggered by the CreateLawyer queue) creates a laywer, a practice and adds the lawyer to the practice. This is also discussed in the `What I would do next` section below.
+
+#### Initial Login
+Welcome screen.
+
+Create Client
+
+Create Case
+
+Create Events
 
 ## Testing and Accessiblity
-Playwright. Accessiblity concerns.
+Jest, unit testing.
+Playwright, integration testing. Accessiblity concerns.
 Auth Secrets.
 
 
 ## What I would do next
 Mobile-first, supported by Tailwind
+
 optimize queries
+
 Lambda Layers
+
+Queue management (terraform)
+
 Reminder configuration
+
+Alerts
+
 Billing
+
+Decoupling from AWS

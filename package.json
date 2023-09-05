@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@aws-amplify/api-graphql": "^3.4.5",
-    "@aws-amplify/cli-extensibility-helper": "^3.0.13",
-    "@aws-sdk/client-s3": "^3.398.0",
-    "@aws-sdk/client-ses": "^3.379.1",
+    "@aws-amplify/api-graphql": "^3.4.10",
+    "@aws-amplify/cli-extensibility-helper": "^3.0.16",
+    "@aws-sdk/client-s3": "^3.405.0",
+    "@aws-sdk/client-ses": "^3.405.0",
     "@reduxjs/toolkit": "^1.9.5",
     "@rtk-query/graphql-request-base-query": "^2.2.0",
-    "aws-amplify": "^5.3.3",
+    "aws-amplify": "^5.3.10",
     "buffer": "^6.0.3",
     "graphql-request": "^6.1.0",
     "react": "^18.2.0",
@@ -50,6 +50,7 @@
     "@tailwindcss/forms": "^0.5.4",
     "@testing-library/react": "^14.0.0",
     "husky": "^8.0.0",
+    "jest": "^27.5.1",
     "tailwindcss": "^3.3.3",
     "v8-to-istanbul": "^9.1.0"
   }
