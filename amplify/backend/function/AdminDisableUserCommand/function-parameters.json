@@ -1,9 +1,0 @@
-{
-  "lambdaLayers": [],
-  "environmentVariableList": [
-    {
-      "cloudFormationParameterName": "userpoolId",
-      "environmentVariableName": "USERPOOL_ID"
-    }
-  ]
-}

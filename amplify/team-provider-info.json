@@ -168,5 +168,24 @@
         "web": {}
       }
     }
+  },
+  "prod": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-web-prod-161729-authRole",
+      "UnauthRoleArn": "arn:aws:iam::213993515054:role/amplify-web-prod-161729-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::213993515054:role/amplify-web-prod-161729-authRole",
+      "Region": "us-west-1",
+      "DeploymentBucketName": "amplify-web-prod-161729-deployment",
+      "UnauthRoleName": "amplify-web-prod-161729-unauthRole",
+      "StackName": "amplify-web-prod-161729",
+      "StackId": "arn:aws:cloudformation:us-west-1:213993515054:stack/amplify-web-prod-161729/b2fcc270-4c09-11ee-a0a0-067bbcd01999",
+      "AmplifyAppId": "d1vcxk6a0g3i5"
+    },
+    "categories": {
+      "function": {
+        "web": {},
+        "web1c61ecc2": {}
+      }
+    }
   }
 }
